@@ -4,6 +4,8 @@
 <head>
  <title>Contact us</title>
  <meta charset="utf-8">
+
+ <!-- Primary Meta Tags -->
  <meta name="Author" content="State of California" />
  <meta name="Description" content="State of California" />
  <meta name="Keywords" content="California, government" />
@@ -14,12 +16,11 @@
  <meta property="og:image"
   content="https://as-cdt-pub-migr-betaws-ww-p-001-stage.azurewebsites.net/images/social_media_preview_image.png" />
 
- <link href="https://california.azureedge.net/cdt/statetemplate/6.1.0/css/cagov.core.min.css" rel="stylesheet">
+ <!-- Required State Web Template CSS -->
+ <link href="/css/cagov.core.min.css" rel="stylesheet">
+ <link href="/css/colortheme-oceanside.min.css" rel="stylesheet">
 
- <link href="https://california.azureedge.net/cdt/statetemplate/6.1.0/css/colortheme-oceanside.min.css"
-  rel="stylesheet">
-
-
+ <!-- Website Icon -->
  <link rel="apple-touch-icon-precomposed" sizes="100x100" href="/images/apple-touch-icon-precomposed.png">
  <link rel="icon" sizes="192x192" href="/images/apple-touch-icon-192x192.png">
  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/images/apple-touch-icon-180x180.png">
@@ -33,7 +34,7 @@
  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
  <link rel="shortcut icon" href="/favicon.ico">
 
- <!-- BEGIN Google Analytics -->
+ <!-- Google Analytics code -->
  <script async src="https://www.googletagmanager.com/gtag/js?id=G-69TD0KNT0F&l=dataLayer&cx=c"></script>
 
  <script>
@@ -47,20 +48,18 @@
   //statewide GA properties.  Please keep for CA.GOV statewide reporting.
   gtag("config", "G-69TD0KNT0F");
   gtag("config", "UA-3419582-2");
-
-  //please update state department UA/GA4 code in line below before deployment
-  //gtag("config", "G-xxx");
-  //gtag("config", "UA-xxx");
  </script>
  <!-- END Google Analytics -->
 </head>
 
 <body class="primary">
  <header role="banner" id="header" class="global-header fixed">
+  <!--Skip to the content accessibility component -->
   <div id="skip-to-content">
    <a href="#main-content">Skip to Main Content</a>
   </div>
 
+  <!--Utility header structural component -->
   <div class="utility-header">
    <div class="container">
     <div class="flex-row">
@@ -76,6 +75,8 @@
     </div>
    </div>
   </div>
+
+  <!-- Settings structural component -->
   <div class="site-settings section collapse collapsed" id="siteSettings">
    <div class="container p-y">
 
@@ -123,7 +124,9 @@
     </div>
    </div>
   </div>
-  <!-- header branding with light gray background -->
+
+
+  <!--  Site header structural component (branding) -->
   <div class="section-default">
    <div class="branding">
     <div class="header-organization-banner">
@@ -132,17 +135,18 @@
        <img src="/images/template-logo.png" class="logo-img" alt="State Template Logo" />
        <div class="logo-text">
         <span class="logo-state">State of California</span>
-        <span class="logo-dept">Web Template <sup>BETA</sup></span>
+        <span class="logo-dept">Web Template</span>
        </div>
       </div>
      </a>
     </div>
    </div>
   </div>
-  <!-- mobile navigation controls -->
+
+
+  <!-- Mobile controls structural component -->
   <div class="mobile-controls">
    <span class="mobile-control-group mobile-header-icons">
-    <!-- Add more mobile controls here. These will be on the right side of the mobile page header section -->
    </span>
    <div class="mobile-control-group main-nav-icons">
     <button class="mobile-control toggle-search">
@@ -158,7 +162,10 @@
     </button>
    </div>
   </div>
+
+  <!--  Site navigation and search structural components -->
   <div class="navigation-search full-width-nav container">
+   <!--  Google search  -->
    <div id="head-search" class="search-container featured-search">
     <div class="container">
      <form id="Search" class="pos-rel" action="/serp.html">
@@ -171,8 +178,8 @@
      </form>
     </div>
    </div>
-   <!-- navigation types -->
 
+   <!-- Site navigation structural component -->
    <nav id="navigation" class="main-navigation dropdown">
     <ul id="nav_list" class="top-level-nav">
      <li class="nav-item">
@@ -191,72 +198,38 @@
   </div>
  </header>
 
-
+ <!-- Main content -->
  <div id="main-content" class="main-content">
-  <div class="container p-t-md">
+  <div class="container p-t-md p-b-lg">
    <main class="main-primary" id="main">
 
     <nav aria-label="You are here">
      <ol class="breadcrumb">
       <li><a href="/" title="Home page">Home</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <li>Contact</li>
-
-
-
-
-
-
-
-
-
-
-
-
      </ol>
     </nav>
-
-
-
-
-    <h1 class="mt-lg-0">Contact us</h1>
-    <p>Please create a Contact Page specific to your own website. You may want to provide several methods of
-     contacting your organization. </p>
-    <p>To provide State Web Template v6 feedback use GitHub otherwise feel free to contact us by visiting <a
-      href="https://webstandards.ca.gov/contact-us/">Leave Feedback page</a>.</p>
-    <p>Visit the <a href="http://webstandards.ca.gov/">WebStandards</a> website for more information. To contact us
-     about the state template please visit <a href="https://webstandards.ca.gov/contact-us/">Contact us
-      page</a>.<br>
-    </p>
-    <p>This website is managed by the California Department of Technology.</p>
-    <article>
-     <p>&nbsp;</p>
-    </article>
+    <div class="row">
+     <div class="col-md-10 mx-auto">
+      <h1 class="mt-lg-0">Contact us</h1>
+      <p>Please create a Contact Page specific to your own website. You may want to provide several methods of
+       contacting your organization. </p>
+      <p>To provide State Web Template v6 feedback use GitHub otherwise feel free to contact us by visiting <a
+        href="https://webstandards.ca.gov/contact-us/">Leave Feedback page</a>.</p>
+      <p>Visit the <a href="http://webstandards.ca.gov/">WebStandards</a> website for more information. To contact us
+       about the state template please visit <a href="https://webstandards.ca.gov/contact-us/">Contact us
+        page</a>.<br>
+      </p>
+      <p>This website is managed by the California Department of Technology.</p>
+     </div>
+    </div>
    </main>
   </div>
  </div>
 
 
 
- <!-- Global Footer -->
+ <!-- Global Footer structural component -->
  <footer id="footer" class="global-footer">
   <button class="return-top"><span class="sr-only">Back to top</span></button>
   <div class="container">
@@ -269,8 +242,6 @@
      <li><a href="https://www.ca.gov/use/">Conditions of use</a></li>
      <li><a href="https://www.ca.gov/privacy-policy/">Privacy policy</a></li>
      <li><a href="https://www.ca.gov/accessibility/">Accessibility</a></li>
-
-
     </ul>
 
     <ul class="socialsharer-container">
@@ -291,9 +262,8 @@
   </div>
  </footer>
 
- <!-- Extra Decorative Content -->
- <div class="decoration-last">&nbsp;</div>
- <script src="https://california.azureedge.net/cdt/statetemplate/6.1.0/js/cagov.core.min.js"></script>
+ <!-- Required State Web Template JavaScript -->
+ <script src="/js/cagov.core.min.js"></script>
 </body>
 
 </html>
