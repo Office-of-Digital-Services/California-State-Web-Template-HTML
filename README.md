@@ -8,5 +8,5 @@ View this project in GitHub pages: https://office-of-digital-services.github.io/
 
 ## State Web Template with full sample content
 
-- [California-State-Web-Template-Website](https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website)
+- [California-State-Web-Template-Website](https://template.webstandards.ca.gov/)
 
