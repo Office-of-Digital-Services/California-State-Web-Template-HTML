@@ -1,4 +1,4 @@
-# California-State-Web-Template-HTML
+# California State Web Template (HTML Version)
 
 This repository is a simple "Hello world!" HTML site containing a few standalone HTML pages with included local references to the State Web Template CSS and JavaScript files.
 
@@ -16,6 +16,6 @@ The California State Web Template is an HTML template and website standard offer
 
 Learn about how to use the California State Web Template on the official website here:
 
-- [California-State-Web-Template-Website](https://template.webstandards.ca.gov)
+- [California State Web Template Website](https://template.webstandards.ca.gov)
 
 Please visit [webstandards.ca.gov](https://webstandards.ca.gov) for more information on California web publishing guidelines.
