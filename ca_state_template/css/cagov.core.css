@@ -15379,8 +15379,7 @@ a.second-level-link [class^=ca-gov-icon-] {
 
 @media (min-width: 992px) {
   .unit1 {
-    height: 65px;
-    overflow: hidden !important;
+    min-height: 65px;
   }
   .unit2 {
     height: 130px;
