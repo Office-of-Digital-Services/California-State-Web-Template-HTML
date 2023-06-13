@@ -4,11 +4,12 @@
     <title>California State Web Template</title>
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
 
     <!-- BEGIN STATE_TEMPLATE -->
 
-<!-- STATE_TEMPLATE *** HEAD references ***
+    <!-- STATE_TEMPLATE *** HEAD references ***
     
 Include links to stylesheet and custom theme.
     
@@ -22,402 +23,453 @@ You may also use the CDN instead of using the local folder...
 
 -->
 
-<link rel="stylesheet" href="ca_state_template/css/cagov.core.min.css" />
-<link
-  rel="stylesheet"
-  href="ca_state_template/css/colortheme-oceanside.min.css" />
+    <link rel="stylesheet" href="ca_state_template/css/cagov.core.min.css" />
+    <link
+      rel="stylesheet"
+      href="ca_state_template/css/colortheme-oceanside.min.css"
+    />
 
-<!-- END STATE_TEMPLATE -->
+    <!-- END STATE_TEMPLATE -->
 
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="100x100"
-  href="images/apple-touch-icon-precomposed.png" />
-<link rel="icon" sizes="192x192" href="images/apple-touch-icon-192x192.png" />
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="180x180"
-  href="images/apple-touch-icon-180x180.png" />
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="152x152"
-  href="images/apple-touch-icon-152x152.png" />
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="images/apple-touch-icon-144x144.png" />
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="120x120"
-  href="images/apple-touch-icon-120x120.png" />
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="114x114"
-  href="images/apple-touch-icon-114x114.png" />
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="72x72"
-  href="images/apple-touch-icon-72x72.png" />
-<link
-  rel="apple-touch-icon-precomposed"
-  href="images/apple-touch-icon-57x57.png" />
-<link rel="shortcut icon" href="images/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-<link rel="shortcut icon" href="favicon.ico" />
-</head>
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="100x100"
+      href="images/apple-touch-icon-precomposed.png"
+    />
+    <link
+      rel="icon"
+      sizes="192x192"
+      href="images/apple-touch-icon-192x192.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="180x180"
+      href="images/apple-touch-icon-180x180.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="152x152"
+      href="images/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="images/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="120x120"
+      href="images/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="images/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="images/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="images/apple-touch-icon-57x57.png"
+    />
+    <link rel="shortcut icon" href="images/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+  </head>
   <body class="primary">
     <header role="banner" id="header" class="global-header fixed">
       <div id="skip-to-content">
         <a href="#main-content">Skip to Main Content</a>
       </div>
       <div class="utility-header">
-  <div class="container">
-    <div class="flex-row">
-      <div class="social-media-links">
-        <div class="header-cagov-logo">
-          <a href="https://ca.gov">
+        <div class="container">
+          <div class="flex-row">
+            <div class="social-media-links">
+              <div class="header-cagov-logo">
+                <a href="https://ca.gov">
+                  <span class="sr-only">CA.gov</span>
+                  <span class="ca-gov-logo-svg"></span>
+                </a>
+              </div>
+              <p class="official-tag">
+                <span class="desktop-only">Official website of the</span>
+                State of California
+              </p>
+            </div>
+            <div class="settings-links"></div>
+          </div>
+        </div>
+      </div>
+      <!-- header branding with light gray background -->
+      <div class="section-default">
+        <div class="branding">
+          <div class="header-organization-banner">
+            <a href="">
+              <div class="logo-assets">
+                <img
+                  src="images/sample-logo.png"
+                  class="logo-img"
+                  alt="State Template Logo"
+                  style="aspect-ratio: 80 / 70"
+                />
+                <div class="logo-text">
+                  <span class="logo-state">State of California</span>
+                  <span class="logo-dept">Site name</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- mobile navigation controls -->
+      <div class="mobile-controls">
+        <span class="mobile-control-group mobile-header-icons">
+          <!-- Add more mobile controls here. These will be on the right side of the mobile page header section -->
+        </span>
+        <div class="mobile-control-group main-nav-icons">
+          <button
+            id="nav-icon3"
+            class="mobile-control toggle-menu"
+            aria-expanded="false"
+            aria-controls="navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="sr-only">Menu</span>
+          </button>
+        </div>
+      </div>
+      <div class="navigation-search full-width-nav container">
+        <div id="head-search" class="search-container featured-search">
+          <div class="container">
+            <form id="Search" class="pos-rel" action="serp.html">
+              <span class="sr-only" id="SearchInput">Custom Google Search</span>
+              <input
+                type="search"
+                name="q"
+                aria-labelledby="SearchInput"
+                placeholder="Search"
+                class="search-textfield"
+              />
+              <button type="submit" class="gsc-search-button">
+                <span class="ca-gov-icon-search" aria-hidden="true"></span>
+                <span class="sr-only">Submit</span>
+              </button>
+              <div class="close-search-btn">
+                <button
+                  class="close-search gsc-clear-button border-0 bg-transparent pos-rel"
+                  type="reset"
+                >
+                  <span class="sr-only">Close</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- navigation types -->
+        <nav
+          id="navigation"
+          class="main-navigation dropdown"
+          aria-label="Main navigation"
+        >
+          <ul id="nav_list" class="top-level-nav">
+            <li class="nav-item">
+              <a class="first-level-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="first-level-link active">Samples</a>
+              <div class="sub-nav">
+                <ul class="second-level-nav">
+                  <li class="unit1">
+                    <a
+                      class="second-level-link"
+                      href="samples/accordion-list.html"
+                      >Accordion-list</a
+                    >
+                  </li>
+                  <li class="unit1">
+                    <a class="second-level-link" href="samples/accordion.html"
+                      >Accordion</a
+                    >
+                  </li>
+                  <li class="unit1">
+                    <a
+                      class="second-level-link"
+                      href="samples/alert-banner-beta-feedback.html"
+                      >Alert-banner-beta-feedback</a
+                    >
+                  </li>
+                  <li class="unit1">
+                    <a
+                      class="second-level-link"
+                      href="samples/alert-banner.html"
+                      >Alert-banner</a
+                    >
+                  </li>
+                  <li class="unit1">
+                    <a class="second-level-link" href="samples/banner.html"
+                      >Banner</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="first-level-link" href="contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="first-level-link" href="about.html">About</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div id="main-content" class="main-content">
+      <main class="main-primary" id="main">
+        <div class="section-default">
+          <div class="container p-a-md">
+            <div class="row">
+              <div class="col-md-6 col-lg-4 p-y-md order-2 order-md-1">
+                <h1 class="h3 m-t">California State Web Template</h1>
+                <p>
+                  With a new look, more features, and updated content and
+                  components, the final State Web Template is here to help you
+                  update and enhance your websites and applications.
+                </p>
+                <a
+                  href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/releases"
+                  class="btn btn-primary m-t-md m-b-lg"
+                  >Learn what is new</a
+                >
+              </div>
+              <div
+                class="col-lg-8 col-md-6 p-0 text-right order-1 order-md-2 d-flex justify-content-center"
+              >
+                <a
+                  href="#"
+                  class="feature-img"
+                  style="background: url('images/main-banner.jpg')"
+                  aria-label="Feature card example image"
+                >
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <h2>What's new in v6</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <img
+                  class="card-img"
+                  src="images/navigation.jpg"
+                  alt="navigation illustration"
+                />
+                <div class="card-body bg-gray-50">
+                  <h3 class="card-title">
+                    <a href="#">Enhanced navigation</a>
+                  </h3>
+                  <p>
+                    With better wayfinding and new side navigation, developing
+                    user-friendly websites is easier than ever.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img
+                  class="card-img"
+                  src="images/design.jpg"
+                  alt="visual design illustration"
+                />
+                <div class="card-body bg-gray-50">
+                  <h3 class="card-title">
+                    <a href="#">Refreshed visual design</a>
+                  </h3>
+                  <p>
+                    The template, website, and most components have been
+                    redesigned to align with the Design System.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img
+                  class="card-img"
+                  src="images/components.jpg"
+                  alt="components illustration"
+                />
+                <div class="card-body bg-gray-50">
+                  <h3 class="card-title"><a href="#">Updated components</a></h3>
+                  <p>
+                    We added new components, combined similar components, and
+                    improved the overall design and functionality.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <hr />
+          <div class="row p-t">
+            <div class="col-md-4 text-right p-r-md d-none d-md-block">
+              <span
+                class="ca-gov-icon-quotation-mark text-4rem color-primary"
+                aria-hidden="true"
+              ></span>
+            </div>
+            <div class="col-md-7">
+              <blockquote class="no-quotation-mark">
+                <p>A consistent experience is a better experience.</p>
+                <footer>Mark Eberman</footer>
+              </blockquote>
+            </div>
+          </div>
+          <hr />
+        </div>
+
+        <div class="container p-b-lg">
+          <div class="row m-b-md">
+            <div class="col-md-8">
+              <h2>Partner with us</h2>
+              <p>
+                Improvements to the State Web Template and the Design System are
+                largely driven by your feedback. We'd love to hear from you!
+              </p>
+            </div>
+            <div class="col-md-4">
+              <img
+                src="images/geometry.png"
+                alt="geometryc cubes"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 d-flex">
+              <span
+                class="ca-gov-icon-idea-alt text-2-5rem color-p3"
+                aria-hidden="true"
+              ></span>
+              <div class="p-x-md">
+                <h3 class="h4 m-t">Have an idea or an issue?</h3>
+                <div class="width-30 brd-top brd-gray p-b"></div>
+                <p>
+                  <a
+                    href="https://github.com/Office-of-Digital-Services/California-State-Web-Template"
+                    >Reach out in GitHub</a
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex">
+              <span
+                class="ca-gov-icon-chat-bubble text-2-5rem color-p3"
+                aria-hidden="true"
+              ></span>
+              <div class="p-x-md">
+                <h3 class="h4 m-t">Want to give website feedback?</h3>
+                <div class="width-30 brd-top brd-gray p-b"></div>
+                <p>
+                  <a
+                    href="https://coda.io/@yesenia-gutierrez-state-ca-gov/ca-design-system-feature-requests"
+                    >Fill out this form</a
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex">
+              <span
+                class="ca-gov-icon-cal-bear text-2-5rem color-p3"
+                aria-hidden="true"
+              ></span>
+              <div class="p-l-md">
+                <h3 class="h4 m-t">What is coming next?</h3>
+                <div class="width-30 brd-top brd-gray p-b"></div>
+                <p>
+                  <a href="https://designsystem.webstandards.ca.gov/"
+                    >Check out new CA Design System</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- Global Footer -->
+    <footer id="footer" class="global-footer">
+      <div class="container">
+        <div class="d-flex">
+          <a href="https://ca.gov" class="cagov-logo">
             <span class="sr-only">CA.gov</span>
             <span class="ca-gov-logo-svg"></span>
           </a>
+          <ul class="footer-links">
+            <li>
+              <a href="conditions-of-use.html">Conditions of use</a>
+            </li>
+            <li>
+              <a href="privacy-policy.html">Privacy policy</a>
+            </li>
+            <li>
+              <a
+                href="images/WebAccessibilityCert-template.webstandards.ca.gov.pdf"
+              >
+                Website accessibility certification
+              </a>
+            </li>
+            <li>
+              <a href="sitemap.html">Sitemap</a>
+            </li>
+          </ul>
+          <ul class="socialsharer-container">
+            <li>
+              <a
+                href="https://github.com/Office-of-Digital-Innovation/California-State-Web-Template"
+              >
+                <span class="ca-gov-icon-github" aria-hidden="true"></span>
+                <span class="sr-only">GitHub</span>
+              </a>
+            </li>
+          </ul>
         </div>
-        <p class="official-tag">
-          <span class="desktop-only">Official website of the</span>
+      </div>
+      <!-- Copyright Statement -->
+      <div class="copyright">
+        <div class="container text-right">
+          Copyright &copy;
+          <span id="thisyear">
+            <script>
+              document
+                .getElementById("thisyear")
+                .appendChild(document.createTextNode(new Date().getFullYear()));
+            </script>
+          </span>
           State of California
-        </p>
-      </div>
-      <div class="settings-links"></div>
-    </div>
-  </div>
-</div>
-<!-- header branding with light gray background -->
-<div class="section-default">
-  <div class="branding">
-    <div class="header-organization-banner">
-      <a href="">
-        <div class="logo-assets">
-          <img
-            src="images/sample-logo.png"
-            class="logo-img"
-            alt="State Template Logo"
-            style="aspect-ratio: 80 / 70" />
-          <div class="logo-text">
-            <span class="logo-state">State of California</span>
-            <span class="logo-dept">Site name</span>
-          </div>
         </div>
-      </a>
-    </div>
-  </div>
-</div>
-<!-- mobile navigation controls -->
-<div class="mobile-controls">
-  <span class="mobile-control-group mobile-header-icons">
-    <!-- Add more mobile controls here. These will be on the right side of the mobile page header section -->
-  </span>
-  <div class="mobile-control-group main-nav-icons">
-    
-    <button
-      id="nav-icon3"
-      class="mobile-control toggle-menu"
-      aria-expanded="false"
-      aria-controls="navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span class="sr-only">Menu</span>
-    </button>
-  </div>
-</div>
-<div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search"><div class="container">
-  <form id="Search" class="pos-rel" action="serp.html">
-    <span class="sr-only" id="SearchInput">Custom Google Search</span>
-    <input
-      type="search"
-      name="q"
-      aria-labelledby="SearchInput"
-      placeholder="Search"
-      class="search-textfield" />
-    <button type="submit" class="gsc-search-button">
-      <span class="ca-gov-icon-search" aria-hidden="true"></span>
-      <span class="sr-only">Submit</span>
-    </button>
-    <div class="close-search-btn">
-      <button
-        class="close-search gsc-clear-button border-0 bg-transparent pos-rel"
-        type="reset">
-        <span class="sr-only">Close</span>
+      </div>
+      <button class="return-top">
+        <span class="sr-only">Back to top</span>
       </button>
-    </div>
-  </form>
-</div></div>
-        <!-- navigation types --><nav
-  id="navigation"
-  class="main-navigation dropdown"
-  aria-label="Main navigation">
-  <ul id="nav_list" class="top-level-nav">
-    <li class="nav-item">
-      <a class="first-level-link" href="index.html">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="first-level-link active">Samples</a>
-      <div class="sub-nav">
-        <ul class="second-level-nav"><li class="unit1">
-            <a class="second-level-link" href="samples/accordion-list.html"
-              >Accordion-list</a
-            >
-          </li><li class="unit1">
-            <a class="second-level-link" href="samples/accordion.html"
-              >Accordion</a
-            >
-          </li><li class="unit1">
-            <a class="second-level-link" href="samples/alert-banner-beta-feedback.html"
-              >Alert-banner-beta-feedback</a
-            >
-          </li><li class="unit1">
-            <a class="second-level-link" href="samples/alert-banner.html"
-              >Alert-banner</a
-            >
-          </li><li class="unit1">
-            <a class="second-level-link" href="samples/banner.html"
-              >Banner</a
-            >
-          </li>
-        </ul>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="first-level-link" href="contact.html">Contact Us</a>
-    </li>
-    <li class="nav-item">
-      <a class="first-level-link" href="about.html">About</a>
-    </li>
-  </ul>
-</nav>
-</div>
-    </header>
-    <div id="main-content" class="main-content">
-  <div class="container p-t-md">
-    <main class="main-primary" id="main">
-<div class="section-default">
-  <div class="container p-a-md">
-    <div class="row">
-      <div class="col-md-6 col-lg-4 p-y-md order-2 order-md-1">
-        <h1 class="h3 m-t">California State Web Template</h1>
-        <p>
-          With a new look, more features, and updated content and components,
-          the final State Web Template is here to help you update and enhance
-          your websites and applications.
-        </p>
-        <a
-          href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/releases"
-          class="btn btn-primary m-t-md m-b-lg"
-          >Learn what is new</a
-        >
-      </div>
-      <div
-        class="col-lg-8 col-md-6 p-0 text-right order-1 order-md-2 d-flex justify-content-center">
-        <a
-          href="#"
-          class="feature-img"
-          style="background: url('images/main-banner.jpg')"
-          aria-label="Feature card example image">
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+    </footer>
+    <!-- Extra Decorative Content -->
+    <div class="decoration-last">&nbsp;</div>
+    <!-- BEGIN STATE_TEMPLATE -->
 
-<div class="container">
-  <h2>What's new in v6</h2>
-  <div class="row">
-    <div class="col-md-4">
-      <div class="card">
-        <img
-          class="card-img"
-          src="images/navigation.jpg"
-          alt="navigation illustration" />
-        <div class="card-body bg-gray-50">
-          <h3 class="card-title"><a href="#">Enhanced navigation</a></h3>
-          <p>
-            With better wayfinding and new side navigation, developing
-            user-friendly websites is easier than ever.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img
-          class="card-img"
-          src="images/design.jpg"
-          alt="visual design illustration" />
-        <div class="card-body bg-gray-50">
-          <h3 class="card-title"><a href="#">Refreshed visual design</a></h3>
-          <p>
-            The template, website, and most components have been redesigned to
-            align with the Design System.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img
-          class="card-img"
-          src="images/components.jpg"
-          alt="components illustration" />
-        <div class="card-body bg-gray-50">
-          <h3 class="card-title"><a href="#">Updated components</a></h3>
-          <p>
-            We added new components, combined similar components, and improved
-            the overall design and functionality.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <hr />
-  <div class="row p-t">
-    <div class="col-md-4 text-right p-r-md d-none d-md-block">
-      <span
-        class="ca-gov-icon-quotation-mark text-4rem color-primary"
-        aria-hidden="true"></span>
-    </div>
-    <div class="col-md-7">
-      <blockquote class="no-quotation-mark">
-        <p>A consistent experience is a better experience.</p>
-        <footer>Mark Eberman</footer>
-      </blockquote>
-    </div>
-  </div>
-  <hr />
-</div>
-
-<div class="container p-b-lg">
-  <div class="row m-b-md">
-    <div class="col-md-8">
-      <h2>Partner with us</h2>
-      <p>
-        Improvements to the State Web Template and the Design System are largely
-        driven by your feedback. We'd love to hear from you!
-      </p>
-    </div>
-    <div class="col-md-4">
-      <img src="images/geometry.png" alt="geometryc cubes" class="img-fluid" />
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4 d-flex">
-      <span
-        class="ca-gov-icon-idea-alt text-2-5rem color-p3"
-        aria-hidden="true"></span>
-      <div class="p-x-md">
-        <h3 class="h4 m-t">Have an idea or an issue?</h3>
-        <div class="width-30 brd-top brd-gray p-b"></div>
-        <p>
-          <a
-            href="https://github.com/Office-of-Digital-Services/California-State-Web-Template"
-            >Reach out in GitHub</a
-          >
-        </p>
-      </div>
-    </div>
-    <div class="col-md-4 d-flex">
-      <span
-        class="ca-gov-icon-chat-bubble text-2-5rem color-p3"
-        aria-hidden="true"></span>
-      <div class="p-x-md">
-        <h3 class="h4 m-t">Want to give website feedback?</h3>
-        <div class="width-30 brd-top brd-gray p-b"></div>
-        <p>
-          <a
-            href="https://coda.io/@yesenia-gutierrez-state-ca-gov/ca-design-system-feature-requests"
-            >Fill out this form</a
-          >
-        </p>
-      </div>
-    </div>
-    <div class="col-md-4 d-flex">
-      <span
-        class="ca-gov-icon-cal-bear text-2-5rem color-p3"
-        aria-hidden="true"></span>
-      <div class="p-l-md">
-        <h3 class="h4 m-t">What is coming next?</h3>
-        <div class="width-30 brd-top brd-gray p-b"></div>
-        <p>
-          <a href="https://designsystem.webstandards.ca.gov/"
-            >Check out new CA Design System</a
-          >
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-</main>
-  </div>
-</div><!-- Global Footer -->
-<footer id="footer" class="global-footer">
-  <div class="container">
-    <div class="d-flex">
-      <a href="https://ca.gov" class="cagov-logo">
-        <span class="sr-only">CA.gov</span>
-        <span class="ca-gov-logo-svg"></span>
-      </a>
-      <ul class="footer-links">
-        <li>
-          <a href="conditions-of-use.html">Conditions of use</a>
-        </li>
-        <li>
-          <a href="privacy-policy.html">Privacy policy</a>
-        </li>
-        <li>
-          <a
-            href="images/WebAccessibilityCert-template.webstandards.ca.gov.pdf">
-            Website accessibility certification
-          </a>
-        </li>
-        <li>
-          <a href="sitemap.html">Sitemap</a>
-        </li>
-      </ul>
-      <ul class="socialsharer-container">
-        <li>
-          <a
-            href="https://github.com/Office-of-Digital-Innovation/California-State-Web-Template">
-            <span class="ca-gov-icon-github" aria-hidden="true"></span>
-            <span class="sr-only">GitHub</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <!-- Copyright Statement -->
-  <div class="copyright">
-    <div class="container text-right">
-      Copyright &copy;
-      <span id="thisyear">
-        <script>
-          document.getElementById('thisyear').appendChild(document.createTextNode(new Date().getFullYear()))
-        </script>
-      </span>
-      State of California
-    </div>
-  </div>
-  <button class="return-top">
-    <span class="sr-only">Back to top</span>
-  </button>
-</footer>
-<!-- Extra Decorative Content -->
-<div class="decoration-last">&nbsp;</div>
-<!-- BEGIN STATE_TEMPLATE -->
-
-<!-- STATE_TEMPLATE *** Ending Javascript reference ***
+    <!-- STATE_TEMPLATE *** Ending Javascript reference ***
 
 Include core Javascript last
       
@@ -428,8 +480,8 @@ Include core Javascript last
 <script src="https://california.azureedge.net/cdt/statetemplate/6.1.2/js/cagov.core.min.js"></script>
 -->
 
-<script src="ca_state_template/js/cagov.core.min.js"></script>
+    <script src="ca_state_template/js/cagov.core.min.js"></script>
 
-<!-- END STATE_TEMPLATE -->
-</body>
+    <!-- END STATE_TEMPLATE -->
+  </body>
 </html>
