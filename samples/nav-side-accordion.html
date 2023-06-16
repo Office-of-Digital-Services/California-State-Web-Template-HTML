@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Banner</title>
+    <title>Nav Side Accordion</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
@@ -186,7 +186,7 @@ You may also use the CDN instead of using the local folder...
             <a href="../index.html" title="Home page">Home</a>
           </li>
           <li>Samples</li>
-          <li>Banner</li>
+          <li>Nav Side Accordion</li>
         </ol>
       </nav>
       <div class="row">
@@ -209,7 +209,7 @@ You may also use the CDN instead of using the local folder...
               <li>
                 <a
                   href="../samples/banner.html"
-                  class="active">Banner</a>
+                  class="">Banner</a>
               </li>
               <li>
                 <a
@@ -394,7 +394,7 @@ You may also use the CDN instead of using the local folder...
               <li>
                 <a
                   href="../samples/nav-side-accordion.html"
-                  class="">Nav Side Accordion</a>
+                  class="active">Nav Side Accordion</a>
               </li>
               <li>
                 <a
@@ -535,28 +535,35 @@ You may also use the CDN instead of using the local folder...
           </nav>
         </div>
         <div class="col-lg-9 p-b-lg">
-          <h1 class="mt-lg-0">Banner</h1>
+          <h1 class="mt-lg-0">Nav Side Accordion</h1>
           <!-- BEGIN SAMPLE CONTENT -->
-          <div
-  class="header-primary-banner d-flex justify-content-center align-items-center"
-  style="background-image: url('https://template.webstandards.ca.gov/images/main-banner10.jpg');">
-  <div class="container p-y-lg">
-    <div class="row">
-      <div class="col-sm color-white text-center p-a-lg">
-        <h2 class="text-3rem m-t-0 overflow-visible">Title</h2>
-        <p class="text-1-5rem line-height-1-5em">
-          Highlight an action you want people to take or important information
-          on the homepage.
-        </p>
-        <div class="btn-row p-b">
-          <a href="javascript:;" class="btn btn-lg btn-highlight m-t">
-            Short link
-          </a>
-        </div>
+          <nav aria-labelledby="accordion-side-nav">
+  <div class="sr-only" id="accordion-side-nav">Accordion side navigation</div>
+  <a class="sidenav landing" href="javascript:;">Landing page</a>
+
+  <cagov-accordion class="sidenav">
+    <details open>
+      <summary class="active">Page 2</summary>
+      <div class="accordion-body">
+        <ul class="side-subnav">
+          <li>
+            <a href="javascript:;">Subpage 1</a>
+          </li>
+          <li>
+            <a href="javascript:;">Subpage 2</a>
+          </li>
+          <li>
+            <a href="javascript:;">Subpage 3</a>
+          </li>
+        </ul>
       </div>
-    </div>
-  </div>
-</div>
+    </details>
+  </cagov-accordion>
+
+  <a class="sidenav" href="javascript:;">Page 3</a>
+  <a class="sidenav" href="javascript:;">Page 4</a>
+  <a class="sidenav" href="javascript:;">Page 5</a>
+</nav>
 
           <!-- END SAMPLE CONTENT -->
         </div>
