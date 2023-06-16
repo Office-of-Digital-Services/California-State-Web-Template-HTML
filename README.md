@@ -18,4 +18,8 @@ Learn about how to use the California State Web Template on the official website
 
 - [California State Web Template Website](https://template.webstandards.ca.gov)
 
+Development source code for the California State Web Template:
+
+- [California State Web Template Development](https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development)
+
 Please visit [webstandards.ca.gov](https://webstandards.ca.gov) for more information on California web publishing guidelines.
