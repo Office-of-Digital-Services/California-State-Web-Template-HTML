@@ -10,23 +10,24 @@
 
 <!-- STATE_TEMPLATE *** HEAD references ***
     
-Include links to stylesheet and custom theme.
+Include links to stylesheet and custom theme and core JS.
     
 <link rel="stylesheet" href="../ca_state_template/css/cagov.core.min.css"/>
 <link rel="stylesheet" href="../ca_state_template/css/colortheme-oceanside.min.css"/>
+<script src="../ca_state_template/js/cagov.core.min.js"></script>
 
 You may also use the CDN instead of using the local folder...
 
-<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.1.2/css/cagov.core.min.css"/>
-<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.1.2/css/colortheme-oceanside.min.css"/>
+<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.2.0/css/cagov.core.min.css"/>
+<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.2.0/css/colortheme-oceanside.min.css"/>
+<script src="https://california.azureedge.net/cdt/statetemplate/6.2.0/js/cagov.core.min.js"></script>
 
 -->
-
 <link rel="stylesheet" href="../ca_state_template/css/cagov.core.min.css" />
 <link
   rel="stylesheet"
   href="../ca_state_template/css/colortheme-oceanside.min.css" />
-
+<script src="../ca_state_template/js/cagov.core.min.js"></script>
 <!-- END STATE_TEMPLATE -->
 
 <link
@@ -64,6 +65,29 @@ You may also use the CDN instead of using the local folder...
 <link rel="shortcut icon" href="../images/apple-touch-icon-57x57.png" />
 <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
 <link rel="shortcut icon" href="../favicon.ico" />
+<!-- Statewide Alerts Server -->
+<script defer src="https://alert.cdt.ca.gov"></script>
+<!-- BEGIN Google Tag Manager -->
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link rel="preconnect" href="https://www.google-analytics.com" />
+<script>
+  //The GA4 Measurement ID that this website should use for website analytics
+  //*** BEGIN STATE TEMPLATE CHANGE REQUESTED
+  var yourGA4MeasurementId = "G-75V2BNQ3DR"; //Set to the default GA4 Measurement ID (G-75V2BNQ3DR), please change it to the one for your organization.
+  //*** END STATE TEMPLATE CHANGE REQUESTED
+
+  //Keep this tag mananger code as is, it helps collect data for ALL ca.gov sites
+  var stateGTMAccount = "GTM-NJ6Q4MV"; //GTM-NJ6Q4MV, all ca.gov + State Template Version 6.2
+
+  //Support code to make this work, just leave this as is
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  (function(){dataLayer.push(arguments)})('config',yourGA4MeasurementId);
+  })(window,document,'script','dataLayer',stateGTMAccount);
+</script>
+<!-- END Google Tag Manager -->
 </head>
   <body class="primary">
     <header role="banner" id="header" class="global-header fixed">
@@ -167,11 +191,22 @@ You may also use the CDN instead of using the local folder...
         >Samples</a
       >
     </li>
-    <li class="nav-item">
-      <a class="first-level-link" href="../contact.html">Contact Us</a>
-    </li>
-    <li class="nav-item">
-      <a class="first-level-link" href="../about.html">About</a>
+
+    <li class="nav-item" role="presentation">
+      <a href="../getting-started.html" class="first-level-link">Other</a>
+      <div class="sub-nav">
+        <ul class="second-level-nav">
+          <li class="unit1">
+            <a href="../contact.html" class="second-level-link">Contact Us</a>
+          </li>
+          <li class="unit1">
+            <a href="../about.html" class="second-level-link">About</a>
+          </li>
+          <li class="unit1">
+            <a href="../blank.html" class="second-level-link">Blank Page</a>
+          </li>
+        </ul>
+      </div>
     </li>
   </ul>
 </nav>
@@ -537,9 +572,7 @@ You may also use the CDN instead of using the local folder...
         <div class="col-lg-9 p-b-lg">
           <h1 class="mt-lg-0">Header Primary Banner</h1>
           <!-- BEGIN SAMPLE CONTENT -->
-          <div
-  class="header-primary-banner hidden-print"
-  style="background-image: url('https://template.webstandards.ca.gov/images/main-banner.svg');">
+          <div class="header-primary-banner hidden-print">
   <div class="container">
     <div class="row my-4">
       <div class="col my-auto">
@@ -627,21 +660,5 @@ You may also use the CDN instead of using the local folder...
 </footer>
 <!-- Extra Decorative Content -->
 <div class="decoration-last">&nbsp;</div>
-<!-- BEGIN STATE_TEMPLATE -->
-
-<!-- STATE_TEMPLATE *** Ending Javascript reference ***
-
-Include core Javascript last
-      
-<script src="../ca_state_template/js/cagov.core.min.js"></script>
-
-...or use the CDN...
-
-<script src="https://california.azureedge.net/cdt/statetemplate/6.1.2/js/cagov.core.min.js"></script>
--->
-
-<script src="../ca_state_template/js/cagov.core.min.js"></script>
-
-<!-- END STATE_TEMPLATE -->
 </body>
 </html>
