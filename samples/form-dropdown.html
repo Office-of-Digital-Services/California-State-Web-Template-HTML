@@ -71,20 +71,18 @@ You may also use the CDN instead of using the local folder...
 <link rel="preconnect" href="https://www.googletagmanager.com" />
 <link rel="preconnect" href="https://www.google-analytics.com" />
 <script>
-  //The GA4 Measurement ID that this website should use for website analytics
   //*** BEGIN STATE TEMPLATE CHANGE REQUESTED
+  //Your GA4 Measurement ID that this website should use for website analytics
   var yourGA4MeasurementId = "G-75V2BNQ3DR"; //Set to the default GA4 Measurement ID (G-75V2BNQ3DR), please change it to the one for your organization.
   //*** END STATE TEMPLATE CHANGE REQUESTED
 
-  //Keep this tag mananger code as is, it helps collect data for ALL ca.gov sites
-  var stateGTMAccount = "GTM-NJ6Q4MV"; //GTM-NJ6Q4MV, all ca.gov + State Template Version 6.2
-
   //Support code to make this work, just leave this as is
+  var stateGTMAccount = "GTM-NJ6Q4MV"; //GTM-NJ6Q4MV - all ca.gov
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  (function(){dataLayer.push(arguments)})('config',yourGA4MeasurementId);
+  (function(){dataLayer.push(arguments)})('config',yourGA4MeasurementId,{cookie_flags:'samesite=lax;domain=.'+d.domain});
   })(window,document,'script','dataLayer',stateGTMAccount);
 </script>
 <!-- END Google Tag Manager -->
