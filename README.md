@@ -2,11 +2,11 @@
 
 This repository is a simple "Hello world!" HTML site containing a few standalone HTML pages with included local references to the State Web Template CSS and JavaScript files.
 
-## Live sample
+## Starter site live sample
 
 You can view a running version of this sample site here.
 
-- [Live Sample Demo](https://office-of-digital-services.github.io/California-State-Web-Template-HTML).
+- [Starter site live Sample Demo](https://office-of-digital-services.github.io/California-State-Web-Template-HTML).
 
 ## State Web Template
 
