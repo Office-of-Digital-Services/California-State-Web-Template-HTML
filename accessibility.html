@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>About</title>
+    <title>Accessibility</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
@@ -18,9 +18,9 @@ Include links to stylesheet and custom theme and core JS.
 
 You may also use the CDN instead of using the local folder...
 
-<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.2.0/css/cagov.core.min.css"/>
-<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.2.0/css/colortheme-oceanside.min.css"/>
-<script src="https://california.azureedge.net/cdt/statetemplate/6.2.0/js/cagov.core.min.js"></script>
+<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.3.0/css/cagov.core.min.css"/>
+<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.3.0/css/colortheme-oceanside.min.css"/>
+<script src="https://california.azureedge.net/cdt/statetemplate/6.3.0/js/cagov.core.min.js"></script>
 
 -->
 <link rel="stylesheet" href="ca_state_template/css/cagov.core.min.css" />
@@ -66,7 +66,7 @@ You may also use the CDN instead of using the local folder...
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 <link rel="shortcut icon" href="favicon.ico" />
 <!-- Statewide Alerts Server -->
-<script defer src="https://alert.cdt.ca.gov"></script>
+<script defer src="https://alert.cdt.ca.gov" crossorigin="anonymous"></script>
 <!-- BEGIN Google Tag Manager -->
 <link rel="preconnect" href="https://www.googletagmanager.com" />
 <link rel="preconnect" href="https://www.google-analytics.com" />
@@ -115,7 +115,7 @@ You may also use the CDN instead of using the local folder...
 <div class="section-default">
   <div class="branding">
     <div class="header-organization-banner">
-      <a href="">
+      <a href="index.html">
         <div class="logo-assets">
           <img
             src="images/sample-logo.png"
@@ -180,7 +180,18 @@ You may also use the CDN instead of using the local folder...
   aria-label="Main navigation">
   <ul id="nav_list" class="top-level-nav">
     <li class="nav-item">
-      <a class="first-level-link" href="index.html">Home</a>
+      <a
+        class="first-level-link"
+        href="index.html"
+        >Home</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="first-level-link"
+        href="components-patterns.html"
+        >Components and patterns</a
+      >
     </li>
     <li class="nav-item">
       <a
@@ -189,19 +200,34 @@ You may also use the CDN instead of using the local folder...
         >Samples</a
       >
     </li>
+    <li class="nav-item">
+      <a
+        class="first-level-link"
+        href="top-task-1/index.html"
+        >Top task 1</a
+      >
+    </li>
 
-    <li class="nav-item" role="presentation">
-      <a href="getting-started.html" class="first-level-link">Other</a>
+    <li
+      class="nav-item"
+      role="presentation">
+      <a class="first-level-link">Top task 2</a>
       <div class="sub-nav">
         <ul class="second-level-nav">
           <li class="unit1">
-            <a href="contact.html" class="second-level-link">Contact Us</a>
+            <a href="top-task-2/index.html" class="second-level-link"
+              >Overview</a
+            >
           </li>
           <li class="unit1">
-            <a href="about.html" class="second-level-link">About</a>
+            <a href="top-task-2/content-page-1.html" class="second-level-link"
+              >Content 1</a
+            >
           </li>
           <li class="unit1">
-            <a href="blank.html" class="second-level-link">Blank Page</a>
+            <a href="top-task-2/content-page-2.html" class="second-level-link"
+              >Content 2</a
+            >
           </li>
         </ul>
       </div>
@@ -218,88 +244,228 @@ You may also use the CDN instead of using the local folder...
           <li>
             <a href="index.html" title="Home page">Home</a>
           </li>
-          <li>About</li>
+          <li>Accessibility</li>
         </ol>
       </nav>
       <div class="row">
         <div class="col-md-10 p-b-lg mx-auto">
-<h1 class="mt-lg-0">About the State Web Template</h1>
-
-<!-- 
-Use the page-navigation class to list all the h2 sections on a page
-
-For more information see https://template.webstandards.ca.gov/components/page-navigation.html#Sample
--->
-<nav class="page-navigation"></nav>
-
-<p class="lead">
-  The State Web Template is an open source web template maintained by the Office
-  of Digital Services within the Department of Technology. Our components are
-  designed to enhance the user experience and help digital teams create
-  attractive, consistent, and accessible digital products. The State Web
-  Template will always be open source, collaborative and evolving.
-</p>
-
-<h2>Why our template matters</h2>
+<h1 class="mt-lg-0">Accessibility</h1>
 <p>
-  Digitally connecting Californians to the government services they need has
-  become increasingly more critical. Great design is central to succeeding in
-  that effort. We offer this web template to help make digital information and
-  services easier to use.
+  The State of California’s website has been developed in compliance with
+  Section D of the California Government Code 11135. Code 11135 requires that
+  all electronic and information technology developed or purchased by the State
+  of California Government is accessible to people with disabilities. There are
+  various types of physical disabilities that impact user interaction on the
+  web. Vision loss, hearing loss, limited manual dexterity, and cognitive
+  disabilities are examples, with each having different means by which to access
+  electronic information effectively. Our goal is to provide a good web
+  experience for all visitors.
 </p>
 
-<h2>Our mission</h2>
+<h2>Accessible Features</h2>
 <p>
-  Enhance the delivery of digital services for California residents through user
-  experience design.
+  Below you will find a list of some of the technology solutions we have
+  integrated to make our website easy to navigate, fast-loading, and accessible.
 </p>
-
-<h2>Our vision</h2>
-<p>
-  Create excellent digital state services for California residents that are
-  inclusive, accessible and performant.
-</p>
-
-<h2>History</h2>
-<p>
-  A long time ago, the eServices Office was established to lead statewide
-  initiatives providing leadership in statewide web policy, CA.gov portal and
-  the digital government footprint. We have come a long way but our core vision
-  and mission has not changed.
-</p>
-<p>
-  The creation of a statewide web template was a strategy and framework to align
-  on California's digital touchpoint. The state web template has evolved from a
-  technical toolset to a digital standard and tactical playbook on delivering
-  useful, accessible, and performant user experiences.
-</p>
-
-<h2>Looking ahead</h2>
-<p>
-  Over the years, and with each state web template release, we've improved the
-  access of online government services with:
-</p>
+<div>
+  <h3>Photographs/Images:</h3>
+  <ul>
+    <li>
+      Uses Alternative Text “ALT” and/or “TITLE” attributes. ALT/TITLE
+      attributes provide a written description of the image, which is accessible
+      to screen readers, and it is visible when the mouse is placed over the
+      image. This is also useful for people who have images turned off on their
+      browser, in which case a description will display where the image used to
+      be.
+    </li>
+  </ul>
+</div>
+<h3>WCAG 2.0 Level AA</h3>
 <ul>
-  <li>Updated best practices</li>
-  <li>Responsive design elements</li>
-  <li>Web accessibility</li>
-  <li>Improved performance</li>
+  <li>
+    The template adheres to WCAG 2.0 AA Guidelines and Success Criteria
+    organized under the following 4 principles:
+  </li>
 </ul>
+<div class="indent">
+  <h2><strong>1. Perceivable:</strong></h2>
+  <ul>
+    <li>
+      Provide&nbsp;
+      <strong>text alternatives&nbsp;</strong>
+      for non-text content.
+    </li>
+    <li>
+      Provide&nbsp;
+      <strong>captions and other alternatives&nbsp;</strong>
+      for multimedia.
+    </li>
+    <li>
+      Create content that can be&nbsp;
+      <strong>presented in different ways</strong>
+      , including by assistive technologies, without losing meaning.
+    </li>
+    <li>
+      Make it easier for users to&nbsp;
+      <strong>see and hear&nbsp;content</strong>
+      .
+    </li>
+  </ul>
+  <h2><strong>2. Operable:</strong></h2>
+  <ul>
+    <li>
+      Make all functionality available from a&nbsp;
+      <strong>keyboard</strong>
+      .
+    </li>
+    <li>
+      Give users&nbsp;
+      <strong>enough time&nbsp;</strong>
+      to read and use content.
+    </li>
+    <li>
+      Do not use content that causes&nbsp;
+      <strong>seizures</strong>
+      .
+    </li>
+    <li>
+      Help users&nbsp;
+      <strong>navigate and find content</strong>
+      .
+    </li>
+  </ul>
+  <h2><strong>3. Understandable:</strong></h2>
+  <ul>
+    <li>
+      Make text&nbsp;
+      <strong>readable and understandable</strong>
+      .
+    </li>
+    <li>
+      Make content appear and operate in&nbsp;
+      <strong>predictable</strong>
+    </li>
+    <li>
+      Help users&nbsp;
+      <strong>avoid and correct mistakes</strong>
+      .
+    </li>
+  </ul>
+  <h2><strong>4. Robust:</strong></h2>
+  <ul>
+    <li>
+      Maximize&nbsp;
+      <strong>compatibility</strong>
+      &nbsp;with current and future user tools
+    </li>
+  </ul>
+</div>
 <p>
-  Version 6 of the State Web Template gets us one step closer to a production
-  version of the
-  <a href="https://designsystem.webstandards.ca.gov/">
-    California Design System
-  </a>
-  . We are excited to iterate on our digital toolset and evolve the state
-  template to a design standard for California. We want to improve the digital
-  experience of Californians and improve how we partner with State agencies.
+  The following information can further help improve the accessibility
+  experience and find more resources.
+</p>
+
+<h2>Related Resources:</h2>
+<ul>
+  <li>
+    <a href="https://webstandards.ca.gov/accessibility/index.html">
+      California’s Accessibility Standards
+    </a>
+  </li>
+  <li>
+    <a href="https://www.dol.gov/general/topic/disability/ada">
+      Americans with Disabilities Act Notice
+    </a>
+  </li>
+  <li>
+    <a href="https://www.dgs.ca.gov/ccda">
+      California Commission on Disability Access (CCDA)
+    </a>
+  </li>
+  <li>
+    <a href="http://www.dor.ca.gov/index.html">
+      California Department of Rehabilitation (DoR)
+    </a>
+  </li>
+</ul>
+<h2>Difficulty Accessing Material:</h2>
+<p>
+  If you have difficulty accessing any material on this site, please contact us
+  in writing and we will work with you to make the information available. You
+  can direct your request to our&nbsp;
+  <a href="mailto:email@department.ca.gov">Webmaster</a>.
 </p>
 </div>
       </div>
     </main>
   </div>
 </div><!-- Global Footer -->
+<aside class="p-b-md p-t-sm section-standout site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div
+          class="h4 w-100 brd-bottom brd-highlight p-b"
+          role="heading"
+          aria-level="2">
+          About
+        </div>
+        <a
+          href="about/index.html"
+          class="d-block no-underline m-y font-size-16">
+          About <span class="sr-only">our organization</span>
+        </a>
+        <a
+          href="about/news/index.html"
+          class="d-block no-underline m-y font-size-16">
+          News <span class="sr-only">from our organization</span>
+        </a>
+        <a
+          href="about/careers.html"
+          class="d-block no-underline m-y font-size-16">
+          Careers <span class="sr-only">and job openings</span>
+        </a>
+        <a href="contact.html" class="d-block no-underline m-y font-size-16">
+          Contact us
+        </a>
+      </div>
+      <div class="col-md-4">
+        <div
+          class="h4 w-100 brd-bottom  brd-highlight p-b"
+          role="heading"
+          aria-level="2">
+          Heading
+        </div>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 1
+        </a>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 2
+        </a>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 3
+        </a>
+      </div>
+      <div class="col-md-4">
+        <div
+          class="h4 w-100 brd-bottom brd-highlight p-b"
+          role="heading"
+          aria-level="2">
+          Heading
+        </div>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 1 <span class="sr-only">regarding this website</span>
+        </a>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 2 <span class="sr-only">regarding this website</span>
+        </a>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 3 <span class="sr-only">regarding this website</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</aside>
 <footer id="footer" class="global-footer">
   <div class="container">
     <div class="d-flex">
@@ -315,10 +481,12 @@ For more information see https://template.webstandards.ca.gov/components/page-na
           <a href="privacy-policy.html">Privacy policy</a>
         </li>
         <li>
-          <a
-            href="images/WebAccessibilityCert-template.webstandards.ca.gov.pdf">
-            Website accessibility certification
-          </a>
+          <a href="accessibility.html">Accessibility</a>
+        </li>
+        <li>
+          <a href="website-acessibility-certification.html"
+            >Website accessibility certification</a
+          >
         </li>
         <li>
           <a href="sitemap.html">Sitemap</a>
@@ -327,7 +495,7 @@ For more information see https://template.webstandards.ca.gov/components/page-na
       <ul class="socialsharer-container">
         <li>
           <a
-            href="https://github.com/Office-of-Digital-Innovation/California-State-Web-Template">
+            href="https://github.com/Office-of-Digital-Innovation/California-State-Web-HTML">
             <span class="ca-gov-icon-github" aria-hidden="true"></span>
             <span class="sr-only">GitHub</span>
           </a>

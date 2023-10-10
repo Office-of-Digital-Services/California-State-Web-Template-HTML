@@ -18,9 +18,9 @@ Include links to stylesheet and custom theme and core JS.
 
 You may also use the CDN instead of using the local folder...
 
-<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.2.0/css/cagov.core.min.css"/>
-<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.2.0/css/colortheme-oceanside.min.css"/>
-<script src="https://california.azureedge.net/cdt/statetemplate/6.2.0/js/cagov.core.min.js"></script>
+<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.3.0/css/cagov.core.min.css"/>
+<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.3.0/css/colortheme-oceanside.min.css"/>
+<script src="https://california.azureedge.net/cdt/statetemplate/6.3.0/js/cagov.core.min.js"></script>
 
 -->
 <link rel="stylesheet" href="ca_state_template/css/cagov.core.min.css" />
@@ -66,7 +66,7 @@ You may also use the CDN instead of using the local folder...
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 <link rel="shortcut icon" href="favicon.ico" />
 <!-- Statewide Alerts Server -->
-<script defer src="https://alert.cdt.ca.gov"></script>
+<script defer src="https://alert.cdt.ca.gov" crossorigin="anonymous"></script>
 <!-- BEGIN Google Tag Manager -->
 <link rel="preconnect" href="https://www.googletagmanager.com" />
 <link rel="preconnect" href="https://www.google-analytics.com" />
@@ -114,11 +114,6 @@ You may also use the CDN instead of using the local folder...
   .mobile-controls .mobile-header-icons {
     display: none;
   }
-  .search-textfield {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border: 1px solid #72717c;
-  }
 </style></head>
   <body class="primary">
     <header role="banner" id="header" class="global-header fixed">
@@ -148,7 +143,7 @@ You may also use the CDN instead of using the local folder...
 <div class="section-default">
   <div class="branding">
     <div class="header-organization-banner">
-      <a href="">
+      <a href="index.html">
         <div class="logo-assets">
           <img
             src="images/sample-logo.png"
@@ -192,7 +187,18 @@ You may also use the CDN instead of using the local folder...
   aria-label="Main navigation">
   <ul id="nav_list" class="top-level-nav">
     <li class="nav-item">
-      <a class="first-level-link" href="index.html">Home</a>
+      <a
+        class="first-level-link"
+        href="index.html"
+        >Home</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="first-level-link"
+        href="components-patterns.html"
+        >Components and patterns</a
+      >
     </li>
     <li class="nav-item">
       <a
@@ -201,19 +207,34 @@ You may also use the CDN instead of using the local folder...
         >Samples</a
       >
     </li>
+    <li class="nav-item">
+      <a
+        class="first-level-link"
+        href="top-task-1/index.html"
+        >Top task 1</a
+      >
+    </li>
 
-    <li class="nav-item" role="presentation">
-      <a href="getting-started.html" class="first-level-link">Other</a>
+    <li
+      class="nav-item"
+      role="presentation">
+      <a class="first-level-link">Top task 2</a>
       <div class="sub-nav">
         <ul class="second-level-nav">
           <li class="unit1">
-            <a href="contact.html" class="second-level-link">Contact Us</a>
+            <a href="top-task-2/index.html" class="second-level-link"
+              >Overview</a
+            >
           </li>
           <li class="unit1">
-            <a href="about.html" class="second-level-link">About</a>
+            <a href="top-task-2/content-page-1.html" class="second-level-link"
+              >Content 1</a
+            >
           </li>
           <li class="unit1">
-            <a href="blank.html" class="second-level-link">Blank Page</a>
+            <a href="top-task-2/content-page-2.html" class="second-level-link"
+              >Content 2</a
+            >
           </li>
         </ul>
       </div>
@@ -265,6 +286,72 @@ You may also use the CDN instead of using the local folder...
   </main>
 </div>
 <!-- Global Footer -->
+<aside class="p-b-md p-t-sm section-standout site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div
+          class="h4 w-100 brd-bottom brd-highlight p-b"
+          role="heading"
+          aria-level="2">
+          About
+        </div>
+        <a
+          href="about/index.html"
+          class="d-block no-underline m-y font-size-16">
+          About <span class="sr-only">our organization</span>
+        </a>
+        <a
+          href="about/news/index.html"
+          class="d-block no-underline m-y font-size-16">
+          News <span class="sr-only">from our organization</span>
+        </a>
+        <a
+          href="about/careers.html"
+          class="d-block no-underline m-y font-size-16">
+          Careers <span class="sr-only">and job openings</span>
+        </a>
+        <a href="contact.html" class="d-block no-underline m-y font-size-16">
+          Contact us
+        </a>
+      </div>
+      <div class="col-md-4">
+        <div
+          class="h4 w-100 brd-bottom  brd-highlight p-b"
+          role="heading"
+          aria-level="2">
+          Heading
+        </div>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 1
+        </a>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 2
+        </a>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 3
+        </a>
+      </div>
+      <div class="col-md-4">
+        <div
+          class="h4 w-100 brd-bottom brd-highlight p-b"
+          role="heading"
+          aria-level="2">
+          Heading
+        </div>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 1 <span class="sr-only">regarding this website</span>
+        </a>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 2 <span class="sr-only">regarding this website</span>
+        </a>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 3 <span class="sr-only">regarding this website</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</aside>
 <footer id="footer" class="global-footer">
   <div class="container">
     <div class="d-flex">
@@ -280,10 +367,12 @@ You may also use the CDN instead of using the local folder...
           <a href="privacy-policy.html">Privacy policy</a>
         </li>
         <li>
-          <a
-            href="images/WebAccessibilityCert-template.webstandards.ca.gov.pdf">
-            Website accessibility certification
-          </a>
+          <a href="accessibility.html">Accessibility</a>
+        </li>
+        <li>
+          <a href="website-acessibility-certification.html"
+            >Website accessibility certification</a
+          >
         </li>
         <li>
           <a href="sitemap.html">Sitemap</a>
@@ -292,7 +381,7 @@ You may also use the CDN instead of using the local folder...
       <ul class="socialsharer-container">
         <li>
           <a
-            href="https://github.com/Office-of-Digital-Innovation/California-State-Web-Template">
+            href="https://github.com/Office-of-Digital-Innovation/California-State-Web-HTML">
             <span class="ca-gov-icon-github" aria-hidden="true"></span>
             <span class="sr-only">GitHub</span>
           </a>

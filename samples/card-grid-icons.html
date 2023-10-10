@@ -18,9 +18,9 @@ Include links to stylesheet and custom theme and core JS.
 
 You may also use the CDN instead of using the local folder...
 
-<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.2.0/css/cagov.core.min.css"/>
-<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.2.0/css/colortheme-oceanside.min.css"/>
-<script src="https://california.azureedge.net/cdt/statetemplate/6.2.0/js/cagov.core.min.js"></script>
+<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.3.0/css/cagov.core.min.css"/>
+<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.3.0/css/colortheme-oceanside.min.css"/>
+<script src="https://california.azureedge.net/cdt/statetemplate/6.3.0/js/cagov.core.min.js"></script>
 
 -->
 <link rel="stylesheet" href="../ca_state_template/css/cagov.core.min.css" />
@@ -66,7 +66,7 @@ You may also use the CDN instead of using the local folder...
 <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
 <link rel="shortcut icon" href="../favicon.ico" />
 <!-- Statewide Alerts Server -->
-<script defer src="https://alert.cdt.ca.gov"></script>
+<script defer src="https://alert.cdt.ca.gov" crossorigin="anonymous"></script>
 <!-- BEGIN Google Tag Manager -->
 <link rel="preconnect" href="https://www.googletagmanager.com" />
 <link rel="preconnect" href="https://www.google-analytics.com" />
@@ -115,7 +115,7 @@ You may also use the CDN instead of using the local folder...
 <div class="section-default">
   <div class="branding">
     <div class="header-organization-banner">
-      <a href="../">
+      <a href="../index.html">
         <div class="logo-assets">
           <img
             src="../images/sample-logo.png"
@@ -180,7 +180,18 @@ You may also use the CDN instead of using the local folder...
   aria-label="Main navigation">
   <ul id="nav_list" class="top-level-nav">
     <li class="nav-item">
-      <a class="first-level-link" href="../index.html">Home</a>
+      <a
+        class="first-level-link"
+        href="../index.html"
+        >Home</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="first-level-link"
+        href="../components-patterns.html"
+        >Components and patterns</a
+      >
     </li>
     <li class="nav-item">
       <a
@@ -189,19 +200,34 @@ You may also use the CDN instead of using the local folder...
         >Samples</a
       >
     </li>
+    <li class="nav-item">
+      <a
+        class="first-level-link"
+        href="../top-task-1/index.html"
+        >Top task 1</a
+      >
+    </li>
 
-    <li class="nav-item" role="presentation">
-      <a href="../getting-started.html" class="first-level-link">Other</a>
+    <li
+      class="nav-item"
+      role="presentation">
+      <a class="first-level-link">Top task 2</a>
       <div class="sub-nav">
         <ul class="second-level-nav">
           <li class="unit1">
-            <a href="../contact.html" class="second-level-link">Contact Us</a>
+            <a href="../top-task-2/index.html" class="second-level-link"
+              >Overview</a
+            >
           </li>
           <li class="unit1">
-            <a href="../about.html" class="second-level-link">About</a>
+            <a href="../top-task-2/content-page-1.html" class="second-level-link"
+              >Content 1</a
+            >
           </li>
           <li class="unit1">
-            <a href="../blank.html" class="second-level-link">Blank Page</a>
+            <a href="../top-task-2/content-page-2.html" class="second-level-link"
+              >Content 2</a
+            >
           </li>
         </ul>
       </div>
@@ -223,12 +249,17 @@ You may also use the CDN instead of using the local folder...
         </ol>
       </nav>
       <div class="row">
-        <div class="col-lg-3" role="complementary">
+        <div class="col-lg-3 pe-lg-5" role="complementary">
           <!-- Side navigation -->
           <nav
             aria-labelledby="navigation-list"
             class="side-navigation sticky-6">
             <ul class="list-navigation">
+              <li>
+                <a href="javascript:;" aria-hidden="true" class="d-none"
+                  >Samples</a
+                >
+              </li>
               <li>
                 <a
                   href="../samples/accordion.html"
@@ -238,6 +269,16 @@ You may also use the CDN instead of using the local folder...
                 <a
                   href="../samples/accordion-list.html"
                   class="">Accordion List</a>
+              </li>
+              <li>
+                <a
+                  href="../samples/accordion-side-navigation.html"
+                  class="">Accordion Side Navigation</a>
+              </li>
+              <li>
+                <a
+                  href="../samples/alert.html"
+                  class="">Alert</a>
               </li>
               <li>
                 <a
@@ -271,6 +312,11 @@ You may also use the CDN instead of using the local folder...
               </li>
               <li>
                 <a
+                  href="../samples/bootstrap-side-navigation-primary.html"
+                  class="">Bootstrap Side Navigation Primary</a>
+              </li>
+              <li>
+                <a
                   href="../samples/breadcrumb.html"
                   class="">Breadcrumb</a>
               </li>
@@ -283,6 +329,11 @@ You may also use the CDN instead of using the local folder...
                 <a
                   href="../samples/buttons-disabled.html"
                   class="">Buttons Disabled</a>
+              </li>
+              <li>
+                <a
+                  href="../samples/buttons-hover.html"
+                  class="">Buttons Hover</a>
               </li>
               <li>
                 <a
@@ -323,6 +374,16 @@ You may also use the CDN instead of using the local folder...
                 <a
                   href="../samples/card-image.html"
                   class="">Card Image</a>
+              </li>
+              <li>
+                <a
+                  href="../samples/card-legacy.html"
+                  class="">Card Legacy</a>
+              </li>
+              <li>
+                <a
+                  href="../samples/countdown-timer.html"
+                  class="">Countdown Timer</a>
               </li>
               <li>
                 <a
@@ -426,6 +487,16 @@ You may also use the CDN instead of using the local folder...
               </li>
               <li>
                 <a
+                  href="../samples/megamenu.html"
+                  class="">Megamenu</a>
+              </li>
+              <li>
+                <a
+                  href="../samples/modal.html"
+                  class="">Modal</a>
+              </li>
+              <li>
+                <a
                   href="../samples/nav-side-accordion.html"
                   class="">Nav Side Accordion</a>
               </li>
@@ -478,6 +549,11 @@ You may also use the CDN instead of using the local folder...
                 <a
                   href="../samples/page-navigation-more.html"
                   class="">Page Navigation More</a>
+              </li>
+              <li>
+                <a
+                  href="../samples/pagination.html"
+                  class="">Pagination</a>
               </li>
               <li>
                 <a
@@ -574,7 +650,7 @@ You may also use the CDN instead of using the local folder...
   <div class="col-md-4 m-b-md">
     <!-- Icon Block -->
     <article
-      class="no-underline d-block bg-gray-50 bg-grey-lightest-hover p-a-md pos-rel h-100">
+      class="no-underline d-block bg-gray-50 bg-gray-lightest-hover p-a-md pos-rel h-100">
       <div class="text-center p-b">
         <span
           class="ca-gov-icon-clipboard color-p2 color-p2-hover text-huge d-block"
@@ -595,7 +671,7 @@ You may also use the CDN instead of using the local folder...
   <div class="col-md-4 m-b-md">
     <!-- Icon Block -->
     <article
-      class="no-underline d-block bg-gray-50 bg-grey-lightest-hover p-a-md pos-rel h-100">
+      class="no-underline d-block bg-gray-50 bg-gray-lightest-hover p-a-md pos-rel h-100">
       <div class="text-center  p-b">
         <span
           class="ca-gov-icon-accessibility color-p2 color-p2-hover text-huge d-block"
@@ -616,7 +692,7 @@ You may also use the CDN instead of using the local folder...
   <div class="col-md-4 m-b-md">
     <!-- Icon Block -->
     <article
-      class="no-underline d-block bg-gray-50 bg-grey-lightest-hover p-a-md pos-rel h-100">
+      class="no-underline d-block bg-gray-50 bg-gray-lightest-hover p-a-md pos-rel h-100">
       <div class="text-center p-b">
         <span
           class="ca-gov-icon-calendar color-p2 color-p2-hover text-huge d-block"
@@ -642,6 +718,72 @@ You may also use the CDN instead of using the local folder...
     </main>
   </div>
 </div><!-- Global Footer -->
+<aside class="p-b-md p-t-sm section-standout site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div
+          class="h4 w-100 brd-bottom brd-highlight p-b"
+          role="heading"
+          aria-level="2">
+          About
+        </div>
+        <a
+          href="../about/index.html"
+          class="d-block no-underline m-y font-size-16">
+          About <span class="sr-only">our organization</span>
+        </a>
+        <a
+          href="../about/news/index.html"
+          class="d-block no-underline m-y font-size-16">
+          News <span class="sr-only">from our organization</span>
+        </a>
+        <a
+          href="../about/careers.html"
+          class="d-block no-underline m-y font-size-16">
+          Careers <span class="sr-only">and job openings</span>
+        </a>
+        <a href="../contact.html" class="d-block no-underline m-y font-size-16">
+          Contact us
+        </a>
+      </div>
+      <div class="col-md-4">
+        <div
+          class="h4 w-100 brd-bottom  brd-highlight p-b"
+          role="heading"
+          aria-level="2">
+          Heading
+        </div>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 1
+        </a>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 2
+        </a>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 3
+        </a>
+      </div>
+      <div class="col-md-4">
+        <div
+          class="h4 w-100 brd-bottom brd-highlight p-b"
+          role="heading"
+          aria-level="2">
+          Heading
+        </div>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 1 <span class="sr-only">regarding this website</span>
+        </a>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 2 <span class="sr-only">regarding this website</span>
+        </a>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 3 <span class="sr-only">regarding this website</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</aside>
 <footer id="footer" class="global-footer">
   <div class="container">
     <div class="d-flex">
@@ -657,10 +799,12 @@ You may also use the CDN instead of using the local folder...
           <a href="../privacy-policy.html">Privacy policy</a>
         </li>
         <li>
-          <a
-            href="../images/WebAccessibilityCert-template.webstandards.ca.gov.pdf">
-            Website accessibility certification
-          </a>
+          <a href="../accessibility.html">Accessibility</a>
+        </li>
+        <li>
+          <a href="../website-acessibility-certification.html"
+            >Website accessibility certification</a
+          >
         </li>
         <li>
           <a href="../sitemap.html">Sitemap</a>
@@ -669,7 +813,7 @@ You may also use the CDN instead of using the local folder...
       <ul class="socialsharer-container">
         <li>
           <a
-            href="https://github.com/Office-of-Digital-Innovation/California-State-Web-Template">
+            href="https://github.com/Office-of-Digital-Innovation/California-State-Web-HTML">
             <span class="ca-gov-icon-github" aria-hidden="true"></span>
             <span class="sr-only">GitHub</span>
           </a>

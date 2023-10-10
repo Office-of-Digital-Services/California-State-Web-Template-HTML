@@ -1,4 +1,4 @@
-var StateTemplateNpmPackageVersion="6.2.0";
+var StateTemplateNpmPackageVersion="6.3.0";
 /*!
   * Bootstrap v5.3.0 (https://getbootstrap.com/)
   * Copyright 2011-2023 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
@@ -8404,7 +8404,7 @@ window.addEventListener("load", () => {
     class="cagov-pagination__item cagov-pagination__overflow"
     role="presentation"
   >
-    <span> … </span>
+    <span> &#8230; </span>
   </li>`;
   }
 
