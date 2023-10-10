@@ -18,9 +18,9 @@ Include links to stylesheet and custom theme and core JS.
 
 You may also use the CDN instead of using the local folder...
 
-<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.2.0/css/cagov.core.min.css"/>
-<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.2.0/css/colortheme-oceanside.min.css"/>
-<script src="https://california.azureedge.net/cdt/statetemplate/6.2.0/js/cagov.core.min.js"></script>
+<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.3.0/css/cagov.core.min.css"/>
+<link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.3.0/css/colortheme-oceanside.min.css"/>
+<script src="https://california.azureedge.net/cdt/statetemplate/6.3.0/js/cagov.core.min.js"></script>
 
 -->
 <link rel="stylesheet" href="ca_state_template/css/cagov.core.min.css" />
@@ -66,7 +66,7 @@ You may also use the CDN instead of using the local folder...
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 <link rel="shortcut icon" href="favicon.ico" />
 <!-- Statewide Alerts Server -->
-<script defer src="https://alert.cdt.ca.gov"></script>
+<script defer src="https://alert.cdt.ca.gov" crossorigin="anonymous"></script>
 <!-- BEGIN Google Tag Manager -->
 <link rel="preconnect" href="https://www.googletagmanager.com" />
 <link rel="preconnect" href="https://www.google-analytics.com" />
@@ -115,7 +115,7 @@ You may also use the CDN instead of using the local folder...
 <div class="section-default">
   <div class="branding">
     <div class="header-organization-banner">
-      <a href="">
+      <a href="index.html">
         <div class="logo-assets">
           <img
             src="images/sample-logo.png"
@@ -180,7 +180,18 @@ You may also use the CDN instead of using the local folder...
   aria-label="Main navigation">
   <ul id="nav_list" class="top-level-nav">
     <li class="nav-item">
-      <a class="first-level-link" href="index.html">Home</a>
+      <a
+        class="first-level-link active"
+        href="index.html"
+        >Home</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="first-level-link"
+        href="components-patterns.html"
+        >Components and patterns</a
+      >
     </li>
     <li class="nav-item">
       <a
@@ -189,19 +200,34 @@ You may also use the CDN instead of using the local folder...
         >Samples</a
       >
     </li>
+    <li class="nav-item">
+      <a
+        class="first-level-link"
+        href="top-task-1/index.html"
+        >Top task 1</a
+      >
+    </li>
 
-    <li class="nav-item" role="presentation">
-      <a href="getting-started.html" class="first-level-link">Other</a>
+    <li
+      class="nav-item"
+      role="presentation">
+      <a class="first-level-link">Top task 2</a>
       <div class="sub-nav">
         <ul class="second-level-nav">
           <li class="unit1">
-            <a href="contact.html" class="second-level-link">Contact Us</a>
+            <a href="top-task-2/index.html" class="second-level-link"
+              >Overview</a
+            >
           </li>
           <li class="unit1">
-            <a href="about.html" class="second-level-link">About</a>
+            <a href="top-task-2/content-page-1.html" class="second-level-link"
+              >Content 1</a
+            >
           </li>
           <li class="unit1">
-            <a href="blank.html" class="second-level-link">Blank Page</a>
+            <a href="top-task-2/content-page-2.html" class="second-level-link"
+              >Content 2</a
+            >
           </li>
         </ul>
       </div>
@@ -212,167 +238,290 @@ You may also use the CDN instead of using the local folder...
     </header>
     <div id="main-content" class="main-content">
   <main class="main-primary" id="main">
-<div class="section-default">
-  <div class="container p-a-md">
-    <div class="row">
-      <div class="col-md-6 col-lg-4 p-y-md order-2 order-md-1">
-        <h1 class="h3 m-t">California State Web Template</h1>
-        <p>
-          With a new look, more features, and updated content and components,
-          the final State Web Template is here to help you update and enhance
-          your websites and applications.
-        </p>
-        <a
-          href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/releases"
-          class="btn btn-primary m-t-md m-b-lg"
-          >Learn what is new</a
-        >
-      </div>
-      <div
-        class="col-lg-8 col-md-6 p-0 text-right order-1 order-md-2 d-flex justify-content-center">
-        <a
-          href="#"
-          class="feature-img"
-          style="background: url('images/main-banner.jpg')"
-          aria-label="Feature card example image">
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <h2>What's new in v6</h2>
+<div class="container p-a-md">
   <div class="row">
-    <div class="col-md-4">
-      <div class="card">
-        <img
-          class="card-img"
-          src="images/navigation.jpg"
-          alt="navigation illustration" />
-        <div class="card-body bg-gray-50">
-          <h3 class="card-title"><a href="#">Enhanced navigation</a></h3>
-          <p>
-            With better wayfinding and new side navigation, developing
-            user-friendly websites is easier than ever.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img
-          class="card-img"
-          src="images/design.jpg"
-          alt="visual design illustration" />
-        <div class="card-body bg-gray-50">
-          <h3 class="card-title"><a href="#">Refreshed visual design</a></h3>
-          <p>
-            The template, website, and most components have been redesigned to
-            align with the Design System.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img
-          class="card-img"
-          src="images/components.jpg"
-          alt="components illustration" />
-        <div class="card-body bg-gray-50">
-          <h3 class="card-title"><a href="#">Updated components</a></h3>
-          <p>
-            We added new components, combined similar components, and improved
-            the overall design and functionality.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <hr />
-  <div class="row p-t">
-    <div class="col-md-4 text-right p-r-md d-none d-md-block">
-      <span
-        class="ca-gov-icon-quotation-mark text-4rem color-primary"
-        aria-hidden="true"></span>
-    </div>
-    <div class="col-md-7">
-      <blockquote class="no-quotation-mark">
-        <p>A consistent experience is a better experience.</p>
-        <footer>Mark Eberman</footer>
-      </blockquote>
-    </div>
-  </div>
-  <hr />
-</div>
-
-<div class="container p-b-lg">
-  <div class="row m-b-md">
-    <div class="col-md-8">
-      <h2>Partner with us</h2>
+    <div class="bg-gray-lightest col-md-6 col-lg-4 p-a-md order-2 order-md-1">
+      <h1 class="h2 m-t">Homepage title</h1>
       <p>
-        Improvements to the State Web Template and the Design System are largely
-        driven by your feedback. We'd love to hear from you!
+        Compelling sentence or two that ties the website to the department
+        missions or goals
       </p>
+      <p>
+        Vestibulum laoreet faucibus ultrices, vestibulum condimentum lectus in
+        arcu.
+      </p>
+      <a href="javascript:;" class="btn btn-primary m-t-md m-b-lg">Button</a>
     </div>
-    <div class="col-md-4">
-      <img src="images/geometry.png" alt="geometryc cubes" class="img-fluid" />
+    <div
+      class="col-lg-8 col-md-6 p-0 text-right order-1 order-md-2 d-flex justify-content-center">
+      <a
+        href="#"
+        class="feature-img bg-gray-light"
+        style="background: url('images/main-banner.jpg')"
+        aria-label="Feature card example image">
+      </a>
+    </div>
+  </div>
+
+  <h2>Top user tasks</h2>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <a href="components-patterns.html" class="link-grid"
+        >Components directory</a
+      >
+    </div>
+    <div class="col-md-4 mb-4">
+      <a href="top-task-1/content-page-1.html" class="link-grid"
+        >Top task 1 content 1</a
+      >
+    </div>
+    <div class="col-md-4 mb-4">
+      <a href="top-task-2/content-page-1.html" class="link-grid"
+        >Top task 2 content 1</a
+      >
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <a href="https://template.webstandards.ca.gov/index.html" class="link-grid"
+        >State Template Website</a
+      >
+    </div>
+    <div class="col-md-4 mb-4">
+      <a href="javascript:;" class="link-grid">Link</a>
+    </div>
+    <div class="col-md-4 mb-4">
+      <a href="javascript:;" class="link-grid">Link</a>
+    </div>
+  </div>
+
+  <div class="row m-y-lg">
+    <div class="col-md-6 m-b-md">
+      <!-- Article -->
+      <article
+        class="bg-gray-50 bg-gray-100-hover brd-solid-1 brd-gray-200 pos-rel rounded-4">
+        <div class="p-a">
+          <h3 class="h4 m-t-0 m-b-sm">
+            <a
+              class="u-link-v5 color-gray-dark color-primary-hover link-before no-underline"
+              href="javascript:;">
+              Marketing 1
+            </a>
+          </h3>
+          <p>
+            Use marketing spaces to promote items related to business goals.
+            Limit to 2 or 3 and rotate as needed. This allows the homepage to
+            remain simple and focused.
+          </p>
+        </div>
+      </article>
+      <!-- End Article -->
+    </div>
+
+    <div class="col-md-6 m-b-md">
+      <!-- Article -->
+      <article
+        class="bg-gray-50 bg-gray-100-hover brd-solid-1 brd-gray-200 pos-rel rounded-4">
+        <div class="p-a">
+          <h3 class="h4 m-t-0 m-b-sm">
+            <a
+              class="u-link-v5 color-gray-dark color-primary-hover link-before no-underline"
+              href="javascript:;">
+              Marketing 2
+            </a>
+          </h3>
+          <p>
+            Enter a concise description for this topic. You could include
+            imagery with the marketing cards to make it more visually appealing.
+          </p>
+        </div>
+      </article>
+      <!-- End Article -->
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-4 d-flex">
-      <span
-        class="ca-gov-icon-idea-alt text-2-5rem color-p3"
-        aria-hidden="true"></span>
-      <div class="p-x-md">
-        <h3 class="h4 m-t">Have an idea or an issue?</h3>
-        <div class="width-30 brd-top brd-gray p-b"></div>
+    <div class="col-lg-7">
+      <div class="card brd-solid-1 brd-gray-light rounded-4 h-100">
+        <div class="card-body">
+          <h2 class="m-t-0">News</h2>
+
+          <hr class="m-y-md" />
+          <h3 class="lead font-weight-700">
+            <a
+              href="about/news/press-release-title1.html"
+              aria-disabled="true">
+              Press release 1
+            </a>
+          </h3>
+          <p>Month 00, 0000 | News</p>
+          <hr class="m-y-md" />
+          <h3 class="lead font-weight-700">
+            <a
+              href="about/news/press-release-title2.html"
+              aria-disabled="true">
+              Press release 2
+            </a>
+          </h3>
+          <p>Month 00, 0000 | News</p>
+          <hr class="m-y-md" />
+          <h3 class="lead font-weight-700">
+            <a href="about/news/article-title1.html" aria-disabled="true">
+              News article 1
+            </a>
+          </h3>
+          <p>Month 00, 0000 | News</p>
+          <div class="m-t-md">
+            <a href="about/news/index.html">View all</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <div class="card brd-solid-1 brd-gray-light rounded-4 p-a-md h-100">
+        <h2 class="m-t-0">Heading</h2>
         <p>
-          <a
-            href="https://github.com/Office-of-Digital-Services/California-State-Web-Template"
-            >Reach out in GitHub</a
-          >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+          pretium dapibus diam, a finibus metus congue a. Vestibulum laoreet
+          faucibus ultrices. Vestibulum condimentum lectus in arcu ultricies
+          condimentum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+          pretium dapibus diam, a finibus metus congue a. Vestibulum laoreet
+          faucibus ultrices. Vestibulum condimentum lectus in arcu ultricies
+          condimentum.
         </p>
       </div>
     </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="container m-y-md">
+  <div class="row">
     <div class="col-md-4 d-flex">
-      <span
-        class="ca-gov-icon-chat-bubble text-2-5rem color-p3"
-        aria-hidden="true"></span>
-      <div class="p-x-md">
-        <h3 class="h4 m-t">Want to give website feedback?</h3>
-        <div class="width-30 brd-top brd-gray p-b"></div>
-        <p>
-          <a
-            href="https://coda.io/@yesenia-gutierrez-state-ca-gov/ca-design-system-feature-requests"
-            >Fill out this form</a
-          >
-        </p>
-      </div>
+      <!--Executive profile figure-->
+      <figure class="executive-profile bg-transparent">
+        <img src="images/sample-logo.png" alt="Image Description" />
+        <div class="executive-profile-body">
+          <p>Official Title</p>
+          <h3 class="executive-name">Name</h3>
+          <p>Government agency</p>
+          <p>
+            <a href="javascript:;" aria-label="Link to Official's Website">
+              Bio or contact info
+            </a>
+          </p>
+        </div>
+      </figure>
+      <!-- End Figure -->
     </div>
     <div class="col-md-4 d-flex">
-      <span
-        class="ca-gov-icon-cal-bear text-2-5rem color-p3"
-        aria-hidden="true"></span>
-      <div class="p-l-md">
-        <h3 class="h4 m-t">What is coming next?</h3>
-        <div class="width-30 brd-top brd-gray p-b"></div>
-        <p>
-          <a href="https://designsystem.webstandards.ca.gov/"
-            >Check out new CA Design System</a
-          >
-        </p>
-      </div>
+      <!--Executive profile figure-->
+      <figure class="executive-profile bg-transparent">
+        <img src="images/sample-logo.png" alt="Image Description" />
+        <div class="executive-profile-body">
+          <p>Official Title</p>
+          <h3 class="executive-name">Name</h3>
+          <p>Government agency</p>
+          <p>
+            <a href="javascript:;" aria-label="Link to Official's Website">
+              Bio or contact info
+            </a>
+          </p>
+        </div>
+      </figure>
+      <!-- End Figure -->
+    </div>
+    <div class="col-md-4 d-flex">
+      <!--Executive profile figure-->
+      <figure class="executive-profile bg-transparent">
+        <img src="images/sample-logo.png" alt="Image Description" />
+        <div class="executive-profile-body">
+          <p>Official Title</p>
+          <h3 class="executive-name">Name</h3>
+          <p>Government agency</p>
+          <p>
+            <a href="javascript:;" aria-label="Link to Official's Website">
+              Bio or contact info
+            </a>
+          </p>
+        </div>
+      </figure>
+      <!-- End Figure -->
     </div>
   </div>
 </div>
 </main>
 </div><!-- Global Footer -->
+<aside class="p-b-md p-t-sm section-standout site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div
+          class="h4 w-100 brd-bottom brd-highlight p-b"
+          role="heading"
+          aria-level="2">
+          About
+        </div>
+        <a
+          href="about/index.html"
+          class="d-block no-underline m-y font-size-16">
+          About <span class="sr-only">our organization</span>
+        </a>
+        <a
+          href="about/news/index.html"
+          class="d-block no-underline m-y font-size-16">
+          News <span class="sr-only">from our organization</span>
+        </a>
+        <a
+          href="about/careers.html"
+          class="d-block no-underline m-y font-size-16">
+          Careers <span class="sr-only">and job openings</span>
+        </a>
+        <a href="contact.html" class="d-block no-underline m-y font-size-16">
+          Contact us
+        </a>
+      </div>
+      <div class="col-md-4">
+        <div
+          class="h4 w-100 brd-bottom  brd-highlight p-b"
+          role="heading"
+          aria-level="2">
+          Heading
+        </div>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 1
+        </a>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 2
+        </a>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 3
+        </a>
+      </div>
+      <div class="col-md-4">
+        <div
+          class="h4 w-100 brd-bottom brd-highlight p-b"
+          role="heading"
+          aria-level="2">
+          Heading
+        </div>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 1 <span class="sr-only">regarding this website</span>
+        </a>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 2 <span class="sr-only">regarding this website</span>
+        </a>
+        <a href="javascript:;" class="d-block no-underline m-y font-size-16">
+          Link 3 <span class="sr-only">regarding this website</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</aside>
 <footer id="footer" class="global-footer">
   <div class="container">
     <div class="d-flex">
@@ -388,10 +537,12 @@ You may also use the CDN instead of using the local folder...
           <a href="privacy-policy.html">Privacy policy</a>
         </li>
         <li>
-          <a
-            href="images/WebAccessibilityCert-template.webstandards.ca.gov.pdf">
-            Website accessibility certification
-          </a>
+          <a href="accessibility.html">Accessibility</a>
+        </li>
+        <li>
+          <a href="website-acessibility-certification.html"
+            >Website accessibility certification</a
+          >
         </li>
         <li>
           <a href="sitemap.html">Sitemap</a>
@@ -400,7 +551,7 @@ You may also use the CDN instead of using the local folder...
       <ul class="socialsharer-container">
         <li>
           <a
-            href="https://github.com/Office-of-Digital-Innovation/California-State-Web-Template">
+            href="https://github.com/Office-of-Digital-Innovation/California-State-Web-HTML">
             <span class="ca-gov-icon-github" aria-hidden="true"></span>
             <span class="sr-only">GitHub</span>
           </a>
