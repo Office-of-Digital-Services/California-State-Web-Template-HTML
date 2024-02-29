@@ -8,6 +8,19 @@
 
     <!-- BEGIN STATE_TEMPLATE -->
 
+<!-- Public Sans Font
+Load the recommended Public Sans Font.  Removing this section will use System-UI font stack instead.
+
+More info on Typography here...
+https://template.webstandards.ca.gov/visual-design/typography.html
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=block"
+  rel="stylesheet" />
+<!-- End Public Sans Font -->
+
 <!-- STATE_TEMPLATE *** HEAD references ***
     
 Include links to stylesheet and custom theme and core JS.
@@ -18,9 +31,12 @@ Include links to stylesheet and custom theme and core JS.
 
 You may also use the CDN instead of using the local folder...
 
-<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.0/css/cagov.core.min.css" crossorigin="anonymous"/>
-<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.0/css/colortheme-oceanside.min.css" crossorigin="anonymous"/>
-<script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.0/js/cagov.core.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/css/cagov.core.min.css" crossorigin="anonymous"/>
+<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/css/colortheme-oceanside.min.css" crossorigin="anonymous"/>
+<script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/js/cagov.core.min.js" crossorigin="anonymous"></script>
+
+More info on CDN here...
+https://template.webstandards.ca.gov/cdn.html
 
 -->
 <link rel="stylesheet" href="../ca_state_template/css/cagov.core.min.css" />
@@ -73,7 +89,7 @@ You may also use the CDN instead of using the local folder...
 <script>
   //*** BEGIN STATE TEMPLATE CHANGE REQUESTED
   //Your GA4 Measurement ID that this website should use for website analytics
-  var yourGA4MeasurementId = "G-75V2BNQ3DR"; //Set to the default GA4 Measurement ID (G-75V2BNQ3DR), please change it to the one for your organization.
+  var yourGA4MeasurementId = "G-75V2BNQ3DR"; //Set to the default GA4 Measurement ID (G-75V2BNQ3D...R), please change it to the one for your organization.
   //*** END STATE TEMPLATE CHANGE REQUESTED
 
   //Support code to make this work, just leave this as is
@@ -107,7 +123,10 @@ You may also use the CDN instead of using the local folder...
           State of California
         </p>
       </div>
-      <div class="settings-links"></div>
+      <div class="settings-links">
+        <a href="../about/index.html">About us</a>
+        <a href="../contact.html">Contacts</a>
+      </div>
     </div>
   </div>
 </div>
@@ -832,10 +851,10 @@ You may also use the CDN instead of using the local folder...
       </ul>
     </div>
   </div>
-  <!-- Copyright Statement -->
+  <!-- Accessible, translatable, Copyright Statement -->
   <div class="copyright">
     <div class="container text-right">
-      Copyright &copy;
+      <span aria-hidden="true">&copy;</span>
       <span id="thisyear">
         <script>
           document.getElementById('thisyear').appendChild(document.createTextNode(new Date().getFullYear()))

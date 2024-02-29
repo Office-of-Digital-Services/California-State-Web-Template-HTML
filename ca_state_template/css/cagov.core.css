@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*! State Web Template Version 6.3.0 */
+/*! State Web Template Version 6.3.1 */
 /*!
  * Bootstrap  v5.3.0 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors
@@ -7272,38 +7272,6 @@ textarea.form-control-lg {
   box-shadow: none !important;
 }
 
-.focus-ring-primary {
-  --bs-focus-ring-color: rgba(var(--bs-primary-rgb), var(--bs-focus-ring-opacity));
-}
-
-.focus-ring-secondary {
-  --bs-focus-ring-color: rgba(var(--bs-secondary-rgb), var(--bs-focus-ring-opacity));
-}
-
-.focus-ring-success {
-  --bs-focus-ring-color: rgba(var(--bs-success-rgb), var(--bs-focus-ring-opacity));
-}
-
-.focus-ring-info {
-  --bs-focus-ring-color: rgba(var(--bs-info-rgb), var(--bs-focus-ring-opacity));
-}
-
-.focus-ring-warning {
-  --bs-focus-ring-color: rgba(var(--bs-warning-rgb), var(--bs-focus-ring-opacity));
-}
-
-.focus-ring-danger {
-  --bs-focus-ring-color: rgba(var(--bs-danger-rgb), var(--bs-focus-ring-opacity));
-}
-
-.focus-ring-light {
-  --bs-focus-ring-color: rgba(var(--bs-light-rgb), var(--bs-focus-ring-opacity));
-}
-
-.focus-ring-dark {
-  --bs-focus-ring-color: rgba(var(--bs-dark-rgb), var(--bs-focus-ring-opacity));
-}
-
 .position-static {
   position: static !important;
 }
@@ -14060,134 +14028,8 @@ textarea.form-control-lg {
 /* -----------------------------------------
    TYPE STYLES - /source/scss/cagov/type.scss
 ----------------------------------------- */
-/* latin-ext */
-@font-face {
-  font-family: "Public Sans";
-  font-style: normal;
-  font-weight: 200;
-  font-display: swap;
-  src: url("../fonts/publicsans-extralight-webfont.woff2") format("woff2");
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: "Public Sans";
-  font-style: normal;
-  font-weight: 200;
-  font-display: swap;
-  src: url("../fonts/publicsans-extralight-webfont.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: "Public Sans";
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url("../fonts/publicsans-light-webfont.woff2") format("woff2");
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: "Public Sans";
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url("../fonts/publicsans-light-webfont.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: "Public Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/publicsans-regular-webfont.woff2") format("woff2");
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: "Public Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/publicsans-regular-webfont.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: "Public Sans";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("../fonts/publicsans-medium-webfont.woff2") format("woff2");
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: "Public Sans";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("../fonts/publicsans-medium-webfont.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: "Public Sans";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("../fonts/publicsans-semibold-webfont.woff2") format("woff2");
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: "Public Sans";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("../fonts/publicsans-semibold-webfont.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: "Public Sans";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("../fonts/publicsans-bold-webfont.woff2") format("woff2");
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: "Public Sans";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("../fonts/publicsans-bold-webfont.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: "Public Sans";
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url("../fonts/publicsans-extrabold-webfont.woff2") format("woff2");
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: "Public Sans";
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url("../fonts/publicsans-extrabold-webfont.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
 body {
-  font: 1.125rem/1.5 "Public Sans", sans-serif;
+  font: 1.125rem/1.5 "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif;
   color: var(--gray-900, #3b3a48);
   overflow-y: scroll;
 }
@@ -14281,7 +14123,7 @@ h1,
   margin-bottom: 1.6rem;
   font-weight: 700;
   line-height: 1.25;
-  font-family: "Public Sans", sans-serif;
+  font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif;
 }
 h1 span[class^=ca-gov-icon-]:first-child,
 .h1 span[class^=ca-gov-icon-]:first-child {
@@ -14303,7 +14145,7 @@ h2,
   margin-bottom: 1.4rem;
   font-weight: 700;
   line-height: 1.375;
-  font-family: "Public Sans", sans-serif;
+  font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif;
 }
 @media (min-width: 576px) {
   h2,
@@ -14321,7 +14163,7 @@ h3,
   margin-bottom: 1.2rem;
   font-weight: 700;
   line-height: 1.5;
-  font-family: "Public Sans", sans-serif;
+  font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif;
 }
 @media (min-width: 576px) {
   h3,
@@ -14339,7 +14181,7 @@ h4,
   margin-bottom: 1rem;
   font-weight: 700;
   line-height: 1.625;
-  font-family: "Public Sans", sans-serif;
+  font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif;
 }
 @media (min-width: 576px) {
   h4,
@@ -14357,7 +14199,7 @@ h5,
   margin-bottom: 0.8rem;
   font-weight: 700;
   line-height: 1.75;
-  font-family: "Public Sans", sans-serif;
+  font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif;
 }
 @media (min-width: 576px) {
   h5,
@@ -14375,7 +14217,7 @@ h6,
   margin-bottom: 0.6rem;
   font-weight: 700;
   line-height: 1.75;
-  font-family: "Public Sans", sans-serif;
+  font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif;
 }
 @media (min-width: 576px) {
   h6,
@@ -14420,7 +14262,7 @@ h6,
 }
 
 .serif {
-  font-family: "Merriweather", serif !important;
+  font-family: "Merriweather", "Times New Roman", serif !important;
 }
 
 .monospace {
@@ -14428,7 +14270,7 @@ h6,
 }
 
 .heading {
-  font-family: "Public Sans", sans-serif !important;
+  font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif !important;
 }
 
 code {
@@ -15347,7 +15189,7 @@ h2, .h2 {
   padding-left: 5px;
 }
 .branding .header-organization-banner a .logo-assets .logo-text .logo-state {
-  font: 1rem "Public Sans", sans-serif;
+  font: 1rem "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif;
   margin: 0;
   padding: 0;
   color: var(--gray-900, #3b3a48);
@@ -15362,7 +15204,7 @@ h2, .h2 {
   }
 }
 .branding .header-organization-banner a .logo-assets .logo-text .logo-dept {
-  font: 700 1.75rem "Public Sans", sans-serif;
+  font: 700 1.75rem "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif;
   margin: 0;
   padding: 0;
   color: var(--color-p3, #323a45);
@@ -15421,7 +15263,7 @@ h2, .h2 {
   background-color: rgba(0, 0, 0, 0.5);
 }
 .explore-invite .explore-title {
-  font-family: "Public Sans", sans-serif;
+  font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif;
   font-size: 1.7rem;
 }
 .explore-invite [class^=ca-gov-icon-] {
@@ -16630,7 +16472,7 @@ input[type=search]::-webkit-search-results-decoration {
 .full-width-nav .nav-item .first-level-btn {
   display: block;
   padding: 0.85rem 1rem 0.9rem;
-  font-family: "Public Sans", sans-serif;
+  font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif;
   font-weight: 400;
   position: relative;
   text-align: left;
@@ -16848,6 +16690,7 @@ input[type=search]::-webkit-search-results-decoration {
   #navigation {
     clear: both;
     width: 100%;
+    margin-top: 2rem;
   }
   .main-navigation #nav-item-search button.first-level-link {
     background: none;
@@ -17599,7 +17442,7 @@ header::after {
   content: "";
   position: absolute;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh + 100px);
   background-color: rgba(0, 0, 0, 0.48);
   top: 0;
   left: 0;
@@ -17620,11 +17463,11 @@ header.nav-overlay::after {
   align-items: center;
   position: relative;
   transform: rotate(0deg);
-  transition: 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
   cursor: pointer;
   color: var(--white, #fff);
   min-width: 2.5rem;
-  min-height: 2.5rem;
+  min-height: 1.75rem;
   margin: 1.3rem 0 0 auto;
 }
 .toggle-menu span {
@@ -17776,6 +17619,9 @@ header.nav-overlay::after {
   margin-left: 1rem;
   margin-right: 1rem;
   font-size: 1rem;
+}
+.navigation-search .settings-links a:last-child {
+  margin-right: 0;
 }
 .navigation-search .settings-links a::before {
   content: "";
@@ -17944,11 +17790,6 @@ header.nav-overlay::after {
     font-size: calc(1rem + 0.1vw);
   }
 }
-@media (min-width: 992px) {
-  .utility-header .settings-links {
-    padding-right: 5px;
-  }
-}
 .utility-header [class^=ca-gov-icon-] {
   font-size: 1.1rem;
   vertical-align: -2px;
@@ -17979,8 +17820,12 @@ header.nav-overlay::after {
   min-height: 38px;
 }
 .utility-header .flex-row .settings-links a {
-  margin: 0 10px;
+  margin: 0;
+  margin-left: 1rem;
   font-size: 0.95rem;
+}
+.utility-header .flex-row .settings-links a:last-child {
+  margin-right: 0;
 }
 .utility-header .flex-row .settings-links button {
   margin: 0;
@@ -18671,7 +18516,7 @@ a.text-white:not(.btn):hover {
     transition: opacity 0.3s, visibility 0.3s;
     z-index: 5;
     visibility: visible;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif;
     /* 3rd and beyond positions panel on right of button */
     /* first two panels positioned on left of button */
   }
@@ -20143,7 +19988,7 @@ cagov-accordion:defined details[open] summary:focus::after {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   padding-bottom: 0;
-  font-family: "Public Sans", sans-serif;
+  font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif;
 }
 
 .accordion__trigger {
@@ -20478,7 +20323,6 @@ cagov-accordion.sidenav details .accordion-body .side-subnav li:last-child {
 /* -----------------------------------------
    BREADCRUMBS -  /source/scss/cagov/breadcrumbs.scss
 ----------------------------------------- */
-.breadcrumb,
 .breadcrumbs ul,
 .breadcrumbs ol {
   padding: 0.5em 1rem;
@@ -20490,41 +20334,36 @@ cagov-accordion.sidenav details .accordion-body .side-subnav li:last-child {
   font-size: 0.85rem;
 }
 @media (min-width: 576px) {
-  .breadcrumb,
   .breadcrumbs ul,
   .breadcrumbs ol {
     font-size: calc(0.85rem + 0.1vw);
   }
 }
-.breadcrumb li,
 .breadcrumbs ul li,
 .breadcrumbs ol li {
   position: relative;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
-.breadcrumb li:first-child,
 .breadcrumbs ul li:first-child,
 .breadcrumbs ol li:first-child {
   padding-left: 0;
 }
-.breadcrumb li::after,
 .breadcrumbs ul li::after,
 .breadcrumbs ol li::after {
   content: "";
-  color: var(--gray-300, #bcbbc1);
+  color: var(--gray-900, #3b3a48);
   border: none;
   margin: 0 0.75rem;
   font-size: 1.125rem;
   font-weight: 200;
   position: absolute;
-  border-left: 1px solid var(--gray-900, #3b3a48);
+  border-left: 1px solid;
   height: 70%;
   top: 5px;
   right: -12px;
   transform: rotate(15deg);
 }
-.breadcrumb li:last-child::after,
 .breadcrumbs ul li:last-child::after,
 .breadcrumbs ol li:last-child::after {
   content: "";
@@ -20534,6 +20373,10 @@ cagov-accordion.sidenav details .accordion-body .side-subnav li:last-child {
 
 .breadcrumb > li + li::before {
   padding: 0;
+}
+
+.section--overstated .breadcrumbs ul li::after, .section--overstated .breadcrumbs ol li::after, .section-standout .breadcrumbs ul li::after, .section-standout .breadcrumbs ol li::after, .section-impact .breadcrumbs ul li::after, .section-impact .breadcrumbs ol li::after, .section-primary .breadcrumbs ul li::after, .section-primary .breadcrumbs ol li::after, .section-inverted .breadcrumbs ul li::after, .section-inverted .breadcrumbs ol li::after, .bg-primary .breadcrumbs ul li::after, .bg-primary .breadcrumbs ol li::after, .bg-standout .breadcrumbs ul li::after, .bg-standout .breadcrumbs ol li::after, .bg-p2 .breadcrumbs ul li::after, .bg-p2 .breadcrumbs ol li::after, .bg-p3 .breadcrumbs ul li::after, .bg-p3 .breadcrumbs ol li::after {
+  color: var(--white, #FFF);
 }
 
 /* -----------------------------------------
@@ -22181,7 +22024,7 @@ select:focus {
 .card .card-header .h4,
 .card .card-header h5,
 .card .card-header .h5 {
-  font-family: "Public Sans", sans-serif;
+  font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif;
   font-weight: 500;
   line-height: 1.5;
   color: inherit;
@@ -25019,12 +24862,12 @@ div[data-state=open] .title {
 .stat-counter {
   text-align: center;
   font-size: 3rem;
-  font-family: "Public Sans", sans-serif;
+  font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif;
 }
 
 .circles-text {
   font-size: 2.1875rem !important;
-  font-family: "Public Sans", sans-serif;
+  font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif;
 }
 
 /* -----------------------------------------
