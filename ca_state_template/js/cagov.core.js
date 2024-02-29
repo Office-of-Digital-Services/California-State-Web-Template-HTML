@@ -1,4 +1,4 @@
-var StateTemplateNpmPackageVersion="6.3.0";
+var StateTemplateNpmPackageVersion="6.3.1";
 /*!
   * Bootstrap v5.3.0 (https://getbootstrap.com/)
   * Copyright 2011-2023 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
@@ -6864,6 +6864,8 @@ window.addEventListener("load", () => {
  * License MIT: https://github.com/nico3333fr/van11y-accessible-accordion-aria/blob/master/LICENSE
  */
 (() => {
+  const isDesktopWidth = () => window.innerWidth > 991; //Maximum px for mobile width
+
   /**
    * @param {Object} obj
    * @param {String} key
@@ -7200,8 +7202,8 @@ window.addEventListener("load", () => {
             // making sure all second level links are not tabable
             accordionPanel
               .querySelectorAll(".second-level-link")
-              .forEach(item => {
-                item.setAttribute("tabindex", "-1");
+              .forEach((/** @type {HTMLElement} **/ item) => {
+                item.tabIndex = -1;
               });
           }
         });
@@ -7282,7 +7284,10 @@ window.addEventListener("load", () => {
                     // adding tabindex to links to make sure they are not tabable if sub nav panel is closed
                     destination
                       .querySelectorAll(".second-level-link")
-                      .forEach(item => item.setAttribute("tabindex", "-1"));
+                      .forEach(
+                        (/** @type {HTMLElement} **/ item) =>
+                          (item.tabIndex = -1)
+                      );
                   }
 
                   if (!mobileView()) {
@@ -7301,7 +7306,10 @@ window.addEventListener("load", () => {
                         //Added fix to make closed panels non-tabbable
                         destinationPanel
                           .querySelectorAll(".second-level-link")
-                          .forEach(item => item.setAttribute("tabindex", "-1"));
+                          .forEach(
+                            (/** @type {HTMLElement} **/ item) =>
+                              (item.tabIndex = -1)
+                          );
                       }
                     });
                   }
@@ -7323,31 +7331,28 @@ window.addEventListener("load", () => {
     return plugin;
   };
 
+  // reset navigation function
   const NavReset = () => {
     //RESET
     document
       .querySelectorAll(".first-level-btn")
-      .forEach(el => el.setAttribute("aria-expanded", "false"));
+      .forEach(el => (el.ariaExpanded = "false")); //Must be false and not blank for CSS
+
     document.querySelectorAll(".sub-nav").forEach(el => {
-      el.setAttribute("aria-hidden", "true");
+      el.ariaHidden = "true";
       el.classList.remove("open");
     });
+
     document
       .querySelectorAll(".second-level-link")
-      .forEach(el => el.setAttribute("tabindex", "-1"));
+      .forEach((/**@type {HTMLElement} */ el) => (el.tabIndex = -1));
 
-    if (window.innerWidth <= 991) {
-      document
-        .querySelectorAll(".rotate")
-        .forEach(
-          (/**@type {HTMLElement} */ el) => (el.style.display = "block")
-        );
-    } else {
-      document
-        .querySelectorAll(".rotate")
-        .forEach((/**@type {HTMLElement} */ el) => (el.style.display = "none"));
-      document.querySelector("#navigation")?.removeAttribute("aria-hidden");
-    }
+    document
+      .querySelectorAll(".rotate")
+      .forEach(
+        (/**@type {HTMLElement} */ el) =>
+          (el.style.display = isDesktopWidth() ? "none" : "block")
+      );
   };
 
   // Remove href if <a> has a link
@@ -7426,11 +7431,11 @@ window.addEventListener("load", () => {
 
         const carrot = document.createElement("span");
         carrot.classList.add("ca-gov-icon-caret-down", "carrot");
-        carrot.setAttribute("aria-hidden", "true");
+        carrot.ariaHidden = "true";
 
         const toggleSubNav = document.createElement("div");
         toggleSubNav.classList.add("ca-gov-icon-caret-right", "rotate");
-        toggleSubNav.setAttribute("aria-hidden", "true");
+        toggleSubNav.ariaHidden = "true";
         toggleSubNav.style.display = mobileView() ? "block" : "none";
 
         el.appendChild(toggleSubNav);
@@ -7439,22 +7444,6 @@ window.addEventListener("load", () => {
     }
 
     addActive();
-  });
-
-  // Do Navigation Reset function on window resize.
-  window.addEventListener("resize", () => {
-    document
-      .querySelector(".toggle-menu")
-      ?.setAttribute("aria-expanded", "false");
-
-    //Collapse the nav when narrow
-    //const nav = document.querySelector("#navigation");
-    //if (nav) {
-    //nav.classList.remove("show"); //This was causing the desktop menu to stay hidden when resizing from mobile.
-    //nav.setAttribute("aria-hidden", "true");
-    //}
-
-    NavReset();
   });
 
   // Reset on escape
@@ -8667,164 +8656,217 @@ cagov-pagination .cagov-pagination__item:has(.cagov-pagination__link-inactive) {
 //@ts-check
 
 window.addEventListener("load", () => {
-  // VARIABLES
-  const navButton = document.querySelector(".toggle-menu");
-  if (!navButton) return;
+  const isDesktopWidth = () => window.innerWidth > 991; //Maximum px for mobile width
 
-  const getAllNavLinks = () =>
-    document.querySelectorAll(
-      '.navigation-search a.first-level-link, .navigation-search button.first-level-btn, .navigation-search input, .navigation-search button, .navigation-search [tabindex]:not([tabindex="-1"])'
-    );
-
-  const getAllUtilityLinks = () =>
-    document.querySelectorAll(
-      '.settings-links a, .settings-links button, .settings-links input, .settings-links select, .settings-links [tabindex]:not([tabindex="-1"])'
-    );
-
-  // all focusable elements other than navigation
-  const getAllBodyLinks = () =>
-    document.querySelectorAll(
-      '.utility-header .social-media-links a, .utility-header .social-media-links input, .utility-header .social-media-links button, .utility-header .social-media-links [tabindex]:not([tabindex="-1"]), .branding a, .branding button, .branding input, .branding select, .main-content a[href], .main-content button, .main-content input, .main-content textarea, .main-content select, .main-content details, .main-content [tabindex]:not([tabindex="-1"]), .site-footer a[href], .site-footer button, .site-footer input, .site-footer textarea, .site-footer select, .site-footer details, .site-footer [tabindex]:not([tabindex="-1"]), footer a[href], footer button, footer input, footer textarea, footer select, footer details, footer [tabindex]:not([tabindex="-1"])'
-    );
+  /** @type {HTMLButtonElement} */
+  const navToggleBtn = document.querySelector(".toggle-menu");
+  if (!navToggleBtn) return;
 
   // create container for drawer mobile nav items
   const mobileItemsCont = document.createElement("div");
-  mobileItemsCont.setAttribute("class", "nav-drawer");
+  mobileItemsCont.className = "nav-drawer";
 
-  // move mobile navigation toggle button back into mobile controls container
-  const moveNavToggleButtonToMobileControlsContainer = () => {
-    const navButtonCont = document.querySelector(
-      ".mobile-controls .main-nav-icons"
+  // Create close mobile meu button
+  const navMobileMenuToggleBtn = document.createElement("button");
+  navMobileMenuToggleBtn.classList.add("mobile-control", "toggle-menu");
+  navMobileMenuToggleBtn.ariaExpanded = "false";
+  navMobileMenuToggleBtn.setAttribute("aria-controls", "navigation");
+  navMobileMenuToggleBtn.tabIndex = -1;
+
+  const navCloseBtnSpans = [0, 1, 2, 3, 4].map(() =>
+    document.createElement("span")
+  );
+
+  navCloseBtnSpans[4].classList.add("sr-only");
+  navCloseBtnSpans[4].innerText = "Menu";
+  navMobileMenuToggleBtn.append(...navCloseBtnSpans);
+  mobileItemsCont.append(navMobileMenuToggleBtn);
+
+  /** @type {HTMLElement} */
+  const mainNav = document.querySelector(".main-navigation");
+
+  // VARIABLES
+  /** @type {HTMLDivElement} */
+  const navSearchCont = document.querySelector(".navigation-search");
+  if (!navSearchCont) return;
+
+  const mobileCntls = document.querySelector(".global-header .mobile-controls");
+  const mobileControlsDisplay = mobileCntls
+    ? window.getComputedStyle(mobileCntls).display
+    : "";
+
+  //Used for hiding/showing main elements
+  const mainElements = document.querySelectorAll(
+    ".main-content, footer, .site-footer, .utility-header, .branding, header"
+  );
+
+  const regularHeader = document.querySelector("header");
+
+  // reset navigation function
+  const NavReset = () => {
+    //RESET
+    document
+      .querySelectorAll(".first-level-btn")
+      .forEach(el => (el.ariaExpanded = "false")); //Must be false and not blank for CSS
+
+    document.querySelectorAll(".sub-nav").forEach(el => {
+      el.ariaHidden = "true";
+      el.classList.remove("open");
+    });
+
+    document
+      .querySelectorAll(".second-level-link")
+      .forEach((/**@type {HTMLElement} */ el) => (el.tabIndex = -1));
+
+    document
+      .querySelectorAll(".rotate")
+      .forEach(
+        (/**@type {HTMLElement} */ el) =>
+          (el.style.display = isDesktopWidth() ? "none" : "block")
+      );
+
+    const targetAriaHidden = isDesktopWidth() ? null : "true";
+
+    if (navSearchCont.ariaHidden != targetAriaHidden)
+      navSearchCont.ariaHidden = targetAriaHidden;
+  };
+
+  const getAllNavLinks = () =>
+    /** @type { NodeListOf<HTMLElement>} */ (
+      navSearchCont.querySelectorAll(
+        'a.first-level-link, button.first-level-btn, input, button, [tabindex]:not([tabindex="-1"])'
+      )
     );
-    setTimeout(() => {
-      navButton.setAttribute("aria-expanded", "false");
-      navButtonCont?.append(navButton);
-    }, 300);
-  };
 
-  const setHidden = (/** @type {boolean} */ hide) => {
-    const mainCont = document.querySelector(".main-content");
-    const footerGlobal = document.querySelector("footer");
-    const footerSite = document.querySelector(".site-footer");
-    const headerutility = document.querySelector(".utility-header");
-    const siteBranding = document.querySelector(".branding");
-    const regularHeader = document.querySelector("header");
+  const getAllFirstLevelNavLinks = () =>
+    /** @type { NodeListOf<HTMLElement>} */ (
+      navSearchCont.querySelectorAll(
+        "a.first-level-link, button.first-level-btn"
+      )
+    );
 
-    if (hide) {
-      mainCont?.setAttribute("aria-hidden", "true");
-      footerGlobal?.setAttribute("aria-hidden", "true");
-      footerSite?.setAttribute("aria-hidden", "true");
-      headerutility?.setAttribute("aria-hidden", "true");
-      siteBranding?.setAttribute("aria-hidden", "true");
-      regularHeader?.classList.add("nav-overlay");
-    } else {
-      //show
-      mainCont?.removeAttribute("aria-hidden");
-      footerGlobal?.removeAttribute("aria-hidden");
-      footerSite?.removeAttribute("aria-hidden");
-      headerutility?.removeAttribute("aria-hidden");
-      siteBranding?.removeAttribute("aria-hidden");
-      regularHeader?.classList.remove("nav-overlay");
-    }
-  };
-
-  // Button click open and close menu function
-  const openMenu = () => {
-    mobileItemsCont.append(navButton);
-    const navSearchCont = document.querySelector(".navigation-search");
-    if (!navSearchCont) return;
-    navSearchCont.classList.toggle("visible");
-    navSearchCont.classList.toggle("not-visible");
-    // Open
+  // Escape key event listener
+  document.addEventListener("keydown", e => {
     if (navSearchCont.classList.contains("visible")) {
-      navButton.setAttribute("aria-expanded", "true");
-      document.body.classList.add("overflow-hidden");
-      navSearchCont.setAttribute("aria-hidden", "false");
-      // make links focusable
-      getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
-      getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
-      // make all the rest of the links not focusable
-      getAllBodyLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-      // Hide all the website areas (add aria-hidden)
-      setHidden(true);
+      if (e.key === "Escape") {
+        e.stopPropagation();
+        closeMenu();
+      }
+    }
+  });
 
-      // Close
-    } else {
-      navButton.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("overflow-hidden");
-      navSearchCont.setAttribute("aria-hidden", "true");
-      // removing focus
-      getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-      getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-      getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
-      // remove aria hidden for the rest of the site
-      setHidden(false);
-      moveNavToggleButtonToMobileControlsContainer();
+  const checkIfMobileView = () => {
+    const mobileElement = document.querySelector(
+      ".global-header .mobile-controls"
+    );
+    return mobileElement
+      ? getComputedStyle(mobileElement)["display"] !== "none"
+      : false;
+  };
+
+  // Close menu on focusout (tabbing out) event (if target is outside of mobile menu and ignore if focus target is navToggleBtn button)
+  navSearchCont.addEventListener("focusout", e => {
+    if (checkIfMobileView()) {
+      const child = /** @type {Node} **/ (e.relatedTarget);
+      const parent = /** @type {Node} **/ (e.currentTarget);
+
+      if (child && !parent.contains(child)) {
+        closeMenu();
+      }
+    }
+  });
+
+  // Button click open menu function
+  const openMenu = () => {
+    navSearchCont.classList.add("visible");
+    navSearchCont.classList.remove("not-visible");
+    document.body.classList.add("overflow-hidden");
+    navToggleBtn.ariaExpanded = "true";
+    setOpen();
+    // Hide all the website areas (add aria-hidden)
+    mainElements.forEach(x => (x.ariaHidden = "true"));
+
+    regularHeader?.classList.add("nav-overlay");
+    navMobileMenuToggleBtn.focus();
+  };
+
+  const setOpen = () => {
+    navMobileMenuToggleBtn.ariaExpanded = "true";
+    navSearchCont.ariaHidden = null;
+    // make links focusable
+    getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
+    // desktop
+    if (
+      mobileControlsDisplay !== "block" &&
+      navToggleBtn.ariaExpanded !== "false"
+    ) {
+      navToggleBtn.ariaExpanded = "false";
     }
   };
 
-  // Default state for mobile
-  const mobileNavDefault = () => {
-    moveNavToggleButtonToMobileControlsContainer();
-    const mainNav = document.querySelector(".main-navigation");
-    const utilityLinks = document.querySelector(".settings-links");
-    if (mainNav && utilityLinks) mainNav.before(utilityLinks);
-    document.body.classList.remove("overflow-hidden");
+  // Button click close menu function
+  const closeMenu = () => {
+    if (navSearchCont.classList.contains("visible")) {
+      navSearchCont.classList.remove("visible");
 
-    const navSearchCont = document.querySelector(".navigation-search");
-    if (!navSearchCont) return;
+      //Set focus only when close actually happens
+      navToggleBtn.focus();
+    }
+
     navSearchCont.classList.add("not-visible");
-    navSearchCont.classList.remove("visible");
-    navSearchCont.setAttribute("aria-hidden", "true");
-    // removing focus
-    getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-    getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-    getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
-    // remove aria hidden for the rest of the site
-    setHidden(false);
+
+    setClosed();
   };
 
-  // Default state for desktop
-  const desktopNavDefault = () => {
-    moveNavToggleButtonToMobileControlsContainer();
-    const utilityLinks = document.querySelector(".settings-links");
-    const headerutilityLinksCont = document.querySelector(
-      ".utility-header .container .flex-row"
-    );
-    if (utilityLinks && headerutilityLinksCont)
-      headerutilityLinksCont.append(utilityLinks);
-    document.body.classList.remove("overflow-hidden");
-    const navSearchCont = document.querySelector(".navigation-search");
-    if (!navSearchCont) return;
-    navSearchCont.classList.remove("visible");
-    navSearchCont.classList.remove("not-visible");
-    navSearchCont.setAttribute("aria-hidden", "false");
-    getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
-    getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
-    getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
+  const setClosed = () => {
+    if (navToggleBtn.ariaExpanded !== "false") {
+      navToggleBtn.ariaExpanded = "false";
+    }
+    if (navMobileMenuToggleBtn.ariaExpanded !== "false") {
+      navMobileMenuToggleBtn.ariaExpanded = "false";
+    }
+    if (mainNav) document.body.classList.remove("overflow-hidden");
+
+    // removing focus
+    getAllNavLinks().forEach(el => (el.tabIndex = -1));
     // remove aria hidden for the rest of the site
-    setHidden(false);
+    mainElements.forEach(x => (x.ariaHidden = null));
+    regularHeader?.classList.remove("nav-overlay");
+
+    NavReset();
   };
 
   // Button Click event
-  navButton.addEventListener("click", openMenu);
+  navToggleBtn.addEventListener("click", openMenu);
+  // Button Click event
+  navMobileMenuToggleBtn.addEventListener("click", closeMenu);
 
   const mobileCheck = () => {
-    const mobileCntls = document.querySelector(
-      ".global-header .mobile-controls"
-    );
+    NavReset();
 
-    const mobileControlsDisplay = mobileCntls
-      ? window.getComputedStyle(mobileCntls).display
-      : "";
-
-    if (mobileControlsDisplay == "block") {
-      mobileNavDefault();
-      // if desktop
-    } else {
-      desktopNavDefault();
+    // desktop
+    if (isDesktopWidth()) {
+      getAllFirstLevelNavLinks().forEach(el => el.removeAttribute("tabindex"));
+    }
+    // mobile
+    else {
+      getAllFirstLevelNavLinks().forEach(el => (el.tabIndex = -1));
+      closeMenu();
     }
   };
+
+  // Close mobile nav if click outside of nav
+  regularHeader.addEventListener("mouseup", e => {
+    // if the target of the click isn't the navigation container nor a descendant of the navigation
+    if (checkIfMobileView()) {
+      if (
+        navSearchCont !== e.target &&
+        !navSearchCont?.contains(/**@type {Node} */ (e.target))
+      ) {
+        closeMenu();
+      }
+    }
+  });
 
   // on resize function (hide mobile nav)
   window.addEventListener("resize", mobileCheck);
@@ -8832,6 +8874,5 @@ window.addEventListener("load", () => {
   // ONLOAD
   // move duplicated logo to navigation drawer section
   document.querySelector(".navigation-search")?.prepend(mobileItemsCont);
-
   mobileCheck();
 });
