@@ -1,4 +1,4 @@
-var StateTemplateNpmPackageVersion="6.3.2";
+var StateTemplateNpmPackageVersion="6.3.4";
 /*!
   * Bootstrap v5.3.3 (https://getbootstrap.com/)
   * Copyright 2011-2024 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
@@ -8851,6 +8851,7 @@ window.addEventListener("load", () => {
 
   const mobileCheck = () => {
     const searchInput = document.querySelector(".search-textfield");
+    if (!searchInput) return;
 
     // Add a focus event listener to add the class on focus
     searchInput.addEventListener("focus", () => {
