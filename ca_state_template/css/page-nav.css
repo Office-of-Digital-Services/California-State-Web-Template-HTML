@@ -1,0 +1,59 @@
+aside cagov-page-navigation .label {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28.2px;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 16px;
+}
+
+aside cagov-page-navigation ul,
+aside cagov-page-navigation ol:not([class*=menu]):not([class*=nav]):not([class*=footer-links]),
+aside cagov-page-navigation ul:not([class*=menu]):not([class*=nav]):not([class*=footer-links]) {
+  margin: 0;
+  text-indent: 0;
+  padding: 0;
+}
+
+aside cagov-page-navigation ul li {
+  padding-top: 14px;
+  padding-bottom: 18px;
+  margin-left: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-bottom: 1px solid var(--gray-300, #e1e0e3);
+  line-height: 28.2px;
+  list-style: none;
+}
+aside cagov-page-navigation ul li:first-child {
+  border-top: 1px solid var(--gray-300, #e1e0e3);
+}
+aside cagov-page-navigation ul li a {
+  text-decoration: none;
+}
+aside cagov-page-navigation ul li a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 992px) {
+  cagov-page-navigation .label {
+    display: none;
+  }
+  .aside-container {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+  cagov-page-navigation ul li a {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
+
+@media (min-width: 1400px) {
+  html body.divi-built #main-content .entry-content .et_builder_inner_content .et_pb_fullwidth_section .et_pb_module.et_pb_fullwidth_menu .et_pb_row, html body #main-content .entry-content .et_builder_inner_content .et_pb_row, html body #main-content .entry-content > #et-fb-app .et-fb-post-content .et_pb_fullwidth_section .et_pb_module.et_pb_fullwidth_menu .et_pb_row, html body #main-content .entry-content > #et-fb-app .et-fb-post-content .et_pb_row {
+        max-width: 1920px !important;
+    }
+}
