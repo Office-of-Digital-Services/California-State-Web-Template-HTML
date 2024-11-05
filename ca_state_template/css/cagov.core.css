@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*! State Web Template Version 6.4.0 */
+/*! State Web Template Version 6.4.1 */
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
@@ -11969,6 +11969,10 @@ textarea.form-control-lg {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.ca-gov-icon-cagov-icon::before {
+  content: "\ea34";
 }
 
 .ca-gov-icon-bullet::before {
