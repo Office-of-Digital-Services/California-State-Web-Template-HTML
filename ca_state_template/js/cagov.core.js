@@ -1,4 +1,4 @@
-var StateTemplateNpmPackageVersion="6.4.0";
+var StateTemplateNpmPackageVersion="6.4.1";
 /*!
   * Bootstrap v5.3.3 (https://getbootstrap.com/)
   * Copyright 2011-2024 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
@@ -8714,7 +8714,7 @@ window.addEventListener("load", () => {
 
   //Used for hiding/showing main elements
   const mainElements = document.querySelectorAll(
-    ".main-content, footer, .site-footer, .utility-header, .branding, header"
+    ".main-content, footer, .site-footer, .utility-header, .branding"
   );
 
   const regularHeader = document.querySelector("header");
