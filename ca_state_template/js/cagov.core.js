@@ -1,4 +1,4 @@
-var StateTemplateNpmPackageVersion="6.4.1";
+var StateTemplateNpmPackageVersion="6.4.2";
 /*!
   * Bootstrap v5.3.3 (https://getbootstrap.com/)
   * Copyright 2011-2024 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
