@@ -31,18 +31,22 @@ Include links to stylesheet and custom theme and core JS.
 
 You may also use the CDN instead of using the local folder...
 
-<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.2/css/cagov.core.min.css" crossorigin="anonymous"/>
-<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.2/css/colortheme-oceanside.min.css" crossorigin="anonymous"/>
-<script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.2/js/cagov.core.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.0/css/cagov.core.min.css" crossorigin="anonymous"/>
+<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.0/css/colortheme-oceanside.min.css" crossorigin="anonymous"/>
+<script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.0/js/cagov.core.min.js" crossorigin="anonymous"></script>
 
 More info on CDN here...
 https://template.webstandards.ca.gov/cdn.html
 
 -->
-<link rel="stylesheet" href="../ca_state_template/css/cagov.core.min.css" />
 <link
   rel="stylesheet"
-  href="../ca_state_template/css/colortheme-oceanside.min.css" />
+  href="../ca_state_template/css/cagov.core.css"
+  id="main-stylesheet" />
+<!-- Replace with different color theme if needed (oceanside is default)
+<link
+  rel="stylesheet"
+  href="../ca_state_template/css/colortheme-delta.min.css" /> -->
 <script src="../ca_state_template/js/cagov.core.min.js"></script>
 <!-- END STATE_TEMPLATE -->
 
@@ -592,6 +596,16 @@ https://template.webstandards.ca.gov/cdn.html
               </li>
               <li>
                 <a
+                  href="../samples/section-primary.html"
+                  class="">Section Primary</a>
+              </li>
+              <li>
+                <a
+                  href="../samples/section-standout.html"
+                  class="">Section Standout</a>
+              </li>
+              <li>
+                <a
                   href="../samples/side-navigation.html"
                   class="">Side Navigation</a>
               </li>
@@ -667,8 +681,8 @@ https://template.webstandards.ca.gov/cdn.html
           <h1 class="mt-lg-0">Countdown Timer</h1>
           <!-- BEGIN SAMPLE CONTENT -->
           <!--HTML-->
-<div class="group countdown p-x">
-  <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+<div class="row flex-column flex-md-row countdown p-x">
+  <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
     <span class="countdown-text"
       ><abbr title="weeks" aria-label="weeks" class="text-decoration-none"
         >wks</abbr
@@ -676,11 +690,11 @@ https://template.webstandards.ca.gov/cdn.html
     /></span>
     <span id="weeks1"></span>
   </div>
-  <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+  <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
     <span class="countdown-text">days<br /></span>
     <span id="days1"></span>
   </div>
-  <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+  <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
     <span class="countdown-text"
       ><abbr title="hours" aria-label="hours" class="text-decoration-none"
         >hrs</abbr
@@ -689,7 +703,7 @@ https://template.webstandards.ca.gov/cdn.html
     /></span>
     <span id="hours1"></span>
   </div>
-  <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+  <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
     <span class="countdown-text"
       ><abbr title="minutes" aria-label="minutes" class="text-decoration-none"
         >mins</abbr
@@ -697,7 +711,7 @@ https://template.webstandards.ca.gov/cdn.html
     /></span>
     <span id="minutes1"></span>
   </div>
-  <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+  <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
     <span class="countdown-text"
       ><abbr title="seconds" aria-label="seconds" class="text-decoration-none"
         >secs</abbr
@@ -710,7 +724,7 @@ https://template.webstandards.ca.gov/cdn.html
 <!--JavaScript-->
 <script>
   // Set the date we're counting down to
-  var countDownDate = new Date("Jan 1, 2024 00:00:00").getTime();
+  var countDownDate = new Date("Jan 1, 2026 00:00:00").getTime();
 
   // Update the count down every 1 second
   var x = setInterval(function () {
