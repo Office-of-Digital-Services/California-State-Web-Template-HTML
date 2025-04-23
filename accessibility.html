@@ -31,18 +31,22 @@ Include links to stylesheet and custom theme and core JS.
 
 You may also use the CDN instead of using the local folder...
 
-<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.2/css/cagov.core.min.css" crossorigin="anonymous"/>
-<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.2/css/colortheme-oceanside.min.css" crossorigin="anonymous"/>
-<script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.2/js/cagov.core.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.0/css/cagov.core.min.css" crossorigin="anonymous"/>
+<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.0/css/colortheme-oceanside.min.css" crossorigin="anonymous"/>
+<script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.0/js/cagov.core.min.js" crossorigin="anonymous"></script>
 
 More info on CDN here...
 https://template.webstandards.ca.gov/cdn.html
 
 -->
-<link rel="stylesheet" href="ca_state_template/css/cagov.core.min.css" />
 <link
   rel="stylesheet"
-  href="ca_state_template/css/colortheme-oceanside.min.css" />
+  href="ca_state_template/css/cagov.core.css"
+  id="main-stylesheet" />
+<!-- Replace with different color theme if needed (oceanside is default)
+<link
+  rel="stylesheet"
+  href="ca_state_template/css/colortheme-delta.min.css" /> -->
 <script src="ca_state_template/js/cagov.core.min.js"></script>
 <!-- END STATE_TEMPLATE -->
 
@@ -270,6 +274,7 @@ https://template.webstandards.ca.gov/cdn.html
       <div class="row">
         <div class="col-md-10 p-b-lg mx-auto">
 <h1 class="mt-lg-0">Accessibility</h1>
+
 <p>
   The State of California’s website has been developed in compliance with
   Section D of the California Government Code 11135. Code 11135 requires that

@@ -1,4 +1,4 @@
-var StateTemplateNpmPackageVersion="6.4.2";
+var StateTemplateNpmPackageVersion="6.5.0";
 /*!
   * Bootstrap v5.3.3 (https://getbootstrap.com/)
   * Copyright 2011-2024 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
@@ -8296,7 +8296,8 @@ window.addEventListener("load", () => {
 
 /* EXTERNAL LINK ICON */
 window.addEventListener("load", () => {
-  const ext = '<span class="external-link-icon" aria-hidden="true"></span>';
+  const ext =
+    '<span class="external-link-icon" aria-hidden="true"></span><span class="sr-only">(external link)</span>';
 
   // Check if link is external function
   /**
@@ -8911,4 +8912,18 @@ window.addEventListener("load", () => {
   // move duplicated logo to navigation drawer section
   document.querySelector(".navigation-search")?.prepend(mobileItemsCont);
   mobileCheck();
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  //POLYFILL for CSS nesting
+  if (!CSS.supports("selector(&)")) {
+    // If CSS nesting not supported load alternative CSS file
+    const link = /** @type {HTMLLinkElement} */ (
+      document.getElementById("main-stylesheet")
+    );
+    if (link) {
+      link.href = link.href.replace("min", "flat");
+      console.log("POLYFILL: Using FLAT CSS instead of Nested");
+    }
+  }
 });
