@@ -1,4 +1,4 @@
-var StateTemplateNpmPackageVersion="6.5.0";
+var StateTemplateNpmPackageVersion="6.5.1";
 /*!
   * Bootstrap v5.3.3 (https://getbootstrap.com/)
   * Copyright 2011-2024 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
@@ -8383,6 +8383,17 @@ window.addEventListener("load", () => {
     pagenav.appendChild(pagenavUL);
     pagenav.setAttribute("aria-labelledby", "on-this-page-navigation-label");
   }
+
+  // Scroll to hash solution
+  const hashLocation = window.location;
+  if (hashLocation.hash) {
+    // Trigger a hashchange to ensure hash scrolling works
+    setTimeout(() => {
+      const currentHash = hashLocation.hash;
+      hashLocation.hash += "_"; // Remove the hash temporarily
+      hashLocation.hash = currentHash; // Reapply the hash
+    }, 500);
+  }
 }); // call out the function on the page load
 
 //@ts-check
@@ -8915,15 +8926,61 @@ window.addEventListener("load", () => {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  //POLYFILL for CSS nesting
-  if (!CSS.supports("selector(&)")) {
-    // If CSS nesting not supported load alternative CSS file
-    const link = /** @type {HTMLLinkElement} */ (
-      document.getElementById("main-stylesheet")
+  const csscorelink = /** @type {HTMLcsscorelinkElement} */ (
+    document.querySelector("link[rel='stylesheet'][href*='cagov.core.']")
+  );
+
+  /**
+   * Checks if media queries are supported by the browser.
+   * @returns {boolean} True if media queries are supported, otherwise false.
+   */
+  function mediaQueriesSupported() {
+    return (
+      typeof window.matchMedia != "undefined" ||
+      typeof window.msMatchMedia != "undefined"
     );
-    if (link) {
-      link.href = link.href.replace("min", "flat");
-      console.log("POLYFILL: Using FLAT CSS instead of Nested");
+  }
+
+  /**
+   * Tests if media query range notation is supported by the browser.
+   * @returns {boolean} True if range notation is supported, otherwise false.
+   */
+  function testMediaQueryRangeNotation() {
+    return window.matchMedia("(width >= 0px)").matches;
+  }
+
+  /**
+   * Loads an alternative CSS file if CSS nesting or media query range notation is not supported.
+   */
+  function loadAlternativeCSS() {
+    if (csscorelink) {
+      csscorelink.removeAttribute("integrity");
+      csscorelink.href = csscorelink.href.replace(
+        /cagov\.core(\.min)?\.css/,
+        "cagov.core.flat.css"
+      );
+      console.log(`POLYFILL: Using new CSS file - ${csscorelink.href}`);
     }
+  }
+
+  // POLYFILL for CSS nesting and media query range notation
+  /**
+   * Checks if CSS nesting is supported by the browser.
+   */
+  if (!CSS.supports("selector(&)")) {
+    console.log("POLYFILL: Nested CSS is not supported");
+
+    loadAlternativeCSS();
+  }
+
+  /**
+   * Checks if media queries are supported by the browser.
+   */
+  if (!mediaQueriesSupported() || !testMediaQueryRangeNotation()) {
+    console.log(
+      "POLYFILL: Media query range notation (<, <=, >, >=) is not supported."
+    );
+
+    loadAlternativeCSS();
   }
 });
