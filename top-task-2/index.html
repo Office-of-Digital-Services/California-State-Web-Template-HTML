@@ -31,9 +31,9 @@ Include links to stylesheet and custom theme and core JS.
 
 You may also use the CDN instead of using the local folder...
 
-<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.1/css/cagov.core.min.css" crossorigin="anonymous"/>
-<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.1/css/colortheme-oceanside.min.css" crossorigin="anonymous"/>
-<script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.1/js/cagov.core.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/css/cagov.core.min.css" crossorigin="anonymous"/>
+<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/css/colortheme-oceanside.min.css" crossorigin="anonymous"/>
+<script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/js/cagov.core.min.js" crossorigin="anonymous"></script>
 
 More info on CDN here...
 https://template.webstandards.ca.gov/cdn.html
@@ -110,8 +110,7 @@ https://template.webstandards.ca.gov/cdn.html
     <header role="banner" id="header" class="global-header fixed">
       <div id="skip-to-content">
         <a href="#main-content">Skip to Main Content</a>
-      </div>
-      <div class="utility-header">
+      </div><div class="utility-header">
   <div class="container">
     <div class="flex-row">
       <div class="social-media-links">
@@ -188,13 +187,6 @@ https://template.webstandards.ca.gov/cdn.html
       <span class="ca-gov-icon-search" aria-hidden="true"></span>
       <span class="sr-only">Submit</span>
     </button>
-    <div class="close-search-btn">
-      <button
-        class="close-search gsc-clear-button border-0 bg-transparent pos-rel"
-        type="reset">
-        <span class="sr-only">Close</span>
-      </button>
-    </div>
   </form>
 </div></div>
         <!-- navigation types --><nav
@@ -287,7 +279,16 @@ https://template.webstandards.ca.gov/cdn.html
           <li>
             <a href="../top-task-2/content-page-1.html">Content page 1</a>
           </li>
-          <li><a href="javascript:;">Content page 2</a></li>
+          <li>
+            <ul>
+              <li>
+                <a href="../top-task-1/content-page-2.html">Content page 2</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="../top-task-2/content-page-3.html">Content page 3</a>
+          </li>
         </ul>
       </nav>
     </div>

@@ -1,7 +1,7 @@
-var StateTemplateNpmPackageVersion="6.5.1";
+var StateTemplateNpmPackageVersion="6.5.5";
 /*!
-  * Bootstrap v5.3.3 (https://getbootstrap.com/)
-  * Copyright 2011-2024 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Bootstrap v5.3.8 (https://getbootstrap.com/)
+  * Copyright 2011-2025 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -205,7 +205,7 @@ var StateTemplateNpmPackageVersion="6.5.1";
    * @param {HTMLElement} element
    * @return void
    *
-   * @see https://www.charistheo.io/blog/2021/02/restart-a-css-animation-with-javascript/#restarting-a-css-animation
+   * @see https://www.harrytheo.com/blog/2021/02/restart-a-css-animation-with-javascript/#restarting-a-css-animation
    */
   const reflow = element => {
     element.offsetHeight; // eslint-disable-line no-unused-expressions
@@ -250,7 +250,7 @@ var StateTemplateNpmPackageVersion="6.5.1";
     });
   };
   const execute = (possibleCallback, args = [], defaultValue = possibleCallback) => {
-    return typeof possibleCallback === 'function' ? possibleCallback(...args) : defaultValue;
+    return typeof possibleCallback === 'function' ? possibleCallback.call(...args) : defaultValue;
   };
   const executeAfterTransition = (callback, transitionElement, waitForTransition = true) => {
     if (!waitForTransition) {
@@ -572,7 +572,7 @@ var StateTemplateNpmPackageVersion="6.5.1";
       const bsKeys = Object.keys(element.dataset).filter(key => key.startsWith('bs') && !key.startsWith('bsConfig'));
       for (const key of bsKeys) {
         let pureKey = key.replace(/^bs/, '');
-        pureKey = pureKey.charAt(0).toLowerCase() + pureKey.slice(1, pureKey.length);
+        pureKey = pureKey.charAt(0).toLowerCase() + pureKey.slice(1);
         attributes[pureKey] = normalizeData(element.dataset[key]);
       }
       return attributes;
@@ -647,7 +647,7 @@ var StateTemplateNpmPackageVersion="6.5.1";
    * Constants
    */
 
-  const VERSION = '5.3.3';
+  const VERSION = '5.3.8';
 
   /**
    * Class definition
@@ -673,6 +673,8 @@ var StateTemplateNpmPackageVersion="6.5.1";
         this[propertyName] = null;
       }
     }
+
+    // Private
     _queueCallback(callback, element, isAnimated = true) {
       executeAfterTransition(callback, element, isAnimated);
     }
@@ -1604,11 +1606,11 @@ var StateTemplateNpmPackageVersion="6.5.1";
       this._element.style[dimension] = '';
       this._queueCallback(complete, this._element, true);
     }
+
+    // Private
     _isShown(element = this._element) {
       return element.classList.contains(CLASS_NAME_SHOW$7);
     }
-
-    // Private
     _configAfterMerge(config) {
       config.toggle = Boolean(config.toggle); // Coerce string values
       config.parent = getElement(config.parent);
@@ -2666,7 +2668,6 @@ var StateTemplateNpmPackageVersion="6.5.1";
     var popperOffsets = computeOffsets({
       reference: referenceClientRect,
       element: popperRect,
-      strategy: 'absolute',
       placement: placement
     });
     var popperClientRect = rectToClientRect(Object.assign({}, popperRect, popperOffsets));
@@ -2994,7 +2995,6 @@ var StateTemplateNpmPackageVersion="6.5.1";
     state.modifiersData[name] = computeOffsets({
       reference: state.rects.reference,
       element: state.rects.popper,
-      strategy: 'absolute',
       placement: state.placement
     });
   } // eslint-disable-next-line import/no-unused-modules
@@ -3701,7 +3701,7 @@ var StateTemplateNpmPackageVersion="6.5.1";
     }
     _createPopper() {
       if (typeof Popper === 'undefined') {
-        throw new TypeError('Bootstrap\'s dropdowns require Popper (https://popper.js.org)');
+        throw new TypeError('Bootstrap\'s dropdowns require Popper (https://popper.js.org/docs/v2/)');
       }
       let referenceElement = this._element;
       if (this._config.reference === 'parent') {
@@ -3780,7 +3780,7 @@ var StateTemplateNpmPackageVersion="6.5.1";
       }
       return {
         ...defaultBsPopperConfig,
-        ...execute(this._config.popperConfig, [defaultBsPopperConfig])
+        ...execute(this._config.popperConfig, [undefined, defaultBsPopperConfig])
       };
     }
     _selectMenuItem({
@@ -4802,7 +4802,6 @@ var StateTemplateNpmPackageVersion="6.5.1";
    *
    * Shout-out to Angular https://github.com/angular/angular/blob/15.2.8/packages/core/src/sanitization/url_sanitizer.ts#L38
    */
-  // eslint-disable-next-line unicorn/better-regex
   const SAFE_URL_PATTERN = /^(?!javascript:)(?:[a-z0-9+.-]+:|[^&:/?#]*(?:[/?#]|$))/i;
   const allowedAttribute = (attribute, allowedAttributeList) => {
     const attributeName = attribute.nodeName.toLowerCase();
@@ -4967,7 +4966,7 @@ var StateTemplateNpmPackageVersion="6.5.1";
       return this._config.sanitize ? sanitizeHtml(arg, this._config.allowList, this._config.sanitizeFn) : arg;
     }
     _resolvePossibleFunction(arg) {
-      return execute(arg, [this]);
+      return execute(arg, [undefined, this]);
     }
     _putElementInTemplate(element, templateElement) {
       if (this._config.html) {
@@ -5066,7 +5065,7 @@ var StateTemplateNpmPackageVersion="6.5.1";
   class Tooltip extends BaseComponent {
     constructor(element, config) {
       if (typeof Popper === 'undefined') {
-        throw new TypeError('Bootstrap\'s tooltips require Popper (https://popper.js.org)');
+        throw new TypeError('Bootstrap\'s tooltips require Popper (https://popper.js.org/docs/v2/)');
       }
       super(element, config);
 
@@ -5112,7 +5111,6 @@ var StateTemplateNpmPackageVersion="6.5.1";
       if (!this._isEnabled) {
         return;
       }
-      this._activeTrigger.click = !this._activeTrigger.click;
       if (this._isShown()) {
         this._leave();
         return;
@@ -5300,7 +5298,7 @@ var StateTemplateNpmPackageVersion="6.5.1";
       return offset;
     }
     _resolvePossibleFunction(arg) {
-      return execute(arg, [this._element]);
+      return execute(arg, [this._element, this._element]);
     }
     _getPopperConfig(attachment) {
       const defaultBsPopperConfig = {
@@ -5338,7 +5336,7 @@ var StateTemplateNpmPackageVersion="6.5.1";
       };
       return {
         ...defaultBsPopperConfig,
-        ...execute(this._config.popperConfig, [defaultBsPopperConfig])
+        ...execute(this._config.popperConfig, [undefined, defaultBsPopperConfig])
       };
     }
     _setListeners() {
@@ -5347,6 +5345,7 @@ var StateTemplateNpmPackageVersion="6.5.1";
         if (trigger === 'click') {
           EventHandler.on(this._element, this.constructor.eventName(EVENT_CLICK$1), this._config.selector, event => {
             const context = this._initializeOnDelegatedTarget(event);
+            context._activeTrigger[TRIGGER_CLICK] = !(context._isShown() && context._activeTrigger[TRIGGER_CLICK]);
             context.toggle();
           });
         } else if (trigger !== TRIGGER_MANUAL) {
@@ -6212,7 +6211,6 @@ var StateTemplateNpmPackageVersion="6.5.1";
     }
 
     // Private
-
     _maybeScheduleHide() {
       if (!this._config.autohide) {
         return;
@@ -6318,17 +6316,18 @@ var StateTemplateNpmPackageVersion="6.5.1";
 window.addEventListener("load", () => {
   const doc = document.documentElement;
 
-  let prevScroll = window.scrollY || doc.scrollTop;
-  let curScroll;
-  let direction = 0;
-  let prevDirection = 0;
-
-  const headerAlert = document.querySelector("header .alert");
+  const headerAlert = document.querySelectorAll("header .alert");
   const header = document.querySelector(".utility-header");
   const mainheader = document.querySelector("header");
   if (!header || !mainheader) return;
 
-  window.addEventListener("scroll", () => {
+  let prevScroll;
+  let curScroll;
+  let direction = 0;
+  let prevDirection = 0;
+  let ticking = false;
+
+  const updateHeader = () => {
     /*
      ** Find the direction of scroll
      ** 0 - initial, 1 - up, 2 - down
@@ -6346,25 +6345,32 @@ window.addEventListener("load", () => {
     if (direction !== prevDirection) {
       // Toggle Header
       if (direction === 2 && curScroll > 40) {
-        const hiddenheight =
-          header.clientHeight + (headerAlert?.clientHeight || 0);
+        // Add all the alert heights to the hidden height
+        let alertHeight = 0;
+        headerAlert.forEach(alert => {
+          alertHeight += alert.clientHeight;
+        });
 
+        const hiddenheight = header.clientHeight + alertHeight;
         mainheader.style.top = `-${hiddenheight}px`;
         prevDirection = direction;
       } else if (direction === 1 && curScroll < 40) {
-        // mainheader.classList.remove('scrolled');
-        // header.classList.remove('is-hidden');
-        // header.removeAttribute("style");
         mainheader.style.removeProperty("top");
         prevDirection = direction;
       }
     }
 
     prevScroll = curScroll;
+    ticking = false;
+  };
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
   });
 });
-
-// retain scroll position
 
 //@ts-check
 
@@ -6872,12 +6878,15 @@ window.addEventListener("load", () => {
  * License MIT: https://github.com/nico3333fr/van11y-accessible-accordion-aria/blob/master/LICENSE
  */
 (() => {
-  const isDesktopWidth = () => window.innerWidth > 991; //Maximum px for mobile width
+  const isDesktopWidth = () =>
+    getComputedStyle(document.documentElement)
+      .getPropertyValue("--is-mobile")
+      .trim() === "0";
 
   /**
-   * @param {Object} obj
-   * @param {String} key
-   * @param {String | Number} value
+   * @param {object} obj
+   * @param {string} key
+   * @param {string | number} value
    */
   const _defineProperty = (obj, key, value) => {
     if (key in obj) {
@@ -6897,8 +6906,8 @@ window.addEventListener("load", () => {
     const CACHE = {};
 
     /**
-     * @param {String | Number} id
-     * @param {Object} config
+     * @param {string | number} id
+     * @param {object} config
      */
     const set = (id, config) => {
       CACHE[id] = config;
@@ -6906,7 +6915,7 @@ window.addEventListener("load", () => {
 
     /**
      *
-     * @param {String | Number} id
+     * @param {string | number} id
      */
     const get = id => {
       return CACHE[id];
@@ -6914,7 +6923,7 @@ window.addEventListener("load", () => {
 
     /**
      *
-     * @param {String | Number} id
+     * @param {string | number} id
      */
     const remove = id => {
       return CACHE[id];
@@ -6931,10 +6940,11 @@ window.addEventListener("load", () => {
 
   const pluginConfig = loadConfig();
 
-  /** Find an element based on an Id
-   * @param  {String} id Id to find
-   * @param  {String} hash hash id (not mandatory)
-   * @return {Element | null} the element with the specified id
+  /**
+   * Find an element based on an Id
+   * @param  {string} id Id to find
+   * @param  {string} hash hash id (not mandatory)
+   * @returns {Element | null} the element with the specified id
    */
   const findById = (id, hash) =>
     document.querySelector(`#${id}[${DATA_HASH_ID}="${hash}"]`);
@@ -6949,10 +6959,11 @@ window.addEventListener("load", () => {
     });
   };
 
-  /** search if element is or is contained in another element with attribute data-nav-id
+  /**
+   * search if element is or is contained in another element with attribute data-nav-id
    * @param  {Element | null} el element (node)
-   * @param  {String} hashId the attribute data-hashtooltip-id
-   * @return {String | null} the value of attribute data-hashtooltip-id
+   * @param  {string} hashId the attribute data-hashtooltip-id
+   * @returns {string | null} the value of attribute data-hashtooltip-id
    */
   const searchParentHashId = (el, hashId) => {
     let parentElement = el;
@@ -6968,8 +6979,8 @@ window.addEventListener("load", () => {
 
   /**
    * @param {Element | null} el
-   * @param {String} parentClass
-   * @param {String} hashId
+   * @param {string} parentClass
+   * @param {string} hashId
    */
   const searchParent = (el, parentClass, hashId) => {
     let parentElement = el;
@@ -6984,16 +6995,6 @@ window.addEventListener("load", () => {
       }
     }
     return "";
-  };
-
-  const mobileView = () => {
-    const mobileElement = document.querySelector(
-      ".global-header .mobile-controls"
-    );
-
-    return mobileElement
-      ? getComputedStyle(mobileElement)["display"] !== "none"
-      : false;
   };
 
   /**
@@ -7093,7 +7094,7 @@ window.addEventListener("load", () => {
         // Init attributes accordion
         accordion_node.setAttribute(
           CONFIG.ATTR_MULTISELECTABLE,
-          mobileView() ? "true" : "false"
+          !isDesktopWidth() ? "true" : "false"
         );
 
         accordion_node.setAttribute(DATA_HASH_ID, HASH_ID);
@@ -7298,7 +7299,7 @@ window.addEventListener("load", () => {
                       );
                   }
 
-                  if (!mobileView()) {
+                  if (isDesktopWidth()) {
                     accordionAllHeaders.forEach(header_node => {
                       //Close all the other panels
 
@@ -7438,13 +7439,13 @@ window.addEventListener("load", () => {
         el.classList.add("has-sub");
 
         const carrot = document.createElement("span");
-        carrot.classList.add("ca-gov-icon-caret-down", "carrot");
+        carrot.classList.add("carrot");
         carrot.ariaHidden = "true";
 
         const toggleSubNav = document.createElement("div");
-        toggleSubNav.classList.add("ca-gov-icon-caret-right", "rotate");
+        toggleSubNav.classList.add("rotate");
         toggleSubNav.ariaHidden = "true";
-        toggleSubNav.style.display = mobileView() ? "block" : "none";
+        toggleSubNav.style.display = isDesktopWidth() ? "none" : "block";
 
         el.appendChild(toggleSubNav);
         el.appendChild(carrot);
@@ -7485,6 +7486,11 @@ window.addEventListener("load", () => {
 ----------------------------------------- */
 
 window.addEventListener("load", () => {
+  const isDesktopWidth = () =>
+    getComputedStyle(document.documentElement)
+      .getPropertyValue("--is-mobile")
+      .trim() === "0";
+
   const setSearchContainerAriaHidden = () => {
     if (searchContainer) {
       if (featuredsearch) {
@@ -7497,18 +7503,6 @@ window.addEventListener("load", () => {
       } else {
         searchContainer.setAttribute("aria-hidden", "true");
       }
-    }
-  };
-
-  const mobileControlVisible = () => {
-    const mobileElement = document.querySelector(
-      ".global-header .mobile-controls"
-    );
-
-    if (mobileElement) {
-      return getComputedStyle(mobileElement)["display"] !== "none";
-    } else {
-      return false; // or whatever is supposed to be returned when there is no header
     }
   };
 
@@ -7540,7 +7534,7 @@ window.addEventListener("load", () => {
 
     //        document.dispatchEvent('cagov.searchresults.hide'); // ???
 
-    if (mobileControlVisible()) setSearchContainerAriaHidden();
+    if (!isDesktopWidth()) setSearchContainerAriaHidden();
   };
 
   /** @type {HTMLInputElement | null} */
@@ -7568,34 +7562,31 @@ window.addEventListener("load", () => {
     ".search-container:not(.featured-search)"
   ); // only on subpages, unique, same as #head-search
 
-  // header, contains nav, search form, etc, unique
-  const headerHeight = /** @type {HTMLElement} */ (
-    document.querySelector(".global-header")
-  )?.offsetHeight; // header height
+  const getSearchTop = () => {
+    /** @type {HTMLElement} */
+    const header = document.querySelector(".global-header");
+    /** @type {HTMLElement} */
+    const utility = document.querySelector(".utility-header");
+    /** @type {NodeListOf<HTMLElement>} */
+    const alertBanners = document.querySelectorAll(".alert-banner");
 
-  /** @type {HTMLElement | null} */
-  const utility = document.querySelector(".utility-header"); // utility header, unique
-  const utilityHeight = utility?.offsetHeight || 0;
-  // utility header height
+    const headerHeight = header?.offsetHeight || 0;
+    const utilityHeight = utility?.offsetHeight || 0;
+    const alertBannerHeight = Array.from(alertBanners).reduce(
+      (sum, banner) => sum + (banner.offsetHeight || 0),
+      0
+    );
 
-  /** @type {NodeListOf<HTMLElement>} */
-  const alertBanner = document.querySelectorAll(".alert-banner"); // page can have multiple
+    // contains navigation and search form, unique
+    // Full width navigation
+    const navigationHeight = document
+      .querySelector(".navigation-search")
+      ?.classList.contains("full-width-nav")
+      ? 82
+      : 0;
 
-  let alertbannerHeight = 0;
-  // taking into account multiple alert banners
-  alertBanner.forEach(oneBanner => {
-    alertbannerHeight += oneBanner.offsetHeight;
-  });
-
-  //const fullnav = document.querySelector(".top-level-nav"); // navigation ul tag, unique
-
-  // contains navigation and search form, unique
-  // Full width navigation
-  const navigationHeight = document
-    .querySelector(".navigation-search")
-    ?.classList.contains("full-width-nav")
-    ? 82
-    : 0;
+    return headerHeight - utilityHeight - alertBannerHeight - navigationHeight;
+  };
 
   if (searchText && searchContainer) {
     // Unfreeze search width when blured.
@@ -7623,15 +7614,14 @@ window.addEventListener("load", () => {
   }
 
   //  search box top position
-  // TODO: Really close to searchTop() except for top size
-  if (!mobileControlVisible()) {
+  const setSearchTop = () => {
+    if (!searchbox) return;
+
     // calulation search box top position
-    const searchtop =
-      headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
-    if (!mobileControlVisible() && searchbox) {
-      searchbox.style.top = `${Math.max(searchtop, 82)}px`;
+    if (isDesktopWidth()) {
+      searchbox.style.top = `${Math.max(getSearchTop(), 55)}px`;
     }
-  }
+  };
 
   // have the close button remove search results and the applied classes
   //resultsContainer.find('.close').on('click', removeSearchResults);
@@ -7727,46 +7717,18 @@ window.addEventListener("load", () => {
     }
   }
 
-  const setSearchTop = () => {
-    // calulation search box top position
-    const searchtop =
-      headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
-    if (!mobileControlVisible() && searchbox) {
-      searchbox.style.top = `${Math.max(searchtop, 55)}px`;
-    }
-  };
-
   // on alert close event
   document.querySelectorAll(".alert-banner .close").forEach(oneClose => {
     oneClose.addEventListener("click", setSearchTop);
   });
 
-  // Calculation search box top property on the scroll for the fixed nav
-  window.addEventListener("scroll", () => {
-    if (!mobileControlVisible()) {
-      // setting timeout before calculating the search box top property otherwise it can take into account transitional values.
-      setTimeout(setSearchTop, 400);
-
-      // remove featured search on scroll in desktop
-      const FeaturedSearch = document.querySelector("nav ~ #head-search");
-      if (FeaturedSearch) {
-        if (
-          document.body.scrollTop >= 100 ||
-          document.documentElement.scrollTop >= 100
-        ) {
-          FeaturedSearch.classList.add("hidden-up");
-        } else {
-          FeaturedSearch.classList.remove("hidden-up");
-        }
-      }
-    }
-  });
-
-  //  search box top position if browser window is resized
-  window.addEventListener("resize", () => {
-    setSearchTop();
-    setSearchContainerAriaHidden();
-  });
+  if (searchContainer || searchbox) {
+    //  search box top position if browser window is resized
+    window.addEventListener("resize", () => {
+      setSearchTop();
+      setSearchContainerAriaHidden();
+    });
+  }
 
   setSearchContainerAriaHidden();
 });
@@ -7958,70 +7920,61 @@ window.addEventListener("load", () => {
 /**
  * @typedef {Object} ScrollCounter_Properties
  * @property {boolean} counterAlreadyFired
- * @property {number} counterSpeed
- * @property {number} counterTarget
- * @property {number} counterCount
- * @property {number} counterStep
  * @property {()=>void} updateCounter
  * @typedef {HTMLElement & ScrollCounter_Properties} ScrollCounter
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-  // You can change this class to specify which elements are going to behave as counters.
   /** @type {NodeListOf<ScrollCounter>} */
   const elements = document.querySelectorAll(".scroll-counter");
 
   elements.forEach(item => {
-    // Add new attributes to the elements with the '.scroll-counter' HTML class
     item.counterAlreadyFired = false;
-    item.counterSpeed = Number(item.getAttribute("data-counter-time")) / 45;
-    item.counterTarget = +item.innerText;
-    item.counterCount = 0;
-    item.counterStep = item.counterTarget / item.counterSpeed;
+
+    const duration = Number(item.getAttribute("data-counter-time")); // ms
+    const target = +item.textContent; // final number
 
     item.updateCounter = () => {
-      item.counterCount += item.counterStep;
-      item.innerText = Math.ceil(item.counterCount).toLocaleString();
+      const start = performance.now();
 
-      if (item.counterCount < item.counterTarget) {
-        window.setTimeout(item.updateCounter, item.counterSpeed);
-      } else {
-        item.innerText = item.counterTarget.toLocaleString();
-      }
+      const animate = now => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const current = Math.ceil(progress * target);
+
+        item.textContent = current.toLocaleString();
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+
+      requestAnimationFrame(animate);
     };
   });
 
-  // Function to determine if an element is visible in the web page
-  const isElementVisible = (/** @type {Element} */ el) => {
-    const scroll = window.scrollY || window.pageYOffset;
-    const boundsTop = el.getBoundingClientRect().top + scroll;
-    const viewport = {
-      top: scroll,
-      bottom: scroll + window.innerHeight
-    };
-    const bounds = {
-      top: boundsTop,
-      bottom: boundsTop + el.clientHeight
-    };
-    return (
-      (bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom) ||
-      (bounds.top <= viewport.bottom && bounds.top >= viewport.top)
-    );
+  // Check if element is visible in viewport
+  const isElementVisible = el => {
+    const rect = el.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
   };
 
-  // Funciton that will get fired uppon scrolling
+  // Scroll handler
   const handleScroll = () => {
     elements.forEach(item => {
       if (item.counterAlreadyFired) return;
       if (!isElementVisible(item)) return;
+
       item.updateCounter();
       item.counterAlreadyFired = true;
     });
   };
 
-  // Fire the function on load and scroll
+  // Fire once on load and on scroll
   window.addEventListener("load", handleScroll);
-  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("scroll", () => {
+    requestAnimationFrame(handleScroll);
+  });
 });
 
 //@ts-check
@@ -8376,7 +8329,7 @@ window.addEventListener("load", () => {
 
     // create on this page label
     const onthispage =
-      '<div id="on-this-page-navigation-label" class="label">On this page</div>';
+      '<div id="on-this-page-navigation-label" class="label" lang="en-US">On this page</div>';
     pagenav.innerHTML = onthispage;
 
     // add ul item to the nav and set aria labelledby
@@ -8385,14 +8338,15 @@ window.addEventListener("load", () => {
   }
 
   // Scroll to hash solution
-  const hashLocation = window.location;
-  if (hashLocation.hash) {
-    // Trigger a hashchange to ensure hash scrolling works
-    setTimeout(() => {
-      const currentHash = hashLocation.hash;
-      hashLocation.hash += "_"; // Remove the hash temporarily
-      hashLocation.hash = currentHash; // Reapply the hash
-    }, 500);
+  if (location.hash) {
+    const target = document.querySelector(location.hash);
+    if (target) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          target.scrollIntoView({ block: "start" });
+        });
+      });
+    }
   }
 }); // call out the function on the page load
 
@@ -8686,11 +8640,12 @@ cagov-pagination .cagov-pagination__item:has(.cagov-pagination__link-inactive) {
 //@ts-check
 
 window.addEventListener("load", () => {
-  const isDesktopWidth = () => window.innerWidth > 991; //Maximum px for mobile width
-
   /** @type {HTMLButtonElement} */
   const navToggleBtn = document.querySelector(".toggle-menu");
   if (!navToggleBtn) return;
+  /** @type {HTMLDivElement} */
+  const navSearchCont = document.querySelector(".navigation-search");
+  if (!navSearchCont) return;
   /** @type {HTMLElement} */
   const mainNav = document.querySelector(".main-navigation");
   // create container for drawer mobile nav items
@@ -8714,16 +8669,6 @@ window.addEventListener("load", () => {
   navMobileMenuToggleBtn.append(...navCloseBtnSpans);
   mobileItemsCont.append(navMobileMenuToggleBtn);
 
-  // VARIABLES
-  /** @type {HTMLDivElement} */
-  const navSearchCont = document.querySelector(".navigation-search");
-  if (!navSearchCont) return;
-
-  const mobileCntls = document.querySelector(".global-header .mobile-controls");
-  const mobileControlsDisplay = mobileCntls
-    ? window.getComputedStyle(mobileCntls).display
-    : "";
-
   //Used for hiding/showing main elements
   const mainElements = document.querySelectorAll(
     ".main-content, footer, .site-footer, .utility-header, .branding"
@@ -8731,6 +8676,11 @@ window.addEventListener("load", () => {
 
   const regularHeader = document.querySelector("header");
 
+  // Begin Function Definitions
+  const isDesktopWidth = () =>
+    getComputedStyle(document.documentElement)
+      .getPropertyValue("--is-mobile")
+      .trim() === "0";
   // reset navigation function
   const NavReset = () => {
     //RESET
@@ -8774,63 +8724,26 @@ window.addEventListener("load", () => {
       )
     );
 
-  // Escape key event listener
-  document.addEventListener("keydown", e => {
-    if (navSearchCont.classList.contains("visible")) {
-      if (e.key === "Escape") {
-        e.stopPropagation();
-        closeMenu();
-      }
-    }
-  });
-
-  const checkIfMobileView = () => {
-    const mobileElement = document.querySelector(
-      ".global-header .mobile-controls"
-    );
-    return mobileElement
-      ? getComputedStyle(mobileElement)["display"] !== "none"
-      : false;
-  };
-
-  // Close menu on focusout (tabbing out) event (if target is outside of mobile menu and ignore if focus target is navToggleBtn button)
-  navSearchCont.addEventListener("focusout", e => {
-    if (checkIfMobileView()) {
-      const child = /** @type {Node} **/ (e.relatedTarget);
-      const parent = /** @type {Node} **/ (e.currentTarget);
-
-      if (child && !parent.contains(child)) {
-        closeMenu();
-      }
-    }
-  });
-
   // Button click open menu function
   const openMenu = () => {
     navSearchCont.classList.add("visible");
     navSearchCont.classList.remove("not-visible");
     document.body.classList.add("overflow-hidden");
     navToggleBtn.ariaExpanded = "true";
-    setOpen();
-    // Hide all the website areas (add aria-hidden)
-    mainElements.forEach(x => (x.ariaHidden = "true"));
-
-    regularHeader?.classList.add("nav-overlay");
-    navMobileMenuToggleBtn.focus();
-  };
-
-  const setOpen = () => {
     navMobileMenuToggleBtn.ariaExpanded = "true";
     navSearchCont.ariaHidden = null;
     // make links focusable
     getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
     // desktop
-    if (
-      mobileControlsDisplay !== "block" &&
-      navToggleBtn.ariaExpanded !== "false"
-    ) {
+
+    if (isDesktopWidth() && navToggleBtn.ariaExpanded !== "false") {
       navToggleBtn.ariaExpanded = "false";
     }
+    // Hide all the website areas (add aria-hidden)
+    mainElements.forEach(x => (x.ariaHidden = "true"));
+
+    regularHeader?.classList.add("nav-overlay");
+    navMobileMenuToggleBtn.focus();
   };
 
   // Button click close menu function
@@ -8844,10 +8757,6 @@ window.addEventListener("load", () => {
 
     navSearchCont.classList.add("not-visible");
 
-    setClosed();
-  };
-
-  const setClosed = () => {
     if (navToggleBtn.ariaExpanded !== "false") {
       navToggleBtn.ariaExpanded = "false";
     }
@@ -8864,11 +8773,6 @@ window.addEventListener("load", () => {
 
     NavReset();
   };
-
-  // Button Click event
-  navToggleBtn.addEventListener("click", openMenu);
-  // Button Click event
-  navMobileMenuToggleBtn.addEventListener("click", closeMenu);
 
   const mobileCheck = () => {
     const searchInput = document.querySelector(".search-textfield");
@@ -8903,10 +8807,37 @@ window.addEventListener("load", () => {
     }
   };
 
+  // End Function Definitions
+
+  // Escape key event listener
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && navSearchCont.classList.contains("visible")) {
+      e.stopPropagation();
+      closeMenu();
+    }
+  });
+
+  // Close menu on focusout (tabbing out) event (if target is outside of mobile menu and ignore if focus target is navToggleBtn button)
+  navSearchCont.addEventListener("focusout", e => {
+    if (!isDesktopWidth()) {
+      const child = /** @type {Node} **/ (e.relatedTarget);
+      const parent = /** @type {Node} **/ (e.currentTarget);
+
+      if (child && !parent.contains(child)) {
+        closeMenu();
+      }
+    }
+  });
+
+  // Button Click event
+  navToggleBtn.addEventListener("click", openMenu);
+  // Button Click event
+  navMobileMenuToggleBtn.addEventListener("click", closeMenu);
+
   // Close mobile nav if click outside of nav
   regularHeader.addEventListener("mouseup", e => {
     // if the target of the click isn't the navigation container nor a descendant of the navigation
-    if (checkIfMobileView()) {
+    if (!isDesktopWidth()) {
       if (
         navSearchCont !== e.target &&
         !navSearchCont?.contains(/**@type {Node} */ (e.target))

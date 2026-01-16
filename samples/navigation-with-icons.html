@@ -30,9 +30,9 @@ Include links to stylesheet and custom theme and core JS.
 
 You may also use the CDN instead of using the local folder...
 
-<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.1/css/cagov.core.min.css" crossorigin="anonymous"/>
-<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.1/css/colortheme-oceanside.min.css" crossorigin="anonymous"/>
-<script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.1/js/cagov.core.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/css/cagov.core.min.css" crossorigin="anonymous"/>
+<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/css/colortheme-oceanside.min.css" crossorigin="anonymous"/>
+<script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/js/cagov.core.min.js" crossorigin="anonymous"></script>
 
 More info on CDN here...
 https://template.webstandards.ca.gov/cdn.html
@@ -172,12 +172,6 @@ https://template.webstandards.ca.gov/cdn.html
         link 2
       </a>
     </li>
-    <li class="nav-item" id="nav-item-search">
-      <button class="first-level-link">
-        <span class="ca-gov-icon-search" aria-hidden="true"></span>
-        Search
-      </button>
-    </li>
   </ul>
 </nav>
         <div
@@ -196,13 +190,6 @@ https://template.webstandards.ca.gov/cdn.html
       <span class="ca-gov-icon-search" aria-hidden="true"></span>
       <span class="sr-only">Submit</span>
     </button>
-    <div class="close-search-btn">
-      <button
-        class="close-search gsc-clear-button border-0 bg-transparent pos-rel"
-        type="reset">
-        <span class="sr-only">Close</span>
-      </button>
-    </div>
   </form>
 </div>
         </div>
@@ -214,46 +201,53 @@ https://template.webstandards.ca.gov/cdn.html
       <div class="container p-b-lg p-t-md">
         <main class="main-primary" id="main">
           
-
-
 <nav aria-label="You are here" class="breadcrumbs">
   <ol>
     <li>
       <a href="../index.html" title="Home page">Home</a>
     </li>
-    <li><a href="../components-patterns.html" title="Components and patterns page">Components and patterns</a></li>
+    <li>
+      <a href="../components-patterns.html" title="Components and patterns page"
+        >Components and patterns</a
+      >
+    </li>
     <li>Navigation with icons</li>
   </ol>
 </nav>
 
-
-
-  <div class="row">
-    <div class="col-lg-3 pe-lg-5" role="complementary">
-      <!-- Side navigation -->
-      <nav aria-label="list navigation" class="side-navigation">
-        <ul>
-          <li>
-            <a href="../top-task-1/index.html" class="landing back">Top task</a>
-          </li>
-          <li>
-            <a href="../top-task-1/content-page-1.html">Content page 1</a>
-          </li>
-          <li><a href="../top-task-1/content-page-2.html">Content page 2</a></li>
-          <li><a href="../top-task-1/content-page-3.html">Content page 3</a></li>
-          <li><a href="../top-task-1/content-page-4.html">Content page 4</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="col-lg-9 p-b-lg">
-
-      <h1 class="m-t-0">Navigation with icons</h1>
-      <p class="lead">
-        This is navigation with icons option that also contains the search button, which toggles the search widget. Navigation with icons usually appears to the right of the site logo. It uses icons from CA.gov font library inside of the first level navigation items.
-      </p>
-    </div>
+<div class="row">
+  <div class="col-lg-3 pe-lg-5" role="complementary">
+    <!-- Side navigation -->
+    <nav aria-label="list navigation" class="side-navigation">
+      <ul>
+        <li>
+          <a href="../top-task-1/index.html" class="landing back">Top task</a>
+        </li>
+        <li>
+          <a href="../top-task-1/content-page-1.html">Content page 1</a>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <a href="../top-task-1/content-page-2.html">Content page 2</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../top-task-1/content-page-3.html">Content page 3</a></li>
+        <li><a href="../top-task-1/content-page-4.html">Content page 4</a></li>
+      </ul>
+    </nav>
   </div>
-
+  <div class="col-lg-9 p-b-lg">
+    <h1 class="m-t-0">Navigation with icons</h1>
+    <p class="lead">
+      This is navigation with icons option that also contains the search button,
+      which toggles the search widget. Navigation with icons usually appears to
+      the right of the site logo. It uses icons from CA.gov font library inside
+      of the first level navigation items.
+    </p>
+  </div>
+</div>
 
         </main>
       </div>
