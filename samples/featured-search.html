@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Pagination</title>
+    <title>Featured Search</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
@@ -260,7 +260,7 @@ https://template.webstandards.ca.gov/cdn.html
             <a href="../index.html" title="Home page">Home</a>
           </li>
           <li>Samples</li>
-          <li>Pagination</li>
+          <li>Featured Search</li>
         </ol>
       </nav>
       <div class="row">
@@ -428,7 +428,7 @@ https://template.webstandards.ca.gov/cdn.html
               <li>
                 <a
                   href="../samples/featured-search.html"
-                  class="">Featured Search</a>
+                  class="active">Featured Search</a>
               </li>
               <li>
                 <a
@@ -578,7 +578,7 @@ https://template.webstandards.ca.gov/cdn.html
               <li>
                 <a
                   href="../samples/pagination.html"
-                  class="active">Pagination</a>
+                  class="">Pagination</a>
               </li>
               <li>
                 <a
@@ -679,11 +679,23 @@ https://template.webstandards.ca.gov/cdn.html
           </nav>
         </div>
         <div class="col-lg-9 p-b-lg">
-          <h1 class="mt-lg-0">Pagination</h1>
+          <h1 class="mt-lg-0">Featured Search</h1>
           <!-- BEGIN SAMPLE CONTENT -->
-          <cagov-pagination
-  data-current-page="5"
-  data-total-pages="99"></cagov-pagination>
+          <form class="pos-rel d-flex" action="../serp.html">
+  <span class="sr-only" id="SearchInput">Custom Google Search</span>
+  <input
+    type="search"
+    name="q"
+    aria-labelledby="SearchInput"
+    placeholder="Search"
+    class="font-size-20 pt-3 pb-3 ps-3 w-100 border-end-0 rounded-start brd-primary border border-2 outline-offset-5" />
+  <button
+    type="submit"
+    class="bg-white border-start-0 rounded-end brd-primary border border-2 outline-offset-5 font-size-30 ps-3 pe-3 bg-gray-50-hover gray-900 color-black-hover">
+    <span class="ca-gov-icon-search" aria-hidden="true"></span>
+    <span class="sr-only">Submit</span>
+  </button>
+</form>
 
           <!-- END SAMPLE CONTENT -->
         </div>

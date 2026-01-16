@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Pagination</title>
+    <title>Alert Banner</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
@@ -110,7 +110,9 @@ https://template.webstandards.ca.gov/cdn.html
     <header role="banner" id="header" class="global-header fixed">
       <div id="skip-to-content">
         <a href="#main-content">Skip to Main Content</a>
-      </div><div class="utility-header">
+      </div>
+ <div class="alert alert-dismissible alert-banner alert-info" role="alert"> <div class="container"> <img src="https://template.webstandards.ca.gov/images/alert-info.svg" alt="alert info icon"> <span class="alert-text"><span class="text-bold">New!</span> A new version of the State Web Template has launched. <span class="ca-gov-icon-pipe" aria-hidden="true"></span> <a href="javascript:;">Upgrade now</a></span> <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"> <span class="ca-gov-icon-close-mark" aria-hidden="true"></span> </button> </div> </div> <div class="alert alert-dismissible alert-banner alert-warning" role="alert"> <div class="container"> <span class="alert-icon ca-gov-icon-warning-triangle text-warning" aria-hidden="true"></span> <span class="alert-text"><span class="text-bold">Warning:</span> Our website may be impacted during upgrade. <span class="ca-gov-icon-pipe" aria-hidden="true"></span> <a href="javascript:;">Learn more <span class="sr-only">about the impact</span></a></span> <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"> <span class="ca-gov-icon-close-mark" aria-hidden="true"></span> </button> </div> </div> <div class="alert alert-dismissible alert-banner alert-danger" role="alert"> <div class="container"> <img src="https://template.webstandards.ca.gov/images/alert-warning-diamond.svg" alt="alert warning icon"> <span class="alert-text"><span class="text-bold">Alert:</span> Our systems are currently down. <span class="ca-gov-icon-pipe" aria-hidden="true"></span> <a href="javascript:;">Learn more <span class="sr-only">about the incident</span></a></span> <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"> <span class="ca-gov-icon-close-mark" aria-hidden="true"></span> </button> </div> </div> <div class="alert alert-dismissible alert-banner alert-success" role="alert"> <div class="container"> <img src="https://template.webstandards.ca.gov/images/alert-success.svg" alt="alert success icon"> <span class="alert-text"><span class="text-bold">Fixed.</span> Our systems are back up again. <span class="ca-gov-icon-pipe" aria-hidden="true"></span> <a href="javascript:;">Learn more <span class="sr-only">about the resolution</span></a></span> <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"> <span class="ca-gov-icon-close-mark" aria-hidden="true"></span> </button> </div> </div> 
+<div class="utility-header">
   <div class="container">
     <div class="flex-row">
       <div class="social-media-links">
@@ -260,7 +262,7 @@ https://template.webstandards.ca.gov/cdn.html
             <a href="../index.html" title="Home page">Home</a>
           </li>
           <li>Samples</li>
-          <li>Pagination</li>
+          <li>Alert Banner</li>
         </ol>
       </nav>
       <div class="row">
@@ -298,7 +300,7 @@ https://template.webstandards.ca.gov/cdn.html
               <li>
                 <a
                   href="../samples/alert-banner.html"
-                  class="">Alert Banner</a>
+                  class="active">Alert Banner</a>
               </li>
               <li>
                 <a
@@ -578,7 +580,7 @@ https://template.webstandards.ca.gov/cdn.html
               <li>
                 <a
                   href="../samples/pagination.html"
-                  class="active">Pagination</a>
+                  class="">Pagination</a>
               </li>
               <li>
                 <a
@@ -679,11 +681,10 @@ https://template.webstandards.ca.gov/cdn.html
           </nav>
         </div>
         <div class="col-lg-9 p-b-lg">
-          <h1 class="mt-lg-0">Pagination</h1>
+          <h1 class="mt-lg-0">Alert Banner</h1>
           <!-- BEGIN SAMPLE CONTENT -->
-          <cagov-pagination
-  data-current-page="5"
-  data-total-pages="99"></cagov-pagination>
+          
+See Alert Banners above
 
           <!-- END SAMPLE CONTENT -->
         </div>
