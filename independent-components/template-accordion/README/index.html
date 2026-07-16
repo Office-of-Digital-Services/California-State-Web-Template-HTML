@@ -1,0 +1,57 @@
+<h1>Template Accordion Component</h1>
+<p>The Template Accordion component is a progressively enhanced disclosure pattern built on native <code>details</code> and <code>summary</code> elements. It features a class-root architecture (<code>.template-accordion</code>) combined with structural descendant selectors and a lightweight JavaScript controller for smooth height animation and optional single-open behavior.</p>
+<h2>Initial Structure</h2>
+<p>The component's HTML structure must remain consistent, as the CSS and JavaScript rely on this exact nesting to style the summary row, animate panel height, and target the accordion body.</p>
+<pre><code class="language-html">&lt;!--
+  Accordion Component
+  data-open options: &quot;single&quot;
+--&gt;
+&lt;section
+  class=&quot;template-accordion&quot;
+  data-open=&quot;single&quot;&gt;
+  &lt;details&gt;
+    &lt;!-- Accordion Summary --&gt;
+    &lt;summary&gt;Accordion heading&lt;/summary&gt;
+
+    &lt;!-- Accordion Body --&gt;
+    &lt;div&gt;
+      &lt;p&gt;This is accordion content.&lt;/p&gt;
+      &lt;p&gt;You can place text, lists, links, or other simple content here.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/details&gt;
+
+  &lt;details&gt;
+    &lt;summary&gt;Another accordion heading&lt;/summary&gt;
+    &lt;div&gt;
+      &lt;ul&gt;
+        &lt;li&gt;List item 1&lt;/li&gt;
+        &lt;li&gt;List item 2&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/details&gt;
+&lt;/section&gt;
+</code></pre>
+<h2>Data Attribute Selectors and Features</h2>
+<p>Instead of utility classes, this component uses a single <code>data-open</code> attribute on the root element to control accordion interaction behavior.</p>
+<h3>Open Behavior (<code>data-open</code>)</h3>
+<p>Applied to the root <code>.template-accordion</code> element.</p>
+<ul>
+<li><code>data-open=&quot;single&quot;</code>: Allows only one accordion item to remain open at a time. Opening a new item automatically closes the others.</li>
+</ul>
+<p>If <code>data-open</code> is omitted, each <code>details</code> element can be opened and closed independently.</p>
+<h2>Structure Notes</h2>
+<p>The JavaScript expects the following structure inside each accordion item:</p>
+<ul>
+<li>A <code>summary</code> element as the clickable toggle.</li>
+<li>A direct child <code>div</code> after the <code>summary</code> to serve as the animated content container.</li>
+</ul>
+<p>Changing <code>details &gt; div</code> to a different element, or inserting extra wrapper elements between <code>details</code>, <code>summary</code>, and the content container, can break the height calculations and visual styling.</p>
+<h2>Animation Behavior</h2>
+<p>The accordion uses JavaScript to calculate the exact closed and expanded heights of each <code>details</code> element, which allows for a smooth height transition without relying on <code>max-height</code> hacks.</p>
+<ul>
+<li>Default transition speed: <code>300ms</code></li>
+<li>Height animation is synchronized with the chevron rotation.</li>
+<li>Border-inclusive height measurement uses <code>offsetHeight</code>, so the summary border remains visible in the collapsed state.</li>
+</ul>
+<h2>Accessibility and Progressive Enhancement</h2>
+<p>Because the component is built on native <code>details</code> and <code>summary</code>, it retains basic disclosure behavior even if JavaScript is unavailable. JavaScript enhances the interaction by adding smooth transitions and optional single-open logic, while the CSS provides visible focus treatment for keyboard users.</p>

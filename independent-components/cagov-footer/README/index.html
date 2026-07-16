@@ -1,0 +1,69 @@
+<h1>CA.gov Footer</h1>
+<p>This component is the standard CA.gov footer shell used to present official statewide branding, legal links, and footer-level attribution. It is included here for reference, implementation consistency, and structural understanding.</p>
+<p>This component is not intended for modification. It should remain as-is because it represents official CA.gov branding and a primary CA.gov shell component. Do not restyle, restructure, rename regions, or swap core content patterns unless direction comes from the platform or branding owners.</p>
+<h2>Purpose</h2>
+<p>Use this component when the experience needs the standard CA.gov global footer treatment, including:</p>
+<ul>
+<li>CA.gov branding</li>
+<li>legal and policy links</li>
+<li>footer attribution for the State of California</li>
+</ul>
+<h2>High-Level Structure</h2>
+<p>The component is wrapped in:</p>
+<pre><code class="language-html">&lt;footer class=&quot;cagov-footer&quot;&gt;
+  &lt;!-- Footer content --&gt;
+&lt;/footer&gt;
+</code></pre>
+<p>It is composed of three primary content areas:</p>
+<ol>
+<li>CA.gov brand link</li>
+<li>Footer link list</li>
+<li>State attribution</li>
+</ol>
+<h2>Region Breakdown</h2>
+<h3>1. CA.gov Brand Link</h3>
+<p>The first content area provides the CA.gov wordmark/logo link back to the main CA.gov site.</p>
+<p>Contained areas:</p>
+<ul>
+<li>CA.gov text label</li>
+<li>CA.gov logo graphic</li>
+</ul>
+<p>This region establishes statewide branding and should remain visually and structurally intact.</p>
+<h3>2. Footer Link List</h3>
+<p>The second content area provides key statewide policy and support destinations.</p>
+<p>Contained areas:</p>
+<ul>
+<li>Conditions of use</li>
+<li>Privacy policy</li>
+<li>Accessibility</li>
+<li>Sitemap</li>
+</ul>
+<p>These links support common global footer expectations and should remain consistent with the CA.gov shell.</p>
+<h3>3. State Attribution</h3>
+<p>The final content area provides the copyright line for the State of California, including the current year.</p>
+<p>Contained areas:</p>
+<ul>
+<li>copyright symbol</li>
+<li>current year</li>
+<li>State of California label</li>
+</ul>
+<h2>Structural Outline</h2>
+<pre><code class="language-html">footer.cagov-footer
+  div
+    div
+      a        /* CA.gov brand link */
+      ul       /* Footer links */
+      div      /* State attribution */
+</code></pre>
+<h2>Guidance</h2>
+<ul>
+<li>Treat this as a protected shell component, not a customization surface.</li>
+<li>Do not alter the branding, logo treatment, labels, legal link set, or region order.</li>
+<li>Do not repurpose the component as a local footer variant.</li>
+<li>If a project needs different footer behavior, create or use another component rather than editing this one.</li>
+</ul>
+<h2>Files</h2>
+<ul>
+<li><code>cagov-footer.html</code>: Markup and region structure</li>
+<li><code>cagov-footer.html.css</code>: Presentation and layout</li>
+</ul>

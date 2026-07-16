@@ -1,0 +1,54 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<div id="template-skip-to-content">
+  <a href="#main-content">Skip to Main Content</a>
+</div>
+<style>
+  *,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div#template-skip-to-content {
+  position: relative;
+  left: 50% !important;
+  transform: translateX(-50%);
+  z-index: 999;
+  font-family:
+    "Public Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    "Noto Sans",
+    sans-serif;
+  font-size: calc(1rem + 0.1vw);
+
+  & a {
+    width: 1px;
+    height: 1px;
+    text-align: center;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    clip: unset;
+    background-color: white;
+    border-radius: 0 0 7px 7px;
+    overflow: hidden;
+    color: #214a68;
+
+    &:focus {
+      width: 250px;
+      height: 27px;
+      padding: 0;
+      outline: 2px solid #0b8ee5;
+    }
+  }
+}
+
+</style>

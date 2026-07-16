@@ -1,0 +1,30 @@
+<h1>Template Skip To Content</h1>
+<p>The Skip to Content component provides an accessible shortcut that lets keyboard and assistive technology users move directly to the primary page content without tabbing through the full header and navigation.</p>
+<h2>Placement</h2>
+<p>This component should be placed as the first element inside the <code>&lt;header&gt;</code> tag.</p>
+<p>Putting it first ensures the link is the first interactive control available to keyboard users when they enter the page.</p>
+<h2>Expected Behavior</h2>
+<ul>
+<li>The link should point to the main content container, typically <code>#main-content</code>.</li>
+<li>The destination element should exist on the page.</li>
+<li>The component should remain visually hidden until it receives keyboard focus.</li>
+</ul>
+<h2>Recommended Structure</h2>
+<pre><code class="language-html">&lt;header&gt;
+	&lt;div id=&quot;template-skip-to-content&quot;&gt;
+		&lt;a href=&quot;#main-content&quot;&gt;Skip to Main Content&lt;/a&gt;
+	&lt;/div&gt;
+
+	&lt;!-- Header branding, navigation, search, etc. --&gt;
+&lt;/header&gt;
+
+&lt;main id=&quot;main-content&quot;&gt;
+	&lt;!-- Primary page content --&gt;
+&lt;/main&gt;
+</code></pre>
+<h2>Guidance</h2>
+<ul>
+<li>Use this component on pages with persistent header, navigation, or utility content.</li>
+<li>Keep the link label direct and action-oriented.</li>
+<li>Do not place this component after other header controls or navigation elements.</li>
+</ul>

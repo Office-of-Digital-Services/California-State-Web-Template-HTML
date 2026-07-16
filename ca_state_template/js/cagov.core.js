@@ -1,4 +1,4 @@
-var StateTemplateNpmPackageVersion="6.5.5";
+var StateTemplateNpmPackageVersion="6.6.0";
 /*!
   * Bootstrap v5.3.8 (https://getbootstrap.com/)
   * Copyright 2011-2025 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
@@ -6393,21 +6393,54 @@ window.addEventListener("load", () => {
   class CaGovAccordion extends HTMLElement {
     connectedCallback() {
       this.summaryEl = this.querySelector("summary");
+      this.detailsEl = this.querySelector("details");
+      this.bodyEl = this.querySelector(".accordion-body");
+
+      if (!this.summaryEl || !this.detailsEl || !this.bodyEl) {
+        return;
+      }
+
       // trigger the opening and closing height change animation on summary click
 
       this.setHeight();
-      this.summaryEl.addEventListener("click", this.listen.bind(this));
+      this.detailsEl.addEventListener("toggle", this.handleToggle.bind(this));
       this.summaryEl.insertAdjacentHTML(
         "beforeend",
         `<div class="cagov-open-indicator" aria-hidden="true" />`
       );
-      this.detailsEl = this.querySelector("details");
-      this.bodyEl = this.querySelector(".accordion-body");
 
       window.addEventListener(
         "resize",
         this.debounce(this.setHeight).bind(this)
       );
+    }
+
+    handleToggle() {
+      if (this.detailsEl.open) {
+        this.closeGroupedDetails();
+      }
+
+      this.setHeight();
+    }
+
+    closeGroupedDetails() {
+      const groupName = this.detailsEl.getAttribute("name");
+
+      if (!groupName) {
+        return;
+      }
+
+      document.querySelectorAll("details[name]").forEach(otherDetailsEl => {
+        const otherDetails = /** @type {HTMLDetailsElement} */ (otherDetailsEl);
+
+        if (
+          otherDetails !== this.detailsEl &&
+          otherDetails.open &&
+          otherDetails.getAttribute("name") === groupName
+        ) {
+          otherDetails.open = false;
+        }
+      });
     }
 
     setHeight() {
@@ -6416,32 +6449,15 @@ window.addEventListener("load", () => {
         this.closedHeightInt = this.summaryEl.scrollHeight + 2;
         this.closedHeight = `${this.closedHeightInt}px`;
 
-        // apply initial height
+        // Apply the height that matches the current open state.
         if (this.detailsEl.hasAttribute("open")) {
-          // if open get scrollHeight
           this.detailsEl.style.height = `${
             this.bodyEl.scrollHeight + this.closedHeightInt
           }px`;
         } else {
-          // else apply closed height
           this.detailsEl.style.height = this.closedHeight;
         }
       });
-    }
-
-    listen() {
-      if (this.detailsEl.hasAttribute("open")) {
-        // was open, now closing
-        this.detailsEl.style.height = this.closedHeight;
-      } else {
-        // was closed, opening
-        window.requestAnimationFrame(() => {
-          // delay so the desired height is readable in all browsers
-          this.detailsEl.style.height = `${
-            this.bodyEl.scrollHeight + this.closedHeightInt
-          }px`;
-        });
-      }
     }
 
     /**
@@ -8065,113 +8081,12 @@ window.addEventListener("load", () => {
     document.querySelector(".side-navigation")
   );
   if (!sidenavigation || !siteHeader) return;
-  const allSidenavLinks = /** @type {NodeListOf<HTMLElement>} */ (
-    sidenavigation.querySelectorAll(".side-navigation a")
-  );
-  const mainContentSideNavCont = sidenavigation.closest("div");
   sidenavigation.id = "side-navigation";
   const topposition = localStorage.getItem("sidebar-scroll");
   const mobileCntls = document.querySelector(".global-header .mobile-controls");
-  if (!mobileCntls) return;
-  let mobileControlsDisplay = window.getComputedStyle(mobileCntls).display; // Side nav height vs viewport
   const siteHeaderHeight = siteHeader ? siteHeader.clientHeight : 0;
   const mobileView$3 = () =>
     getComputedStyle(mobileCntls)["display"] !== "none";
-  let timeout = 0;
-  const delay = 250; // delay between calls
-  /** @type {HTMLElement} */
-  let mobileSideNavDiv,
-    /** @type {HTMLDivElement} */ mobileSideNavCont,
-    /** @type {HTMLButtonElement} */ sidenavToggleBtn;
-
-  const createMobileSideNavButton = () => {
-    // get first side nav element
-    /** @type {HTMLAnchorElement | null} */
-    const sidenavTItle = document.querySelector(".side-navigation a, .sidenav");
-
-    if (sidenavTItle) {
-      // get text for the button for first side nav element
-      let btnText = sidenavTItle.innerText;
-      const btnTextSpan = sidenavTItle.querySelector("span")?.innerText || ""; // removing the sr-only span and it's content
-      btnText = btnText.replace(btnTextSpan, "").trim();
-      // create button container
-      const sidenavMobile = document.createElement("aside");
-      sidenavMobile.className = "sidenav-mobile-btn";
-      const sidenavMobileCont = document.createElement("div");
-      sidenavMobileCont.className = "container";
-      sidenavMobile.append(sidenavMobileCont);
-      // create button
-      sidenavToggleBtn = document.createElement("button");
-      sidenavToggleBtn.type = "button";
-      sidenavToggleBtn.className = "sidenav-toggle";
-      sidenavToggleBtn.ariaExpanded = "false";
-      sidenavToggleBtn.setAttribute("aria-controls", "side-navigation");
-      sidenavToggleBtn.innerText = btnText;
-      // create icon
-      const arrowIcon = document.createElement("span");
-      arrowIcon.ariaHidden = "true";
-      arrowIcon.className = "ca-gov-icon-caret-down";
-      sidenavToggleBtn.append(arrowIcon);
-      // append button into the header
-      sidenavMobileCont.append(sidenavToggleBtn);
-      siteHeader.after(sidenavMobile);
-      // add click event
-      sidenavToggleBtn.addEventListener("click", toggleSideNav);
-    }
-  };
-
-  const createmobileSideNavDiv = () => {
-    mobileSideNavDiv = document.createElement("aside");
-    mobileSideNavDiv.className = "mobile-sidenav";
-    mobileSideNavCont = document.createElement("div");
-    mobileSideNavCont.className = "container";
-    mobileSideNavDiv.append(mobileSideNavCont);
-    siteHeader.after(mobileSideNavDiv);
-  };
-
-  // MOBILE Side nav
-  const moveSideNavToHeader = () => {
-    if (mobileSideNavCont) {
-      mobileSideNavCont.append(sidenavigation);
-    }
-
-    sidenavigation.ariaHidden = "true";
-    allSidenavLinks?.forEach(el => {
-      el.tabIndex = -1;
-    });
-  };
-
-  // DESKTOP Side nav
-  const moveSideNavToMainContent = () => {
-    if (sidenavigation === mainContentSideNavCont) return; //Prevents an error if sidenav is not set up correctly
-
-    mainContentSideNavCont?.append(sidenavigation);
-    sidenavigation.removeAttribute("aria-hidden");
-    allSidenavLinks?.forEach(el => {
-      el.removeAttribute("tabindex");
-    });
-  };
-
-  // Mobile Side Nav Button click function
-  const toggleSideNav = () => {
-    mobileSideNavDiv.classList.toggle("visible");
-    // Open
-    if (mobileSideNavDiv.classList.contains("visible")) {
-      sidenavigation.removeAttribute("aria-hidden");
-      sidenavToggleBtn.ariaExpanded = "true";
-      allSidenavLinks?.forEach(el => {
-        el.removeAttribute("tabindex");
-      });
-
-      // Closed
-    } else {
-      sidenavToggleBtn.ariaExpanded = "false";
-      sidenavigation.ariaHidden = "true";
-      allSidenavLinks?.forEach(el => {
-        el.tabIndex = -1;
-      });
-    }
-  };
 
   /**
    * Set active class on nav-heading links
@@ -8222,67 +8137,125 @@ window.addEventListener("load", () => {
     });
   };
 
-  // ONLOAD
-  addActiveClass();
-  createmobileSideNavDiv();
-  createMobileSideNavButton();
+  /**
+   * Toggle aria-expanded attribute on details element
+   */
+  function accessibilityToggle() {
+    const detailsToggle = document.querySelector(".side-navigation-toggle");
+    if (!detailsToggle) return;
 
-  if (mobileControlsDisplay == "block") {
-    moveSideNavToHeader();
-  }
-  // on resize
-  window.addEventListener("resize", () => {
-    mobileControlsDisplay = getComputedStyle(mobileCntls).display; // clear the timeout
-
-    window.clearTimeout(timeout); // start timing for event "completion"
-    timeout = window.setTimeout(sidenavOverflow, delay); // if mobile
-    if (mobileControlsDisplay == "block") {
-      moveSideNavToHeader(); // if desctop
-    } else {
-      moveSideNavToMainContent();
+    // Check if aria-expanded exists, if not, set it to false
+    if (!detailsToggle.hasAttribute("aria-expanded")) {
+      detailsToggle.setAttribute("aria-expanded", "false");
     }
-  });
+
+    // Listen for toggle event and update aria-expanded
+    detailsToggle.addEventListener("toggle", () => {
+      const isOpen = detailsToggle.hasAttribute("open");
+      detailsToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  }
+
+  // ONLOAD
+  accessibilityToggle();
   sidenavOverflow();
+  addActiveClass();
 });
 
 //@ts-check
+/* EXTERNAL LINK ICON DECORATION */
+/**
+ * use data-cagov-external="skip" to prevent decoration of a link
+ * use data-cagov-external="force" to force decoration of a link
+ */
+(function () {
+  const externalClass = "cagov-external-link";
 
-/* EXTERNAL LINK ICON */
-window.addEventListener("load", () => {
-  const ext =
-    '<span class="external-link-icon" aria-hidden="true"></span><span class="sr-only">(external link)</span>';
-
-  // Check if link is external function
   /**
-   * @param {HTMLAnchorElement} linkElement
+   * Check for developer override attributes.
+   * @param {HTMLAnchorElement} link
    */
-  function linkIsExternal(linkElement) {
-    return window.location.host.indexOf(linkElement.host) > -1;
+  function getOverride(link) {
+    const val = link.dataset.cagovExternal;
+    return val === "skip" || val === "force" ? val : null;
   }
 
-  // Add any exceptions to not render here
-  const cssExceptions = `:not(code *):not(.cagov-logo)`;
+  /**
+   * Determine whether a link points to an external origin.
+   * @param {HTMLAnchorElement} link
+   */
+  function isExternalLink(link) {
+    const href = link.href;
+    if (!href) return false;
+    try {
+      const url = new URL(href, window.location.origin);
+      return url.origin !== "null" && url.origin !== window.location.origin;
+    } catch {
+      return false;
+    }
+  }
 
-  // Looping thru all links inside of the main content body, agency footer and statewide footer
-  /** @type {NodeListOf<HTMLAnchorElement>} */
-  const externalLink = document.querySelectorAll(
-    `main a${cssExceptions}, .agency-footer a${cssExceptions}, .site-footer a${cssExceptions}, footer a${cssExceptions}`
-  );
-  externalLink.forEach(element => {
-    const anchorLink = element.href.indexOf("#") === 0;
-    const localHost = element.href.indexOf("localhost") > -1;
-    const localEmail = element.href.indexOf("@") > -1;
-    const linkElement = element;
-    if (
-      linkIsExternal(linkElement) === false &&
-      !anchorLink &&
-      !localEmail &&
-      !localHost
-    ) {
-      linkElement.innerHTML += ext; // += concatenates to external links
+  /**
+   * Check whether a link contains elements that should prevent decoration.
+   * @param {HTMLAnchorElement} link
+   */
+  const hasForbiddenChildren = link =>
+    !!link.querySelector("img, [class*='ca-gov-logo'], [class*='ca-gov-icon']");
+
+  /**
+   * Decorate a single external link.
+   * @param {HTMLAnchorElement} link
+   */
+  function decorateExternalLink(link) {
+    const override = getOverride(link);
+
+    if (override === "skip") return;
+
+    const treatAsExternal = override === "force";
+    const isExternal = treatAsExternal || isExternalLink(link);
+
+    if (!isExternal || hasForbiddenChildren(link)) return;
+
+    link.classList.add(externalClass);
+
+    const icon = document.createElement("span");
+    icon.classList.add("external-link-icon");
+    icon.setAttribute("aria-hidden", "true");
+    link.appendChild(icon);
+
+    const sr = document.createElement("span");
+    sr.classList.add("sr-only");
+    sr.lang = "en-US";
+    sr.textContent = "(external link)";
+    link.appendChild(sr);
+  }
+
+  const scanForExternalLinks = () =>
+    document
+      .querySelectorAll(`a[href]:not(.${externalClass})`)
+      .forEach(decorateExternalLink);
+
+  document.addEventListener("DOMContentLoaded", scanForExternalLinks);
+
+  let scanScheduled = false;
+
+  const observer = new MutationObserver(() => {
+    if (!scanScheduled) {
+      scanScheduled = true;
+      queueMicrotask(() => {
+        scanScheduled = false;
+        scanForExternalLinks();
+      });
     }
   });
-});
+
+  observer.observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    characterData: true
+  });
+})();
 
 //@ts-check
 /* -----------------------------------------
@@ -8472,16 +8445,16 @@ cagov-pagination .cagov-pagination__item {
 cagov-pagination .cagov-pagination__item a {
   padding: 6px 14px;
   display: inline-block;
-  color: #4a4958;
+  color: var(--text-secondary, #4a4958);
 }
 cagov-pagination .cagov-pagination__item a:hover, cagov-pagination .cagov-pagination__item a:focus {
-  box-shadow: inset 0 0 0 3px #d4d4d7;
+  box-shadow: inset 0 0 0 3px var(--border-color-default, #d4d4d7);
 }
 cagov-pagination .cagov-pagination__item.cagov-pagination-current {
  font-weight:700;
 }
 cagov-pagination .cagov-pagination__item.cagov-pagination-current a {
-  box-shadow: inset 0 0 0 1px #d4d4d7;
+  box-shadow: inset 0 0 0 1px var(--border-color-default, #d4d4d7);
 }
 cagov-pagination .cagov-pagination__item.cagov-pagination__overflow {
   border: none;

@@ -4,10 +4,10 @@
   content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 <!-- Global Footer -->
 <footer class="cagov-footer">
-  <div class="cagov-footer__1-container">
-    <div class="cagov-footer__2-footer-links">
-      <a href="https://www.ca.gov" class="cagov-footer__3-footer-logo">
-        <span class="cagov-sr-only">CA.gov</span>
+  <div>
+    <div>
+      <a href="https://www.ca.gov">
+        <span>CA.gov</span>
         <?xml version="1.0" encoding="utf-8"?><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 15 378 210"
@@ -46,7 +46,7 @@
             d="M365 174c0-6-5-18-9-22c2-5-1-8-2-10c-1-1-4-2-5-2c-5-7-14-13-28-17c-9-3-19-4-31-4c-1 0-1 0-2 0c-1 0-2 0-4 0c-11 1-27 3-31 3c-2 0-6-2-10-4c-6-2-12-5-17-5c-1 0-1 0-1 0c-5 1-15 7-19 9c-3 1-11 5-14 7c-1 0-2 0-2 0c-6 2-11 9-12 10c0-1-3-4-6-4c0 0-1 0-1 0c-4 2-4 5-4 6c-1 0-2-2-4-2c-1 0-2 0-3 1c-4 2-2 6-3 8c-2 2-7 7-9 11c-1 1 0 5-1 7c-2 4-11 12-12 13c0 1 2 3 5 6c3 2 6 4 8 5c6 0 18-2 21-3c1 0 2 1 4 1c2 0 3 1 6 1c1 0 1 0 2 0c3-1 5-2 6-3c3-3 4-6 7-7c2-1 5-2 7-2c1 0 2 0 3 1C200 187 202 198 200 200c-2 2-3 4-4 5c-4 6-5 12-6 13c-1 0-1 0-2 0c-2 0-5-1-7-1c-1 0-1 0-1 0c-2 1-8 6-6 7c1 0 10 0 20 0h9c0 0 6-5 6-5h14c1 0 1-2 7-5c7-3 4-16 12-26c0 0 3-2 3-2c3 0 8 5 26 5c18 0 23-6 25-6c1 0 4 2 4 3c-8 14 12 29 11 30c-1 0-3-1-6-1c-1 0-3 0-4 1c-3 1-6 5-3 7c1 0 9 0 17 0c5 0 9 0 12 0c1 0 1-2 1-4c0-1 0-2 0-3c1-1 2-5 4-8c2-2 4-4 6-4c1 0 1 0 2 1c4 2 13 3 18 5c2 1 4 2 4 3c0 1-1 1-1 1c0 0-1 0-1 0c-1 0-3-1-5-1c-1 0-2 0-2 0c-2 1-5 3-5 5c0 1 0 2 1 2h22c3 0 2-5 7-16c1-3-7-7-8-13C366 190 365 175 365 174z" />
         </svg>
       </a>
-      <ul class="cagov-footer__4-legal-links">
+      <ul>
         <li>
           <a href="https://www.ca.gov/legal/conditions-of-use/index.html"
             >Conditions of use</a
@@ -62,7 +62,7 @@
           <a href="https://www.ca.gov/about/sitemap/index.html">Sitemap</a>
         </li>
       </ul>
-      <div class="cagov-footer__5-copyright">
+      <div>
         ©
         <span id="thisyear">
           <script>
@@ -76,9 +76,51 @@
 </footer>
 
 <style>
-  body {
+  :root {
+  --font-size-base: 1rem;
+  --font-size-regular: calc(var(--font-size-base, 1rem) * 1.125);
+  --font-size-large: calc(var(--font-size-base, 1rem) * 1.4375);
+  --font-size-h1: calc(var(--font-size-base, 1rem) * 2.9375);
+  --font-size-h2: calc(var(--font-size-base, 1rem) * 2.3175);
+  --font-family-sans-serif:
+    "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto",
+    "Helvetica Neue", "Noto Sans", sans-serif;
+  --gray-900: #3b3a48;
+  --gray-700: #5e5e6a;
+  --gray-500: #72717c;
+  --gray-200: #d4d4d7;
+  --gray-150: #e2e2e3;
+  --gray-100: #ededef;
+  --gray-75: #f8f9fa;
+  --gray-50: #fafafa;
+  --black: #000;
+  --white: #fff;
+  --color-p1: #fdb81e;
+  --color-p1-lighter: #fed478;
+  --color-p1-soft: #f2c45a;
+  --color-p1-softer: #f5ce73;
+  --color-p2: #046b99;
+  --color-p2-darker: #035376;
+  --color-p2-darkest: #01395e;
+  --color-p2-light: #6db7d8;
+  --color-p2-pale: #eef8fb;
+  --color-p2-soft: #f5f9fa;
+  --color-p2-muted: #87b8ce;
+  --color-p3: #323a45;
+  --color-p3-darker: #232930;
+  --outline-default-color: #0b8ee5;
+  --outline-dark-mode-color: #85cbf9;
+  --ratio: 0.1vw;
+  --shadow-strong: 0 2px 4px rgba(0 0 0 / 50%);
+  --shadow-card: 0 3px 5px 0 rgb(0 0 0 / 10%);
+}
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* cagov footer styles */
@@ -86,7 +128,8 @@ footer.cagov-footer {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family:
+  font-family: var(
+    --font-family-sans-serif,
     "Public Sans",
     system-ui,
     -apple-system,
@@ -94,15 +137,16 @@ footer.cagov-footer {
     Roboto,
     "Helvetica Neue",
     "Noto Sans",
-    sans-serif;
-  color: #3b3a48;
-  background-color: #fafafa;
-  border-top: 1px solid #d4d4d7;
+    sans-serif
+  );
+  color: var(--gray-900, #3b3a48);
+  background-color: var(--gray-50, #fafafa);
+  border-top: 1px solid var(--gray-200, #d4d4d7);
 
   /* global */
 
   :focus {
-    outline: 2px solid #0b8ee5;
+    outline: 2px solid var(--outline-default-color, #0b8ee5);
   }
 
   .bold {
@@ -110,24 +154,12 @@ footer.cagov-footer {
   }
 
   & a {
-    color: #046b99;
+    color: var(--color-p2, #046b99);
 
     &:hover,
     &:focus {
-      color: #035376;
+      color: var(--color-p2-darker, #035376);
     }
-  }
-
-  .cagov-sr-only {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    clip: rect(0, 0, 0, 0) !important;
-    white-space: nowrap !important;
-    border: 0 !important;
   }
 
   *,
@@ -138,10 +170,10 @@ footer.cagov-footer {
     padding: 0;
   }
 
-  > div.cagov-footer__1-container {
+  > div {
     width: 100%;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-right: 12px;
+    padding-left: 12px;
     margin-right: auto;
     margin-left: auto;
 
@@ -155,10 +187,10 @@ footer.cagov-footer {
       max-width: 960px;
     }
     @media (width >= 1200px) {
-      max-width: 1140px;
+      max-width: 1176px;
     }
 
-    > div.cagov-footer__2-footer-links {
+    > div {
       display: flex;
       flex-direction: column;
       align-items: start;
@@ -169,10 +201,22 @@ footer.cagov-footer {
         align-items: center;
       }
 
-      > a.cagov-footer__3-footer-logo {
+      > a {
         display: inline-block;
         height: 28px;
         margin-right: 1.5rem;
+
+        > span {
+          position: absolute !important;
+          width: 1px !important;
+          height: 1px !important;
+          padding: 0 !important;
+          margin: -1px !important;
+          overflow: hidden !important;
+          clip: rect(0, 0, 0, 0) !important;
+          white-space: nowrap !important;
+          border: 0 !important;
+        }
 
         > svg {
           height: 100%;
@@ -181,7 +225,7 @@ footer.cagov-footer {
         }
       }
 
-      > ul.cagov-footer__4-legal-links {
+      > ul {
         list-style: none;
         font-size: 1.1rem;
         line-height: 1.5;
@@ -193,23 +237,25 @@ footer.cagov-footer {
             display: inline-block;
           }
 
-          &:not(:last-child) {
-            margin-right: 20px;
+          margin-right: 20px;
+
+          &:last-child {
+            margin-right: 0;
           }
 
           > a {
             text-decoration: none;
-            color: #3b3a48;
+            color: var(--gray-900, #3b3a48);
 
             &:hover,
             &:focus {
-              color: #000;
+              color: var(--black, #000);
             }
           }
         }
       }
 
-      > div.cagov-footer__5-copyright {
+      > div {
         margin-top: 1rem;
         font-size: 1rem;
         line-height: 1.5;

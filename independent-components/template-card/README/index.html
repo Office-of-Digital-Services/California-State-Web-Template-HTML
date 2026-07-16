@@ -1,0 +1,80 @@
+<h1>Template Card Component</h1>
+<p>The Template Card component is a flexible, highly visual element designed for highlighting content with a combination of images, icons, and structured information. It features a class-root architecture (<code>.template-card</code>) combined with data attributes and tag-based descendant selectors for variants and state management.</p>
+<h2>Initial Structure</h2>
+<p>The component's HTML structure must remain consistent, as the CSS utilizes descendant selectors (<code>&gt;</code>) based on this exact nesting to apply styles.</p>
+<pre><code class="language-html">&lt;!--
+  Card Component
+  data-card-corners options: &quot;rounded&quot;
+  data-card-shadow options: &quot;box-shadow&quot;
+  data-card-interaction options: &quot;scale-on-hover&quot;
+--&gt;
+&lt;div
+  class=&quot;template-card&quot;
+  data-card-corners=&quot;rounded&quot;
+  data-card-shadow=&quot;box-shadow&quot;
+  data-card-interaction=&quot;scale-on-hover&quot;&gt;
+  &lt;!-- Card Image --&gt;
+  &lt;img
+    src=&quot;path/to/image.webp&quot;
+    alt=&quot;Card Image&quot; /&gt;
+
+  &lt;!-- Card Content Container --&gt;
+  &lt;div&gt;
+    &lt;!-- Card Icon (Optional) --&gt;
+    &lt;div&gt;
+      &lt;img
+        src=&quot;path/to/icon.svg&quot;
+        alt=&quot;Icon&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Card Info Container --&gt;
+    &lt;div&gt;
+      &lt;!--
+        Card Heading
+        data-card-font-weight options: &quot;200&quot;, &quot;400&quot;
+        data-card-h2 option: boolean (add data-card-h2 attribute without value to match h2 size)
+        NOTE: Adding a hyperlink inside of the heading will make entire card linkable.
+      --&gt;
+      &lt;h2&gt;
+        &lt;a href=&quot;#&quot;&gt;Template card heading&lt;/a&gt;
+      &lt;/h2&gt;
+
+      &lt;!--
+        Card Description
+        Consists of paragraphs, unordered lists (ul), or ordered lists (ol).
+      --&gt;
+      &lt;p&gt;This is a description of the card.&lt;/p&gt;
+      &lt;ul&gt;
+        &lt;li&gt;List item 1&lt;/li&gt;
+        &lt;li&gt;List item 2&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Data Attribute Selectors and Features</h2>
+<p>Instead of utility classes, this component leverages specific <code>data-card-*</code> attributes for modifiers and styling overrides.</p>
+<h3>Corner Style (<code>data-card-corners</code>)</h3>
+<p>Applied to the root <code>.template-card</code> element.</p>
+<ul>
+<li><code>data-card-corners=&quot;rounded&quot;</code>: Applies a <code>10px</code> border-radius to the card and its top image.</li>
+</ul>
+<h3>Shadow Effects (<code>data-card-shadow</code>)</h3>
+<p>Applied to the root <code>.template-card</code> element.</p>
+<ul>
+<li><code>data-card-shadow=&quot;box-shadow&quot;</code>: Applies a subtle outer shadow to the card.</li>
+</ul>
+<h3>Interactions (<code>data-card-interaction</code>)</h3>
+<p>Applied to the root <code>.template-card</code> element.</p>
+<ul>
+<li><code>data-card-interaction=&quot;scale-on-hover&quot;</code>: Automatically adds a smooth transition and scales the card slightly (1.05x) when hovered.</li>
+</ul>
+<h3>Typography &amp; Headings</h3>
+<p>Applied to elements within the info container.</p>
+<ul>
+<li><code>data-card-h2</code>: Forces the font size and styling of an element to match an <code>h2</code> scale (<code>calc(1.4375rem + 0.1vw)</code>).</li>
+<li><code>data-card-font-weight=&quot;400&quot;</code>: Forces the font weight to normal/400.</li>
+<li><code>data-card-font-weight=&quot;200&quot;</code>: Forces the font weight to light/200.</li>
+</ul>
+<h2>Card Linkability</h2>
+<p>Adding a hyperlink (<code>&lt;a&gt;</code>) inside of the <strong>Card Heading</strong> will automatically make the entire card linkable. This is achieved via a CSS pseudo-element (<code>::before</code>) on the link that expands to cover the full dimensions of the card root.</p>

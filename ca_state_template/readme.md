@@ -1,4 +1,4 @@
 
-- State Template Source Version 6.5.5
+- State Template Source Version 6.6.0
 - You may use the CDN location instead of this folder 
-- https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/
+- https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/

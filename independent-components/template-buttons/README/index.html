@@ -1,0 +1,65 @@
+<h1>Template Button Component</h1>
+<p>The Template Button component provides a flexible, accessible button system using a classless CSS architecture. Styling is driven by HTML structure and <code>data-*</code> attributes, not utility classes.</p>
+<h2>Initial Structure</h2>
+<p>Buttons can be rendered as <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> elements. Use the appropriate element for your use case (links for navigation, buttons for actions).</p>
+<pre><code class="language-html">&lt;!-- Primary button --&gt;
+&lt;a href=&quot;#&quot; data-btn-bg=&quot;primary&quot;&gt;Primary color&lt;/a&gt;
+&lt;!-- Highlight button --&gt;
+&lt;a href=&quot;#&quot; data-btn-bg=&quot;highlight&quot;&gt;Highlight color&lt;/a&gt;
+&lt;!-- Standout button --&gt;
+&lt;a href=&quot;#&quot; data-btn-bg=&quot;standout&quot;&gt;Standout color&lt;/a&gt;
+&lt;!-- Outline primary button --&gt;
+&lt;a href=&quot;#&quot; data-btn-bg=&quot;primary&quot; data-btn-variant=&quot;outline&quot;&gt;Primary outline&lt;/a&gt;
+&lt;!-- Outline highlight button --&gt;
+&lt;a href=&quot;#&quot; data-btn-bg=&quot;highlight&quot; data-btn-variant=&quot;outline&quot;&gt;Highlight outline&lt;/a&gt;
+&lt;!-- Small outline standout button --&gt;
+&lt;a href=&quot;#&quot; data-btn-bg=&quot;standout&quot; data-btn-variant=&quot;outline&quot; data-btn-size=&quot;sm&quot;&gt;Standout outline small&lt;/a&gt;
+&lt;!-- Extra small default button --&gt;
+&lt;a href=&quot;#&quot; data-btn-bg=&quot;default&quot; data-btn-size=&quot;xs&quot;&gt;Default extra small&lt;/a&gt;
+&lt;!-- Large default button as &lt;button&gt; --&gt;
+&lt;button data-btn-bg=&quot;default&quot; data-btn-size=&quot;lg&quot;&gt;Default large button&lt;/button&gt;
+</code></pre>
+<h2>Data Attribute Selectors and Features</h2>
+<p>Instead of utility classes, this component leverages specific <code>data-*</code> attributes for modifiers and styling overrides.</p>
+<h3>Background Colors (<code>data-btn-bg</code>)</h3>
+<p>Applied to <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> elements.</p>
+<ul>
+<li><code>data-btn-bg=&quot;primary&quot;</code>: Solid primary blue background (<code>#046b99</code>), white text.</li>
+<li><code>data-btn-bg=&quot;highlight&quot;</code>: Gold background (<code>#fdb81e</code>), dark text.</li>
+<li><code>data-btn-bg=&quot;standout&quot;</code>: Slate background (<code>#323a45</code>), white text.</li>
+<li><code>data-btn-bg=&quot;default&quot;</code>: Light gray background (<code>#fafafa</code>), dark text.</li>
+</ul>
+<h3>Outline Variant (<code>data-btn-variant</code>)</h3>
+<ul>
+<li><code>data-btn-variant=&quot;outline&quot;</code>: Renders the button with a transparent or white background and a colored border, with color based on <code>data-btn-bg</code>.</li>
+</ul>
+<h3>Button Sizes (<code>data-btn-size</code>)</h3>
+<ul>
+<li><code>data-btn-size=&quot;lg&quot;</code>: Large button (increased padding and font size).</li>
+<li><code>data-btn-size=&quot;sm&quot;</code>: Small button.</li>
+<li><code>data-btn-size=&quot;xs&quot;</code>: Extra small button.</li>
+<li><em>(default)</em>: If no size is provided, the default size is used.</li>
+</ul>
+<h2>Accessibility</h2>
+<ul>
+<li>Use <code>&lt;button&gt;</code> for actions and <code>&lt;a&gt;</code> for navigation.</li>
+<li>All buttons have visible focus states for accessibility.</li>
+<li>Ensure <code>aria-label</code> or descriptive text is present for icon-only buttons (not shown above).</li>
+</ul>
+<h2>Example</h2>
+<pre><code class="language-html">&lt;!-- Example usage --&gt;
+&lt;a href=&quot;#&quot; data-btn-bg=&quot;primary&quot;&gt;Primary&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-btn-bg=&quot;highlight&quot;&gt;Highlight&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-btn-bg=&quot;standout&quot;&gt;Standout&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-btn-bg=&quot;primary&quot; data-btn-variant=&quot;outline&quot;&gt;Primary Outline&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-btn-bg=&quot;highlight&quot; data-btn-variant=&quot;outline&quot;&gt;Highlight Outline&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-btn-bg=&quot;standout&quot; data-btn-variant=&quot;outline&quot; data-btn-size=&quot;sm&quot;&gt;Standout Outline Small&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-btn-bg=&quot;default&quot; data-btn-size=&quot;xs&quot;&gt;Default Extra Small&lt;/a&gt;
+&lt;button data-btn-bg=&quot;default&quot; data-btn-size=&quot;lg&quot;&gt;Default Large Button&lt;/button&gt;
+</code></pre>
+<h2>Migration Notes</h2>
+<ul>
+<li>Remove all button-related classes from your HTML. Use only the documented <code>data-*</code> attributes.</li>
+<li>The CSS will automatically style buttons based on these attributes.</li>
+<li>For custom variants or new colors, extend the CSS with new <code>[data-btn-bg]</code> or <code>[data-btn-variant]</code> selectors as needed.</li>
+</ul>

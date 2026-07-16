@@ -48,12 +48,20 @@
   --color-s3-light: #e0ded9;
   --color-s3-lighter: #ebe9e5;
 
+  /* Main nav */
+  --mobile-menu-icon-color: var(--color-p2);
+  --main-nav-color: var(--color-p2);
+
   /* Megamenu sub navigation background */
   --sub-nav-bg: var(--color-s1);
 
   /* Mobile navigation drawer background */
   --mobile-drawer: var(--color-p3);
   --mobile-drawer-active: var(--color-p3-light);
+
+  /* Global */
+  --link-color: var(--color-p2);
+  --link-color-hover: var(--color-p2-darker);
 }
 
 /* color-mix is used for the newer browsers */

@@ -1,0 +1,46 @@
+<h1>Template Page Header Component</h1>
+<p>The Template Page Header component provides a clean, responsive header area for landing and content pages. It features a class-root architecture (<code>.template-page-header</code>) combined with data attributes and tag-based descendant selectors for variants.</p>
+<h2>Initial Structure</h2>
+<p>The component's HTML structure must remain consistent, as the CSS utilizes direct descendant selectors (<code>&gt;</code>) based on this exact nesting to apply styles.</p>
+<pre><code class="language-html">&lt;!-- 
+  Page Header Component 
+  data-page-header-bg options: &quot;understated&quot;, &quot;understated-gradient&quot;, &quot;primary&quot;, &quot;primary-gradient&quot;, &quot;standout&quot;
+--&gt;
+&lt;div
+  class=&quot;template-page-header&quot;
+  data-page-header-bg=&quot;understated-gradient&quot;&gt;
+  &lt;!-- Content Container --&gt;
+  &lt;div&gt;
+    &lt;!-- Heading / Title --&gt;
+    &lt;h1&gt;State template page header&lt;/h1&gt;
+    
+    &lt;!-- Description --&gt;
+    &lt;p&gt;This is a description of the page header.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Data Attribute Selectors and Features</h2>
+<p>Instead of utility classes, this component leverages specific <code>data-page-header-*</code> attributes for modifiers and styling overrides.</p>
+<h3>Background Colors (<code>data-page-header-bg</code>)</h3>
+<p>Applied to the root <code>.template-page-header</code> element.</p>
+<ul>
+<li><code>data-page-header-bg=&quot;understated&quot;</code>: Sets a light blue background (<code>#eef8fb</code>) and dark text.</li>
+<li><code>data-page-header-bg=&quot;understated-gradient&quot;</code>: Sets a light blue gradient background and dark text.</li>
+<li><code>data-page-header-bg=&quot;primary&quot;</code>: Sets a solid primary blue background (<code>#046b99</code>) and white text.</li>
+<li><code>data-page-header-bg=&quot;primary-gradient&quot;</code>: Sets a dark-to-primary blue gradient background and white text.</li>
+<li><code>data-page-header-bg=&quot;standout&quot;</code>: Sets a dark slate background (<code>#323a45</code>) and white text.</li>
+</ul>
+<h3>Typography &amp; Headings</h3>
+<p>Applied to internal elements within the content container.</p>
+<ul>
+<li><code>data-page-header-h2</code>: Forces the font size of an element to match an <code>h2</code> scale (<code>calc(2.3175rem + 0.1vw)</code>).</li>
+<li><code>data-page-header-font-weight=&quot;400&quot;</code>: Forces the font weight to normal/400.</li>
+<li><code>data-page-header-font-weight=&quot;200&quot;</code>: Forces the font weight to light/200.</li>
+</ul>
+<h2>Structural Regions</h2>
+<ul>
+<li><strong>Root Container</strong>: The main component wrapper that handles background colors and alignment.</li>
+<li><strong>Content Container</strong>: An inner wrapper that manages padding, maximum width, and centering.</li>
+<li><strong>Heading/Title</strong>: The primary page title (<code>h1</code>).</li>
+<li><strong>Description</strong>: A supporting paragraph (<code>p</code>) for additional context.</li>
+</ul>

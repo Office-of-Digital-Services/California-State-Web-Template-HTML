@@ -1,0 +1,356 @@
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+
+<!--
+  Accordion Component
+  data-open options: "single"
+-->
+<section class="template-accordion">
+  <details>
+    <summary>Add a short, descriptive heading for your topic</summary>
+    <div>
+      <p>
+        Once open, the content within the accordion should describe the topic in
+        more detail. It should not repeat the heading.
+      </p>
+      <p>
+        This part of the accordion is a great place to link to other resources.
+        Remember, important information and calls to action should live outside
+        of the accordion.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      If your heading must be longer, the accordion will wrap to multiple lines
+      within the container like this
+    </summary>
+    <div>
+      <p>
+        Once open, the content within the accordion should describe the topic in
+        more detail. It should not repeat the heading.
+      </p>
+      <p>
+        This part of the accordion is a great place to link to other resources.
+        Remember, important information and calls to action should live outside
+        of the accordion.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary>This heading tells users what's inside the accordion</summary>
+    <div>
+      <p>
+        Once open, the content within the accordion should describe the topic in
+        more detail. It should not repeat the heading.
+      </p>
+      <p>
+        This part of the accordion is a great place to link to other resources.
+        Remember, important information and calls to action should live outside
+        of the accordion.
+      </p>
+    </div>
+  </details>
+</section>
+
+<style>
+  :root {
+  --font-size-base: 1rem;
+  --font-size-regular: calc(var(--font-size-base, 1rem) * 1.125);
+  --font-size-large: calc(var(--font-size-base, 1rem) * 1.4375);
+  --font-size-h1: calc(var(--font-size-base, 1rem) * 2.9375);
+  --font-size-h2: calc(var(--font-size-base, 1rem) * 2.3175);
+  --font-family-sans-serif:
+    "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto",
+    "Helvetica Neue", "Noto Sans", sans-serif;
+  --gray-900: #3b3a48;
+  --gray-700: #5e5e6a;
+  --gray-500: #72717c;
+  --gray-200: #d4d4d7;
+  --gray-150: #e2e2e3;
+  --gray-100: #ededef;
+  --gray-75: #f8f9fa;
+  --gray-50: #fafafa;
+  --black: #000;
+  --white: #fff;
+  --color-p1: #fdb81e;
+  --color-p1-lighter: #fed478;
+  --color-p1-soft: #f2c45a;
+  --color-p1-softer: #f5ce73;
+  --color-p2: #046b99;
+  --color-p2-darker: #035376;
+  --color-p2-darkest: #01395e;
+  --color-p2-light: #6db7d8;
+  --color-p2-pale: #eef8fb;
+  --color-p2-soft: #f5f9fa;
+  --color-p2-muted: #87b8ce;
+  --color-p3: #323a45;
+  --color-p3-darker: #232930;
+  --outline-default-color: #0b8ee5;
+  --outline-dark-mode-color: #85cbf9;
+  --ratio: 0.1vw;
+  --shadow-strong: 0 2px 4px rgba(0 0 0 / 50%);
+  --shadow-card: 0 3px 5px 0 rgb(0 0 0 / 10%);
+}
+
+.template-accordion {
+  background-color: white;
+  font-family: var(--font-family-sans-serif);
+
+  & summary {
+    cursor: pointer;
+    padding: 0.5rem 3rem 0.5rem 3.75rem;
+    background-color: var(--gray-50, #fafafa);
+    position: relative;
+    line-height: 2rem;
+    margin: 0;
+    color: var(--gray-900, #3b3a48);
+    font-size: var(--font-size-regular);
+    font-weight: bold;
+    list-style: none;
+    border: 1px solid var(--gray-200, #d4d4d7);
+    border-radius: 4px;
+    transition:
+      color 300ms ease-in-out,
+      border-radius 300ms ease-in-out;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 2.75rem;
+      border-right: 1px solid var(--gray-200, #d4d4d7);
+      top: 0;
+      left: 0;
+      background-color: var(--gray-50, #fafafa);
+      border-radius: 3px 0 0 3px;
+      transition: background-color 300ms ease-in-out;
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      text-decoration: none;
+      position: absolute;
+      width: 0.45rem;
+      height: 0.45rem;
+      border-top: 2px solid var(--gray-900, #3b3a48);
+      border-left: 2px solid var(--gray-900, #3b3a48);
+      left: 1rem;
+      top: 50%;
+      vertical-align: middle;
+      transform-origin: center;
+      transform: translateY(-50%) rotate(135deg);
+      transition: transform 300ms ease-in-out;
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--black, #000);
+    }
+
+    &:hover::before,
+    &:focus::before {
+      background-color: var(--gray-100, #f3f3f4);
+    }
+
+    &:hover::after,
+    &:focus::after {
+      border-top-color: var(--black, #000);
+      border-left-color: var(--black, #000);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: inset 0 0 0 2px var(--outline-default-color);
+    }
+
+    &:focus::before {
+      box-shadow:
+        inset 2px 0 0 0 var(--outline-default-color),
+        inset 0 2px 0 0 var(--outline-default-color),
+        inset 0 -2px 0 0 var(--outline-default-color);
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: inset 0 0 0 2px var(--outline-default-color);
+    }
+
+    &:focus-visible::before {
+      box-shadow:
+        inset 2px 0 0 0 var(--outline-default-color),
+        inset 0 2px 0 0 var(--outline-default-color),
+        inset 0 -2px 0 0 var(--outline-default-color);
+    }
+  }
+
+  & details {
+    overflow: hidden;
+    margin-top: 1rem;
+    min-height: 3rem;
+    transition: height 300ms ease-in-out;
+
+    > div {
+      padding: 1rem;
+      font-family: var(--font-family-sans-serif);
+      font-size: var(--font-size-base);
+      border: 1px solid var(--gray-200, #d4d4d7);
+      border-top: 0;
+      border-radius: 0 0 4px 4px;
+    }
+
+    &:is([open]:not(.is-closing), .is-opening) {
+      > summary {
+        border-radius: 4px 4px 0 0;
+      }
+
+      > summary::before {
+        border-radius: 3px 0 0;
+        background-color: var(--gray-100, #f3f3f4);
+      }
+
+      > summary::after {
+        transform: translate(0.125rem, -50%) rotate(225deg);
+      }
+    }
+  }
+}
+
+</style>
+
+<script>
+   class TemplateAccordion {
+  constructor(el, settings) {
+    this.group = el;
+    this.details = this.group.getElementsByTagName("details");
+    this.toggles = this.group.getElementsByTagName("summary");
+    this.contents = this.group.querySelectorAll("details > div");
+
+    // Set default settings if necessary
+    this.settings = Object.assign(
+      {
+        speed: 300,
+        one_visible: false
+      },
+      settings
+    );
+
+    // Setup inital positions
+    for (let i = 0; i < this.details.length; i++) {
+      const detail = this.details[i];
+      const toggle = this.toggles[i];
+      const content = this.contents[i];
+
+      // Set transition-duration to match JS setting
+      detail.style.transitionDuration = this.settings.speed + "ms";
+
+      // Set initial height to transition from
+      if (!detail.hasAttribute("open")) {
+        detail.style.height = toggle.offsetHeight + "px";
+      } else {
+        detail.style.height = toggle.offsetHeight + content.offsetHeight + "px";
+      }
+    }
+
+    // Setup click handler
+    this.group.addEventListener("click", e => {
+      if (e.target.tagName.toLowerCase() === "summary") {
+        e.preventDefault();
+
+        let num = 0;
+        for (let i = 0; i < this.toggles.length; i++) {
+          if (this.toggles[i] === e.target) {
+            num = i;
+            break;
+          }
+        }
+
+        if (!e.target.parentNode.hasAttribute("open")) {
+          this.open(num);
+        } else {
+          this.close(num);
+        }
+      }
+    });
+  }
+
+  open(i) {
+    const detail = this.details[i];
+    const toggle = this.toggles[i];
+    const content = this.contents[i];
+
+    // If applicable, hide all the other details first
+    if (this.settings.one_visible) {
+      for (let a = 0; a < this.toggles.length; a++) {
+        if (i !== a) this.close(a);
+      }
+    }
+
+    // Update class
+    detail.classList.remove("is-closing");
+    detail.classList.add("is-opening");
+
+    // Get height of toggle
+    const toggle_height = toggle.offsetHeight;
+
+    // Momentarily show the contents just to get the height
+    detail.setAttribute("open", true);
+    const content_height = content.offsetHeight;
+    detail.removeAttribute("open");
+
+    // Set the correct height and let CSS transition it
+    detail.style.height = toggle_height + content_height + "px";
+
+    // Finally set the open attr
+    detail.setAttribute("open", true);
+
+    setTimeout(() => {
+      detail.classList.remove("is-opening");
+    }, this.settings.speed);
+  }
+
+  close(i) {
+    const detail = this.details[i];
+    const toggle = this.toggles[i];
+
+    // Update class
+    detail.classList.remove("is-opening");
+    detail.classList.add("is-closing");
+
+    // Get height of toggle
+    const toggle_height = toggle.offsetHeight;
+
+    // Set the height so only the toggle is visible
+    detail.style.height = toggle_height + "px";
+
+    setTimeout(() => {
+      // Check if still closing
+      if (detail.classList.contains("is-closing"))
+        detail.removeAttribute("open");
+      detail.classList.remove("is-closing");
+    }, this.settings.speed);
+  }
+}
+
+(() => {
+  const els = document.getElementsByClassName("template-accordion");
+
+  for (let i = 0; i < els.length; i++) {
+    const isSingle = els[i].getAttribute("data-open") === "single";
+    const details = new TemplateAccordion(els[i], {
+      speed: 300,
+      one_visible: isSingle
+    });
+  }
+})();
+ 
+</script>

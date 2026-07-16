@@ -32,9 +32,9 @@ Include links to stylesheet and custom theme and core JS.
 
 You may also use the CDN instead of using the local folder...
 
-<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/css/cagov.core.min.css" crossorigin="anonymous"/>
-<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/css/colortheme-oceanside.min.css" crossorigin="anonymous"/>
-<script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/js/cagov.core.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/cagov.core.min.css" crossorigin="anonymous"/>
+<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-oceanside.min.css" crossorigin="anonymous"/>
+<script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/js/cagov.core.min.js" crossorigin="anonymous"></script>
 
 More info on CDN here...
 https://template.webstandards.ca.gov/cdn.html
@@ -43,10 +43,18 @@ https://template.webstandards.ca.gov/cdn.html
 <link
   rel="stylesheet"
   href="ca_state_template/css/cagov.core.min.css" />
-<!-- Replace with different color theme if needed (oceanside is default)
+
+<!-- Oceanside theme is default. You can replace color theme with diferent one. 
+There are 12 light and 2 dark mode color themes. -->
+
+<!-- System dark mode switch: loads Ukiah Dark theme if the operating system prefers dark mode -->
 <link
   rel="stylesheet"
-  href="ca_state_template/css/colortheme-delta.min.css" /> -->
+  href="ca_state_template/css/colortheme-ukiahdark.min.css"
+  media="(prefers-color-scheme: dark)" />
+
+
+<!-- State Template Core JavaScript -->
 <script src="ca_state_template/js/cagov.core.min.js"></script>
 <!-- END STATE_TEMPLATE -->
 
