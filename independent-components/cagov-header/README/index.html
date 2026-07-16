@@ -1,0 +1,67 @@
+<h1>CA.gov Header</h1>
+<p>This component is the standard CA.gov header shell used to present official statewide branding, trust messaging, and core search functionality. It is included here for reference, implementation consistency, and structural understanding.</p>
+<p>This component is not intended for modification. It should remain as-is because it represents official CA.gov branding and a primary CA.gov shell component. Do not restyle, restructure, rename regions, or swap core content patterns unless direction comes from the platform or branding owners.</p>
+<h2>Purpose</h2>
+<p>Use this component when the experience needs the standard CA.gov global header treatment, including:</p>
+<ul>
+<li>official California government identification</li>
+<li>CA.gov navigation access</li>
+<li>CA.gov branding</li>
+<li>search</li>
+</ul>
+<h2>High-Level Structure</h2>
+<p>The component is wrapped in:</p>
+<pre><code class="language-html">&lt;div class=&quot;cagov-header&quot;&gt;
+  &lt;!-- Utility / Trust Region --&gt;
+  &lt;!-- Branding / Search Region --&gt;
+&lt;/div&gt;
+</code></pre>
+<p>It is composed of two primary regions:</p>
+<ol>
+<li>Utility / Trust Region</li>
+<li>Branding / Search Region</li>
+</ol>
+<h2>Region Breakdown</h2>
+<h3>1. Utility / Trust Region</h3>
+<p>The first top-level region provides statewide trust messaging and access to the CA.gov menu.</p>
+<p>Contained areas:</p>
+<ul>
+<li>Official California website disclosure button</li>
+<li>Official California website explanatory content</li>
+<li>CA.gov menu button</li>
+<li>CA.gov navigation content</li>
+</ul>
+<p>This region helps users understand they are on an official California government website and provides quick access to core statewide destinations.</p>
+<h3>2. Branding / Search Region</h3>
+<p>The second top-level region contains the primary branded shell and search experience.</p>
+<p>Contained areas:</p>
+<ul>
+<li>CA.gov logo/home link</li>
+<li>Search form</li>
+</ul>
+<p>This region is the main branded interaction layer and should be preserved intact to maintain consistency with CA.gov.</p>
+<h2>Structural Outline</h2>
+<pre><code class="language-html">div.cagov-header
+  div  /* Utility / Trust Region */
+    div
+      div
+        details  /* Official California website */
+      div
+        details  /* CA.gov menu */
+  div  /* Branding / Search Region */
+    div
+      a        /* CA.gov logo */
+      div      /* Search form */
+</code></pre>
+<h2>Guidance</h2>
+<ul>
+<li>Treat this as a protected shell component, not a customization surface.</li>
+<li>Do not alter the branding, logo treatment, labels, or region order.</li>
+<li>Do not repurpose the component as a local header variant.</li>
+<li>If a project needs different header behavior, create or use another component rather than editing this one.</li>
+</ul>
+<h2>Files</h2>
+<ul>
+<li><code>cagov-header.html</code>: Markup and region structure</li>
+<li><code>cagov-header.html.css</code>: Presentation and layout</li>
+</ul>

@@ -1,0 +1,248 @@
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<!-- 
+  Card Component 
+  data-card-corners options: "rounded"
+  data-card-shadow options: "box-shadow"
+  data-card-interaction options: "scale-on-hover"
+-->
+<div
+  class="template-card"
+  data-card-corners="rounded"
+  data-card-shadow="box-shadow"
+  data-card-interaction="scale-on-hover">
+  <!-- Card Image -->
+  <img
+    src="https://www.ca.gov/images/about-tree.webp"
+    alt="Placeholder image" />
+  <!-- Card Content -->
+  <div>
+    <!-- Card Icon -->
+    <div>
+      <img
+        src="https://digitalidstrategy.cdt.ca.gov/images/pro-services.svg"
+        alt="California State icon" />
+    </div>
+    <!-- Card Info -->
+    <div>
+      <!-- 
+        Card Heading 
+        data-card-font-weight options: "200", "400" 
+        data-card-h2 option: boolean (add data-card-h2 attribute without value to match h2 size)
+        NOTE: Adding a hyperlink inside of the heading will make entire card linkable.
+      -->
+      <h2>
+        <a href="javascript:void(0)">Template card heading</a>
+      </h2>
+      <!-- 
+        Card Description 
+        Consists of paragraphs, unordered lists (ul), or ordered lists (ol).
+      -->
+      <p>This is a description of the card.</p>
+      <ul>
+        <li><strong>Placeholder:</strong> item 1</li>
+        <li><strong>Placeholder:</strong> item 2</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<style>
+  :root {
+  --font-size-base: 1rem;
+  --font-size-regular: calc(var(--font-size-base, 1rem) * 1.125);
+  --font-size-large: calc(var(--font-size-base, 1rem) * 1.4375);
+  --font-size-h1: calc(var(--font-size-base, 1rem) * 2.9375);
+  --font-size-h2: calc(var(--font-size-base, 1rem) * 2.3175);
+  --font-family-sans-serif:
+    "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto",
+    "Helvetica Neue", "Noto Sans", sans-serif;
+  --gray-900: #3b3a48;
+  --gray-700: #5e5e6a;
+  --gray-500: #72717c;
+  --gray-200: #d4d4d7;
+  --gray-150: #e2e2e3;
+  --gray-100: #ededef;
+  --gray-75: #f8f9fa;
+  --gray-50: #fafafa;
+  --black: #000;
+  --white: #fff;
+  --color-p1: #fdb81e;
+  --color-p1-lighter: #fed478;
+  --color-p1-soft: #f2c45a;
+  --color-p1-softer: #f5ce73;
+  --color-p2: #046b99;
+  --color-p2-darker: #035376;
+  --color-p2-darkest: #01395e;
+  --color-p2-light: #6db7d8;
+  --color-p2-pale: #eef8fb;
+  --color-p2-soft: #f5f9fa;
+  --color-p2-muted: #87b8ce;
+  --color-p3: #323a45;
+  --color-p3-darker: #232930;
+  --outline-default-color: #0b8ee5;
+  --outline-dark-mode-color: #85cbf9;
+  --ratio: 0.1vw;
+  --shadow-strong: 0 2px 4px rgba(0 0 0 / 50%);
+  --shadow-card: 0 3px 5px 0 rgb(0 0 0 / 10%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Card Component Base */
+div.template-card {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(
+    --font-family-sans-serif,
+    "Public Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    "Noto Sans",
+    sans-serif
+  );
+  color: var(--gray-900, #3b3a48);
+  background-color: var(--gray-50, #fafafa);
+  border: 1px solid var(--gray-100, #ededef);
+  position: relative;
+  line-height: 1.5;
+
+  /* --- Options --- */
+
+  &[data-card-corners="rounded"] {
+    border-radius: 10px;
+  }
+
+  &[data-card-shadow="box-shadow"] {
+    box-shadow: var(--shadow-card, 0 3px 5px 0 rgb(0 0 0 / 10%));
+  }
+
+  &[data-card-interaction*="scale-on-hover"] {
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+  }
+
+  & [data-card-font-weight="400"] {
+    font-weight: 400 !important;
+  }
+
+  & [data-card-font-weight="200"] {
+    font-weight: 200 !important;
+  }
+
+  /* --- Regions --- */
+
+  /* Card Image */
+  > img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    aspect-ratio: 20 / 11;
+  }
+
+  /* Card Content */
+  > div {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    @media (width >= 560px) {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    /* Card Icon */
+    > div:first-child:not(:last-child) {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 1rem;
+      margin-top: 0.5rem;
+
+      > img {
+        width: 100%;
+        height: 100%;
+        min-width: 80px;
+        display: block;
+      }
+    }
+
+    /* Card Info */
+    /* stylelint-disable-next-line no-descending-specificity */
+    > div:last-child {
+      display: flex;
+      flex-direction: column;
+
+      /* Card Heading */
+      > h2,
+      & [data-card-h2] {
+        font-size: calc(var(--font-size-large, 1.4375rem) + var(--ratio));
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        padding-top: 0.5rem;
+        line-height: 1.15;
+        text-wrap: pretty;
+
+        > a {
+          font-weight: 600;
+          color: var(--color-p2, #046b99);
+          text-decoration: none;
+          margin-bottom: 0.5rem;
+
+          &:hover,
+          /* stylelint-disable-next-line no-descending-specificity */
+          &:focus {
+            color: var(--color-p2-darker, #034a6f);
+          }
+        }
+
+        & a::before {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      /* Card Description */
+      > p {
+        font-size: calc(var(--font-size-regular, 1.125rem) + var(--ratio));
+        margin-bottom: 1.5rem;
+        margin-top: 0;
+      }
+
+      & ul {
+        list-style-type: disc;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+        font-size: 1.125rem;
+
+        & li {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+</style>

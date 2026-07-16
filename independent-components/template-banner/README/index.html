@@ -1,0 +1,64 @@
+<h1>Template Banner Component</h1>
+<p>The Template Banner component provides a highly visual, prominent banner usually intended for the top of landing pages. It features a classless CSS architecture where styling is heavily driven by HTML structure and <code>data-*</code> attributes rather than verbose utility classes.</p>
+<h2>Initial Structure</h2>
+<p>The component's HTML structure must remain consistent, as the CSS utilizes descendant selectors (<code>&gt;</code>) based on this exact nesting to apply styles.</p>
+<pre><code class="language-html">&lt;div class=&quot;template-banner__component&quot; data-bg=&quot;primary-gradient&quot;&gt;
+  &lt;!-- 1st Child: Image Container --&gt;
+  &lt;div&gt;
+    &lt;img
+      src=&quot;path/to/image.webp&quot;
+      alt=&quot;Banner Image&quot;
+      data-image=&quot;fade-left&quot; /&gt;
+  &lt;/div&gt;
+
+  &lt;!-- 2nd Child: Content Container --&gt;
+  &lt;div&gt;
+    &lt;!-- Inner wrapper for column constraints --&gt;
+    &lt;div&gt;
+      &lt;!-- Heading element --&gt;
+      &lt;h1 data-font-weight=&quot;200&quot;&gt;
+        State template banner heading
+      &lt;/h1&gt;
+      
+      &lt;!-- Description paragraph --&gt;
+      &lt;p&gt;
+        Description of the banner goes here.
+      &lt;/p&gt;
+      
+      &lt;!-- Actions / Buttons container --&gt;
+      &lt;div&gt;
+        &lt;a href=&quot;#&quot;&gt;Primary Action&lt;/a&gt;
+        &lt;a href=&quot;#&quot; data-action=&quot;secondary&quot;&gt;Secondary Action&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Data Attribute Selectors and Features</h2>
+<p>Instead of utility classes, this component leverages specific <code>data-*</code> attributes for modifiers and styling overrides.</p>
+<h3>Background Colors (<code>data-bg</code>)</h3>
+<p>Applied to the root <code>.template-banner__component</code> element.</p>
+<ul>
+<li><code>data-bg=&quot;understated&quot;</code>: Sets a light blue background (<code>#eef8fb</code>) and dark text.</li>
+<li><code>data-bg=&quot;primary&quot;</code>: Sets a solid primary blue background (<code>#046b99</code>) and white text.</li>
+<li><code>data-bg=&quot;primary-gradient&quot;</code>: Sets a dark-to-primary blue gradient background and white text.</li>
+<li><code>data-bg=&quot;standout&quot;</code>: Sets a dark slate background (<code>#323a45</code>) and white text.</li>
+</ul>
+<h3>Typography &amp; Headings</h3>
+<p>Applied to the heading elements or internal wrappers.</p>
+<ul>
+<li><code>data-h2</code>: Forces the font size to match an <code>h2</code> scale (<code>calc(2.3175rem + 0.1vw)</code>).</li>
+<li><code>data-font-weight=&quot;400&quot;</code>: Forces the font weight to normal/400.</li>
+<li><code>data-font-weight=&quot;200&quot;</code>: Forces the font weight to light/200.</li>
+</ul>
+<h3>Image Modifiers (<code>data-image</code>)</h3>
+<p>Applied directly to the <code>&lt;img&gt;</code> element.</p>
+<ul>
+<li><code>data-image=&quot;fade-left&quot;</code>: Applies a CSS mask image gradient, fading the image out towards the left side (or bottom on mobile) to blend seamlessly with the background color.</li>
+</ul>
+<h3>Action Modifiers (<code>data-action</code>)</h3>
+<p>Applied directly to the <code>&lt;a&gt;</code> (link/button) elements inside the actions container.</p>
+<ul>
+<li><em>(default)</em>: If no data attribute is provided, the link becomes a primary action button (gold background, dark text).</li>
+<li><code>data-action=&quot;secondary&quot;</code>: Formats the link as a secondary action button (transparent/primary background with a solid white border).</li>
+</ul>

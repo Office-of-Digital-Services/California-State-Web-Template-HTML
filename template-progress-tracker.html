@@ -1,0 +1,287 @@
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<!-- 
+  Progress Tracker Component 
+  data-progress-step-border options: "gray", "transparent"
+-->
+<div class="template-progress-tracker">
+  <!-- Progress Tracker Content -->
+  <div>
+    <!-- Progress Tracker Step -->
+    <div>
+      <!-- 
+        Timeline Dot 
+        data-progress-dot options: "primary", "primary-full", "gray"
+      -->
+      <div data-progress-dot="primary-full">
+        <span></span>
+      </div>
+      <!-- Step Content -->
+      <div>
+        <h2>Progress tracker timelline heading</h2>
+        <p>
+          Keep the message clear and concise. The description should provide
+          additional information about the timeline event, but it should not be
+          too long. If the description is too long, it may be difficult for
+          users to read and understand the message.
+        </p>
+        <!-- 
+          Progress List 
+          data-progress-list options: "unstyled"
+        -->
+        <ul data-progress-list="unstyled">
+          <li>
+            Do not link to more information from the tracker.
+            <ul>
+              <li>Example of a link that should not be used in the tracker</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Progress Tracker Step -->
+    <div>
+      <div data-progress-dot="primary">
+        <span></span>
+      </div>
+      <div>
+        <h2>Progress tracker timelline heading</h2>
+        <p>
+          Keep the message clear and concise. The description should provide
+          additional information about the timeline event, but it should not be
+          too long. If the description is too long, it may be difficult for
+          users to read and understand the message.
+        </p>
+        <ul data-progress-list="unstyled">
+          <li>
+            Do not link to more information from the tracker.
+            <ul>
+              <li>Example of a link that should not be used in the tracker</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Progress Tracker Step -->
+    <div data-progress-step-border="gray">
+      <div>
+        <span></span>
+      </div>
+      <div>
+        <h2>Progress tracker timelline heading</h2>
+        <p>
+          Keep the message clear and concise. The description should provide
+          additional information about the timeline event, but it should not be
+          too long. If the description is too long, it may be difficult for
+          users to read and understand the message.
+        </p>
+        <ul data-progress-list="unstyled">
+          <li>
+            Do not link to more information from the tracker.
+            <ul>
+              <li>Example of a link that should not be used in the tracker</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Progress Tracker Step -->
+    <div data-progress-step-border="transparent">
+      <div data-progress-dot="gray">
+        <span></span>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  :root {
+  --font-size-base: 1rem;
+  --font-size-regular: calc(var(--font-size-base, 1rem) * 1.125);
+  --font-size-large: calc(var(--font-size-base, 1rem) * 1.4375);
+  --font-size-h1: calc(var(--font-size-base, 1rem) * 2.9375);
+  --font-size-h2: calc(var(--font-size-base, 1rem) * 2.3175);
+  --font-family-sans-serif:
+    "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto",
+    "Helvetica Neue", "Noto Sans", sans-serif;
+  --gray-900: #3b3a48;
+  --gray-700: #5e5e6a;
+  --gray-500: #72717c;
+  --gray-200: #d4d4d7;
+  --gray-150: #e2e2e3;
+  --gray-100: #ededef;
+  --gray-75: #f8f9fa;
+  --gray-50: #fafafa;
+  --black: #000;
+  --white: #fff;
+  --color-p1: #fdb81e;
+  --color-p1-lighter: #fed478;
+  --color-p1-soft: #f2c45a;
+  --color-p1-softer: #f5ce73;
+  --color-p2: #046b99;
+  --color-p2-darker: #035376;
+  --color-p2-darkest: #01395e;
+  --color-p2-light: #6db7d8;
+  --color-p2-pale: #eef8fb;
+  --color-p2-soft: #f5f9fa;
+  --color-p2-muted: #87b8ce;
+  --color-p3: #323a45;
+  --color-p3-darker: #232930;
+  --outline-default-color: #0b8ee5;
+  --outline-dark-mode-color: #85cbf9;
+  --ratio: 0.1vw;
+  --shadow-strong: 0 2px 4px rgba(0 0 0 / 50%);
+  --shadow-card: 0 3px 5px 0 rgb(0 0 0 / 10%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Progress Tracker Component */
+div.template-progress-tracker {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(
+    --font-family-sans-serif,
+    "Public Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    "Noto Sans",
+    sans-serif
+  );
+  position: relative;
+  line-height: 1.5;
+
+  /* --- Regions --- */
+
+  /* Content Container */
+  > div {
+    padding: 1rem 12px;
+    padding-left: 1.5rem;
+    margin: 0 auto;
+    position: relative;
+
+    @media (width >= 576px) {
+      max-width: 540px;
+    }
+    @media (width >= 768px) {
+      max-width: 720px;
+    }
+    @media (width >= 992px) {
+      max-width: 960px;
+    }
+    @media (width >= 1200px) {
+      max-width: 1176px;
+    }
+
+    /* Progress Step */
+    > div {
+      border-left: solid 6px;
+      border-color: var(--color-p2-muted, #87b8ce);
+      position: relative;
+      display: flex;
+
+      /* --- Options --- */
+      &[data-progress-step-border="gray"] {
+        border-color: var(--gray-100, #ededef);
+      }
+
+      &[data-progress-step-border="transparent"] {
+        border-color: transparent;
+      }
+
+      /* Timeline Dot Container */
+      > div:first-child {
+        left: -1.12rem;
+        top: 0;
+        position: relative;
+
+        /* Dot Inner */
+        > span {
+          position: relative;
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          border: none !important;
+          background-color: var(--color-p2-muted, #87b8ce);
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background-color: var(--white, #fff);
+          }
+        }
+
+        /* Dot Variants */
+        &[data-progress-dot="primary"] > span::before {
+          background-color: var(--color-p2, #046b99);
+        }
+
+        &[data-progress-dot="primary-full"] > span {
+          background-color: var(--color-p2, #046b99);
+        }
+
+        &[data-progress-dot="primary-full"] > span::before {
+          background-color: var(--color-p2, #046b99);
+        }
+
+        &[data-progress-dot="gray"] > span {
+          background-color: var(--gray-100, #ededef);
+        }
+      }
+
+      /* Step Content */
+      > div:last-child {
+        padding-bottom: 1.5rem;
+
+        /* Heading */
+        > h2 {
+          font-size: calc(var(--font-size-large, 1.4375rem) + var(--ratio));
+          margin-top: -0.2rem;
+        }
+
+        /* Description */
+        & p {
+          font-size: calc(var(--font-size-regular, 1.125rem) + var(--ratio));
+        }
+
+        /* Progress List */
+        & ul {
+          font-size: calc(var(--font-size-regular, 1.125rem) + var(--ratio));
+          margin-top: 0.5rem;
+          margin-bottom: 0.5rem;
+          list-style-type: disc;
+          padding-left: 2rem;
+
+          /* List Variants */
+          &[data-progress-list="unstyled"] {
+            padding-left: 0;
+            list-style: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+</style>

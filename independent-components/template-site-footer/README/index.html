@@ -1,0 +1,39 @@
+<h1>Template Site Footer Component</h1>
+<p>The Template Site Footer component is a modular, responsive footer designed to house site-specific navigation, support links, and organizational information. It features a class-root architecture (<code>.template-site-footer</code>) combined with data attributes and tag-based descendant selectors for variants.</p>
+<h2>Initial Structure</h2>
+<p>The component's HTML structure must remain consistent, as the CSS utilizes direct descendant selectors (<code>&gt;</code>) based on this exact nesting to apply styles.</p>
+<pre><code class="language-html">&lt;!-- 
+  Site Footer Component 
+  data-site-footer-bg options: &quot;gray-100&quot;
+--&gt;
+&lt;div class=&quot;template-site-footer&quot;&gt;
+  &lt;!-- Footer Content Container --&gt;
+  &lt;div&gt;
+    &lt;!-- Footer Column --&gt;
+    &lt;div&gt;
+      &lt;h2&gt;Column Heading&lt;/h2&gt;
+      &lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;!-- More columns as needed --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Data Attribute Selectors and Features</h2>
+<p>Instead of utility classes, this component leverages specific <code>data-site-footer-*</code> attributes for modifiers and styling overrides.</p>
+<h3>Background Colors (<code>data-site-footer-bg</code>)</h3>
+<p>Applied to the root <code>.template-site-footer</code> element.</p>
+<ul>
+<li><code>data-site-footer-bg=&quot;gray-100&quot;</code>: Sets a light gray background (<code>#ededef</code>) and switches text/link colors to dark slate for high contrast on light backgrounds.</li>
+<li><em>(default)</em>: If no attribute is provided, the footer uses a dark slate background (<code>#323a45</code>) with white text and gold accent borders.</li>
+</ul>
+<h2>Structural Regions</h2>
+<ul>
+<li><strong>Root Container</strong>: The main component wrapper handling background and base typography.</li>
+<li><strong>Content Container</strong>: An inner wrapper that manages responsive layout (column to row transition) and maximum width constraints.</li>
+<li><strong>Footer Column</strong>: Modular vertical containers that stack on mobile and align horizontally on desktop.</li>
+<li><strong>Column Heading</strong>: Section titles (<code>h2</code>) featuring a secondary accent border.</li>
+<li><strong>Links</strong>: Block-level navigation elements with consistent padding and hover states.</li>
+</ul>

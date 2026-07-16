@@ -1,0 +1,60 @@
+<h1>Template Header Full Component</h1>
+<p>The Template Header Full component provides a complete, responsive header solution including a utility bar (CA.gov branding) and a main branding bar with site-specific logo, search, and navigation.</p>
+<p>It utilizes a &quot;classless&quot; internal CSS architecture where styling is driven by the HTML structure and direct descendant selectors (<code>&gt;</code>) rather than deep BEM nesting.</p>
+<h2>Initial Structure</h2>
+<p>The component's HTML structure must remain consistent, as the CSS utilizes direct descendant selectors (<code>&gt;</code>) based on this exact nesting to apply styles.</p>
+<pre><code class="language-html">&lt;div class=&quot;template-header-full&quot;&gt;
+  &lt;!-- 1st Child: Utility Bar (CA.gov Branding) --&gt;
+  &lt;div&gt;
+    &lt;div&gt;
+      &lt;!-- CA.gov Logo &amp; Official Text --&gt;
+      &lt;div&gt;...&lt;/div&gt;
+      &lt;!-- Utility Links --&gt;
+      &lt;div&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- 2nd Child: Branding Bar (Site Specific) --&gt;
+  &lt;div&gt;
+    &lt;div&gt;
+      &lt;!-- Site Logo --&gt;
+      &lt;div&gt;...&lt;/div&gt;
+
+      &lt;!-- Search Trigger (Mobile) --&gt;
+      &lt;details name=&quot;...&quot;&gt;...&lt;/details&gt;
+
+      &lt;!-- Search Form --&gt;
+      &lt;div&gt;...&lt;/div&gt;
+
+      &lt;!-- Menu Trigger (Mobile) --&gt;
+      &lt;details name=&quot;...&quot;&gt;...&lt;/details&gt;
+
+      &lt;!-- Main Navigation --&gt;
+      &lt;div&gt;
+        &lt;nav&gt;...&lt;/nav&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>CSS Parent-to-Children Selector Method</h2>
+<p>This component relies on a strict parent-to-child relationship in CSS to minimize the need for internal class names. By targeting elements like <code>&gt; div:first-child</code> and <code>&gt; div &gt; div</code>, the stylesheet remains modular and scoped to the <code>.template-header-full</code> root.</p>
+<h3>Benefits</h3>
+<ul>
+<li><strong>Cleaner HTML</strong>: Fewer classes cluttering the markup.</li>
+<li><strong>Structural Integrity</strong>: The CSS enforces a consistent HTML structure, which helps maintain accessibility and design standards.</li>
+<li><strong>Scoped Styling</strong>: All internal element styles are strictly scoped to the header root, preventing leakage.</li>
+</ul>
+<h3>Implementation Details</h3>
+<ul>
+<li><strong>Utility Bar</strong>: Targeted via <code>&gt; div:first-child</code>.</li>
+<li><strong>Branding Bar</strong>: Targeted via <code>&gt; div:last-child</code>.</li>
+<li><strong>Containers</strong>: Inner wrappers use width constraints and flexbox layout, targeted via <code>&gt; div &gt; div</code>.</li>
+<li><strong>Interactive Elements</strong>: Search and Menu triggers use the native <code>&lt;details&gt;</code> element, with styles applied via <code>&gt; details</code>.</li>
+</ul>
+<h2>Responsive Behavior</h2>
+<ul>
+<li><strong>Mobile (&lt; 992px)</strong>: Search and Navigation menus are hidden behind <code>&lt;details&gt;</code> triggers.</li>
+<li><strong>Desktop (&gt;= 992px)</strong>: Search form and Navigation menu are displayed inline.</li>
+<li><strong>Official Branding</strong>: The &quot;Official website&quot; text visibility is managed based on screen width.</li>
+</ul>

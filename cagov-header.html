@@ -3,9 +3,9 @@
   name="viewport"
   content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 <div class="cagov-header">
-  <div class="cagov-header__1-utility">
-    <div class="cagov-header__2-top-bar">
-      <div class="cagov-header__3-official-content">
+  <div>
+    <div>
+      <div>
         <details>
           <summary>Official California website</summary>
           <div>
@@ -16,7 +16,7 @@
         </details>
       </div>
 
-      <div class="cagov-header__3-menu">
+      <div>
         <details>
           <summary>CA.gov menu</summary>
           <div>
@@ -46,11 +46,10 @@
     <!--end cagov-top-bar -->
   </div>
   <!--end cagov-header__1-utility-->
-  <div class="cagov-header__1-bottom-bar">
-    <div class="cagov-header__2-branding">
+  <div>
+    <div>
       <a
         href="https://www.ca.gov/index.html"
-        class="cagov-header__3-logo-link"
         aria-label="Go to the California state government homepage">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -94,13 +93,13 @@
             d="M1550 250l-28-80l-28 80h-84l68 52l-24 80l68-52l68 52l-24-80l68-52h-84Z" />
         </svg>
       </a>
-      <div class="cagov-header__3-search">
+      <div>
         <form
           action="https://www.ca.gov/search/"
           method="get"
           role="search"
           aria-label="Search CA.gov">
-          <label for="cagov-search-input" class="cagov-sr-only"
+          <label for="cagov-search-input"
             >Search CA.gov</label
           >
           <input
@@ -134,9 +133,51 @@
 <!--end cagov-header-->
 
 <style>
-  body {
+  :root {
+  --font-size-base: 1rem;
+  --font-size-regular: calc(var(--font-size-base, 1rem) * 1.125);
+  --font-size-large: calc(var(--font-size-base, 1rem) * 1.4375);
+  --font-size-h1: calc(var(--font-size-base, 1rem) * 2.9375);
+  --font-size-h2: calc(var(--font-size-base, 1rem) * 2.3175);
+  --font-family-sans-serif:
+    "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto",
+    "Helvetica Neue", "Noto Sans", sans-serif;
+  --gray-900: #3b3a48;
+  --gray-700: #5e5e6a;
+  --gray-500: #72717c;
+  --gray-200: #d4d4d7;
+  --gray-150: #e2e2e3;
+  --gray-100: #ededef;
+  --gray-75: #f8f9fa;
+  --gray-50: #fafafa;
+  --black: #000;
+  --white: #fff;
+  --color-p1: #fdb81e;
+  --color-p1-lighter: #fed478;
+  --color-p1-soft: #f2c45a;
+  --color-p1-softer: #f5ce73;
+  --color-p2: #046b99;
+  --color-p2-darker: #035376;
+  --color-p2-darkest: #01395e;
+  --color-p2-light: #6db7d8;
+  --color-p2-pale: #eef8fb;
+  --color-p2-soft: #f5f9fa;
+  --color-p2-muted: #87b8ce;
+  --color-p3: #323a45;
+  --color-p3-darker: #232930;
+  --outline-default-color: #0b8ee5;
+  --outline-dark-mode-color: #85cbf9;
+  --ratio: 0.1vw;
+  --shadow-strong: 0 2px 4px rgba(0 0 0 / 50%);
+  --shadow-card: 0 3px 5px 0 rgb(0 0 0 / 10%);
+}
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* cagov shell styles */
@@ -144,7 +185,8 @@ div.cagov-header {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family:
+  font-family: var(
+    --font-family-sans-serif,
     "Public Sans",
     system-ui,
     -apple-system,
@@ -152,13 +194,14 @@ div.cagov-header {
     Roboto,
     "Helvetica Neue",
     "Noto Sans",
-    sans-serif;
-  color: #3b3a48;
+    sans-serif
+  );
+  color: var(--gray-900, #3b3a48);
 
   /* global */
 
   :focus {
-    outline: 2px solid #0b8ee5;
+    outline: 2px solid var(--outline-default-color, #0b8ee5);
   }
 
   .bold {
@@ -166,24 +209,12 @@ div.cagov-header {
   }
 
   & a {
-    color: #046b99;
+    color: var(--color-p2, #046b99);
 
     &:hover,
     &:focus {
-      color: #035376;
+      color: var(--color-p2-darker, #035376);
     }
-  }
-
-  .cagov-sr-only {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    clip: rect(0, 0, 0, 0) !important;
-    white-space: nowrap !important;
-    border: 0 !important;
   }
 
   *,
@@ -194,10 +225,8 @@ div.cagov-header {
     padding: 0;
   }
 
-  > div.cagov-header__1-bottom-bar,
-  > div.cagov-header__1-utility {
-    > div.cagov-header__2-top-bar,
-    > div.cagov-header__2-branding {
+  > div {
+    > div {
       width: 100%;
       padding-right: 15px;
       padding-left: 15px;
@@ -219,8 +248,13 @@ div.cagov-header {
     }
   }
 
+  > div:first-child {
+    background-color: var(--color-p2-soft, #f5f9fa);
+    min-height: 42px;
+  }
+
   /* cagov branding styles */
-  > div.cagov-header__1-bottom-bar > div.cagov-header__2-branding {
+  > div:last-child > div {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -231,7 +265,7 @@ div.cagov-header {
       justify-content: space-between;
     }
 
-    > a.cagov-header__3-logo-link {
+    > a {
       display: inline-block;
       padding: 0.5rem 0;
 
@@ -244,7 +278,7 @@ div.cagov-header {
     }
 
     /* Search styles */
-    > div.cagov-header__3-search > form {
+    > div > form {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -253,13 +287,25 @@ div.cagov-header {
       padding-bottom: 1rem;
       max-width: 350px;
 
+      > label {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+      }
+
       > input[type="search"] {
         font-size: 1.1rem;
         width: 100%;
         max-height: 38px;
         padding: 0 10px;
         transition: border 0.4s;
-        border: 1px solid #72717c;
+        border: 1px solid var(--gray-500, #72717c);
         border-radius: 5px 0 0 5px;
         height: 38px;
         outline-offset: -2px;
@@ -267,181 +313,175 @@ div.cagov-header {
 
       > button[type="submit"] {
         outline-offset: -4px;
-        outline-color: #85cbf9;
-        background-color: #72717c;
-        color: #fff;
+        outline-color: var(--outline-dark-mode-color, #85cbf9);
+        background-color: var(--gray-500, #72717c);
+        color: var(--white, #fff);
         border-radius: 0 5px 5px 0;
         padding: 0 12px;
-        border: 1px solid #72717c;
+        border: 1px solid var(--gray-500, #72717c);
         min-height: 38px;
         margin-left: -1px;
 
         > svg {
-          fill: #fff;
+          fill: var(--white, #fff);
         }
       }
     }
   }
 
-  > div.cagov-header__1-utility {
-    background-color: #f5f9fa;
-    min-height: 42px;
+  > div:first-child > div {
+    padding-top: 0.2rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
 
-    > div.cagov-header__2-top-bar {
-      padding-top: 0.2rem;
-      padding-bottom: 0.5rem;
-      display: flex;
-      flex-direction: column;
+    @media (width >= 360px) {
+      flex-direction: row;
+      align-items: flex-start;
 
-      @media (width >= 360px) {
-        flex-direction: row;
-        align-items: flex-start;
-
-        > div:first-child {
-          width: 62%;
-        }
-
-        > div:last-child {
-          width: 38%;
-        }
-      }
-      @media (width >= 450px) {
-        flex-direction: row;
-        align-items: flex-start;
-
-        > div:first-child {
-          width: 50%;
-        }
-
-        > div:last-child {
-          width: 50%;
-        }
+      > div:first-child {
+        width: 62%;
       }
 
-      > div.cagov-header__3-official-content > details {
-        font-size: 0.875rem;
+      > div:last-child {
+        width: 38%;
+      }
+    }
+    @media (width >= 450px) {
+      flex-direction: row;
+      align-items: flex-start;
+
+      > div:first-child {
+        width: 50%;
+      }
+
+      > div:last-child {
+        width: 50%;
+      }
+    }
+
+    > div {
+      > details {
+        > div {
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          line-height: 1.5;
+        }
 
         > summary {
-          width: fit-content;
-          padding: 0.35rem 0.5rem;
+          list-style: none;
+          text-decoration: underline;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          position: relative;
+          right: 0.5rem;
+
+          &:hover,
+          &:focus {
+            color: var(--black, #000);
+          }
+
+          &::-webkit-details-marker {
+            display: none;
+          }
+
+          &::after {
+            margin-left: 0.5rem;
+            content: "";
+            display: inline-block;
+            text-decoration: none;
+            position: relative;
+            width: 0.4rem;
+            height: 0.4rem;
+            border-top: 1px solid var(--black, #000);
+            border-left: 1px solid var(--black, #000);
+            transform: rotate(225deg);
+            transition: 200ms;
+            vertical-align: middle;
+          }
+        }
+
+        &[open] > summary::after {
+          transform: rotate(45deg);
+          top: 2px;
         }
       }
+    }
 
-      /* cagov menu styles */
-      > div.cagov-header__3-menu {
-        margin-left: 0;
+    > div:first-child > details {
+      font-size: 0.875rem;
+
+      > summary {
+        width: fit-content;
+        padding: 0.35rem 0.5rem;
+      }
+    }
+
+    /* cagov menu styles */
+    > div:last-child {
+      margin-left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      @media (width >360px) {
+        margin-left: auto;
+        justify-content: flex-end;
+      }
+
+      > details {
+        width: 100%;
         display: flex;
-        align-items: center;
-        justify-content: flex-start;
+        flex-direction: column;
 
-        @media (width >360px) {
-          margin-left: auto;
-          justify-content: flex-end;
+        > summary {
+          text-align: left;
+          padding: 0.35rem 0.5rem;
+
+          @media (width >= 360px) {
+            text-align: right;
+            width: fit-content;
+            align-self: flex-end;
+            right: 0;
+            left: 0.5rem;
+          }
         }
 
-        > details {
-          width: 100%;
+        > div > nav > ul {
+          list-style: none;
           display: flex;
           flex-direction: column;
+          gap: 0.5rem;
+          align-items: flex-start;
+          justify-content: flex-start;
+          padding: 0;
 
-          > summary {
+          @media (width >= 991px) {
+            flex-direction: row;
+          }
+
+          > li {
             text-align: left;
-            padding: 0.35rem 0.5rem;
 
-            @media (width >= 360px) {
-              text-align: right;
-              width: fit-content;
-              align-self: flex-end;
-              right: 0;
-              left: 0.5rem;
+            > a {
+              padding: 0;
+              outline-offset: 0.375rem;
             }
           }
 
-          > div > nav > ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            align-items: flex-start;
-            justify-content: flex-start;
-            padding: 0;
-
-            @media (width >= 991px) {
-              flex-direction: row;
-            }
+          @media (width >= 360px) {
+            gap: 1rem;
+            align-items: flex-end;
+            justify-content: flex-end;
 
             > li {
-              text-align: left;
+              text-align: right;
 
               > a {
-                padding: 0;
-                outline-offset: 0.375rem;
+                padding: 0.5rem 0.35rem;
               }
             }
-
-            @media (width >= 360px) {
-              gap: 1rem;
-              align-items: flex-end;
-              justify-content: flex-end;
-
-              > li {
-                text-align: right;
-
-                > a {
-                  padding: 0.5rem 0.35rem;
-                }
-              }
-            }
-          }
-        }
-      }
-
-      > div.cagov-header__3-menu,
-      > div.cagov-header__3-official-content {
-        > details {
-          > div {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            line-height: 1.5;
-          }
-
-          > summary {
-            list-style: none;
-            text-decoration: underline;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            position: relative;
-            right: 0.5rem;
-
-            &:hover,
-            &:focus {
-              color: #000;
-            }
-
-            &::-webkit-details-marker {
-              display: none;
-            }
-
-            &::after {
-              margin-left: 0.5rem;
-              content: "";
-              display: inline-block;
-              text-decoration: none;
-              position: relative;
-              width: 0.4rem;
-              height: 0.4rem;
-              border-top: 1px solid #000;
-              border-left: 1px solid #000;
-              transform: rotate(225deg);
-              transition: 200ms;
-              vertical-align: middle;
-            }
-          }
-
-          &[open] > summary::after {
-            transform: rotate(45deg);
-            top: 2px;
           }
         }
       }

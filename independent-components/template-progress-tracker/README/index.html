@@ -1,0 +1,68 @@
+<h1>Template Progress Tracker Component</h1>
+<p>The Template Progress Tracker component is a visual timeline designed to show progress through a multi-step process or a chronological list of events. It features a class-root architecture (<code>.template-progress-tracker</code>) combined with data attributes and tag-based descendant selectors for variants.</p>
+<h2>Initial Structure</h2>
+<p>The component's HTML structure must remain consistent, as the CSS utilizes direct descendant selectors (<code>&gt;</code>) based on this exact nesting to apply styles.</p>
+<pre><code class="language-html">&lt;!-- 
+  Progress Tracker Component 
+  data-progress-step-border options: &quot;gray&quot;, &quot;transparent&quot;
+--&gt;
+&lt;div class=&quot;template-progress-tracker&quot;&gt;
+  &lt;!-- Progress Tracker Content --&gt;
+  &lt;div&gt;
+    &lt;!-- Progress Tracker Step --&gt;
+    &lt;div data-progress-step-border=&quot;gray&quot;&gt;
+      &lt;!-- 
+        Timeline Dot 
+        data-progress-dot options: &quot;primary&quot;, &quot;primary-full&quot;, &quot;gray&quot;
+      --&gt;
+      &lt;div data-progress-dot=&quot;primary-full&quot;&gt;
+        &lt;span&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      
+      &lt;!-- Step Content --&gt;
+      &lt;div&gt;
+        &lt;h2&gt;Progress tracker timeline heading&lt;/h2&gt;
+        &lt;p&gt;Description of the progress step goes here.&lt;/p&gt;
+        
+        &lt;!-- 
+          Progress List 
+          data-progress-list options: &quot;unstyled&quot;
+        --&gt;
+        &lt;ul data-progress-list=&quot;unstyled&quot;&gt;
+          &lt;li&gt;List item 1&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Data Attribute Selectors and Features</h2>
+<p>Instead of utility classes, this component leverages specific <code>data-progress-*</code> attributes for modifiers and styling overrides.</p>
+<h3>Step Border Style (<code>data-progress-step-border</code>)</h3>
+<p>Applied to the <strong>Progress Tracker Step</strong> element (the <code>div</code> child of the content container).</p>
+<ul>
+<li><code>data-progress-step-border=&quot;gray&quot;</code>: Sets the left vertical border color to light gray (<code>#ededef</code>).</li>
+<li><code>data-progress-step-border=&quot;transparent&quot;</code>: Hides the left vertical border (useful for the final step).</li>
+<li><em>(default)</em>: If no attribute is provided, the border color defaults to a light blue (<code>#87b8ce</code>).</li>
+</ul>
+<h3>Timeline Dot Style (<code>data-progress-dot</code>)</h3>
+<p>Applied to the <strong>Timeline Dot Container</strong> element.</p>
+<ul>
+<li><code>data-progress-dot=&quot;primary&quot;</code>: Sets the inner dot center to primary blue.</li>
+<li><code>data-progress-dot=&quot;primary-full&quot;</code>: Sets both the ring and the inner center to primary blue.</li>
+<li><code>data-progress-dot=&quot;gray&quot;</code>: Sets the ring to a light gray.</li>
+<li><em>(default)</em>: If no attribute is provided, the ring is light blue with a white center.</li>
+</ul>
+<h3>List Style (<code>data-progress-list</code>)</h3>
+<p>Applied to the <code>&lt;ul&gt;</code> element within the step content.</p>
+<ul>
+<li><code>data-progress-list=&quot;unstyled&quot;</code>: Removes padding and bullet points from the list.</li>
+</ul>
+<h2>Structural Regions</h2>
+<ul>
+<li><strong>Root Container</strong>: The main component wrapper.</li>
+<li><strong>Content Container</strong>: An inner wrapper managing layout and width constraints.</li>
+<li><strong>Progress Step</strong>: A repeating container for each individual stage/event.</li>
+<li><strong>Timeline Dot</strong>: The visual marker on the left representing the step state.</li>
+<li><strong>Step Content</strong>: The text area containing the heading, description, and supporting lists.</li>
+</ul>

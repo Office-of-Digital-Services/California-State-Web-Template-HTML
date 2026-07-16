@@ -1,0 +1,309 @@
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<!-- 
+  Banner Root 
+  data-bg options: "understated", "primary", "primary-gradient", "standout"
+-->
+<div class="template-banner__component" data-bg="primary-gradient">
+  
+  <!-- Image Container -->
+  <div>
+    <!-- data-image options: "fade-left" -->
+    <img
+      src="https://www.ca.gov/images/about-tree.webp"
+      alt="Banner Image"
+      data-image="fade-left" />
+  </div>
+  
+  <!-- Content Container -->
+  <div>
+    <!-- Content Column Wrapper -->
+    <div>
+      <!-- 
+        Heading 
+        data-font-weight options: "200", "400" 
+        data-h2 option: boolean (add data-h2 attribute without value to match h2 size)
+      -->
+      <h1 data-font-weight="200">
+        State template banner heading
+      </h1>
+      
+      <!-- Description -->
+      <p>
+        This is a description of the banner. It should be concise and
+        informative, providing context for the user about the content or purpose
+        of the page.
+      </p>
+      
+      <!-- Actions Container -->
+      <div>
+        <!-- data-action options: "secondary" (default is primary action) -->
+        <a href="#">Primary Action</a>
+        <a href="#" data-action="secondary">Secondary Action</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  :root {
+  --font-size-base: 1rem;
+  --font-size-regular: calc(var(--font-size-base, 1rem) * 1.125);
+  --font-size-large: calc(var(--font-size-base, 1rem) * 1.4375);
+  --font-size-h1: calc(var(--font-size-base, 1rem) * 2.9375);
+  --font-size-h2: calc(var(--font-size-base, 1rem) * 2.3175);
+  --font-family-sans-serif:
+    "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto",
+    "Helvetica Neue", "Noto Sans", sans-serif;
+  --gray-900: #3b3a48;
+  --gray-700: #5e5e6a;
+  --gray-500: #72717c;
+  --gray-200: #d4d4d7;
+  --gray-150: #e2e2e3;
+  --gray-100: #ededef;
+  --gray-75: #f8f9fa;
+  --gray-50: #fafafa;
+  --black: #000;
+  --white: #fff;
+  --color-p1: #fdb81e;
+  --color-p1-lighter: #fed478;
+  --color-p1-soft: #f2c45a;
+  --color-p1-softer: #f5ce73;
+  --color-p2: #046b99;
+  --color-p2-darker: #035376;
+  --color-p2-darkest: #01395e;
+  --color-p2-light: #6db7d8;
+  --color-p2-pale: #eef8fb;
+  --color-p2-soft: #f5f9fa;
+  --color-p2-muted: #87b8ce;
+  --color-p3: #323a45;
+  --color-p3-darker: #232930;
+  --outline-default-color: #0b8ee5;
+  --outline-dark-mode-color: #85cbf9;
+  --ratio: 0.1vw;
+  --shadow-strong: 0 2px 4px rgba(0 0 0 / 50%);
+  --shadow-card: 0 3px 5px 0 rgb(0 0 0 / 10%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+ * Banner Component 
+ * Root element that dictates the overarching layout and colors.
+ */
+div.template-banner__component {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(
+    --font-family-sans-serif,
+    "Public Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    "Noto Sans",
+    sans-serif
+  );
+  color: var(--gray-900, #3b3a48);
+  position: relative;
+
+  /* --- Background Options (`data-bg`) --- */
+
+  &[data-bg="understated"] {
+    background-color: var(--color-p2-pale, #eef8fb);
+    color: var(--gray-900, #3b3a48);
+  }
+
+  &[data-bg="primary"] {
+    background-color: var(--color-p2, #046b99);
+    color: var(--white, #fff);
+  }
+
+  &[data-bg="primary-gradient"] {
+    background: linear-gradient(180deg, var(--color-p2-darkest, #01395e) 20.31%, var(--color-p2, #046b99) 66.15%);
+    color: var(--white, #fff);
+  }
+
+  &[data-bg="standout"] {
+    background-color: var(--color-p3, #323a45);
+    color: var(--white, #fff);
+  }
+
+  /* --- Typography Modifiers --- */
+
+  & [data-h2] {
+    font-size: calc(var(--font-size-h2, 2.3175rem) + var(--ratio)) !important;
+  }
+
+  & [data-font-weight="400"] {
+    font-weight: 400 !important;
+  }
+
+  & [data-font-weight="200"] {
+    font-weight: 200 !important;
+  }
+
+  /* --- 1st Child: Image Container --- */
+  > div:first-of-type {
+    position: relative;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    order: 1;
+
+    @media (width >= 1200px) {
+      display: flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    > img {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+      object-position: center;
+      margin-left: auto;
+
+      @media (width >= 1200px) {
+        width: auto;
+        max-height: 100%;
+        object-fit: contain;
+        object-position: right center;
+        margin-left: auto;
+      }
+
+      /* Image Modifiers (`data-image`) */
+      &[data-image="fade-left"] {
+        /* For Chrome, Safari, Edge */
+        -webkit-mask-image: linear-gradient(to bottom, transparent, black 30%);
+        mask-image: linear-gradient(to bottom, transparent, black 30%);
+
+        @media (width >= 1200px) {
+          /* For Chrome, Safari, Edge */
+          -webkit-mask-image: linear-gradient(to right, transparent, black 30%);
+          mask-image: linear-gradient(to right, transparent, black 30%);
+        }
+      }
+    }
+  }
+
+  /* --- 2nd Child: Content Container --- */
+  > div:last-of-type {
+    box-sizing: border-box;
+    order: 0;
+    padding: 0 12px 3rem;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+
+    @media (width >= 576px) {
+      max-width: 540px;
+    }
+    @media (width >= 768px) {
+      max-width: 720px;
+    }
+    @media (width >= 992px) {
+      max-width: 960px;
+    }
+    @media (width >= 1200px) {
+      max-width: 1176px;
+    }
+
+    /* Content Column Wrapper */
+    > div {
+      width: 100%;
+
+      @media (width >= 1200px) {
+        width: 50%;
+      }
+
+      /* Heading element */
+      > :is(h1, h2, h3, h4, h5, h6) {
+        font-size: calc(var(--font-size-h1, 2.9375rem) + var(--ratio));
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 2rem;
+        line-height: 1.15;
+        text-wrap: pretty;
+      }
+
+      /* Description */
+      > p {
+        font-size: calc(1.5rem + 0.1vw);
+        margin-bottom: 1.5rem;
+        margin-top: 1rem;
+        line-height: 1.5;
+      }
+
+      /* Actions Container */
+      > div {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding-top: 1.5rem;
+        gap: 1rem;
+
+        > a {
+          display: inline-block;
+          padding: 0.75rem 1.5rem;
+          border-radius: 4px;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: calc(var(--font-size-base, 1rem) + var(--ratio));
+          transition:
+            background 0.2s,
+            color 0.2s;
+        }
+
+        /* Primary Action (Default - No data-action) */
+        > a:not([data-action="secondary"]) {
+          background: var(--color-p1-soft, #f2c45a);
+          color: var(--gray-900, #3b3a48);
+          border: none;
+        }
+
+        > a:not([data-action="secondary"]):hover,
+        > a:not([data-action="secondary"]):focus {
+          background: var(--color-p1-softer, #f5ce73);
+          color: var(--black, #000);
+          box-shadow: var(--shadow-strong, 0 2px 4px rgba(0 0 0 / 50%));
+        }
+
+        /* Secondary Action (`data-action="secondary"`) */
+        > a[data-action="secondary"] {
+          background-color: var(--color-p2, #046b99);
+          color: var(--white, #fff);
+          border: 1px solid var(--white, #fff);
+        }
+
+        > a[data-action="secondary"]:hover,
+        > a[data-action="secondary"]:focus {
+          background-color: var(--color-p2-darker, #035376);
+          color: var(--white, #fff);
+          box-shadow: var(--shadow-strong, 0 2px 4px rgba(0 0 0 / 50%));
+        }
+      }
+    }
+  }
+}
+
+</style>

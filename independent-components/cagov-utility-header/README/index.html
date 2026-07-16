@@ -1,0 +1,76 @@
+<h1>CA.gov Utility Header</h1>
+<p>This component is the compact CA.gov utility header shell used to present official statewide branding, navigation access, and search within a single utility bar. It is included here for reference, implementation consistency, and structural understanding.</p>
+<p>This component is not intended for modification. It should remain as-is because it represents official CA.gov branding and a primary CA.gov shell component. Do not restyle, restructure, rename regions, or swap core content patterns unless direction comes from the platform or branding owners.</p>
+<h2>Purpose</h2>
+<p>Use this component when the experience needs a compact CA.gov utility header treatment, including:</p>
+<ul>
+<li>CA.gov branding</li>
+<li>CA.gov navigation access</li>
+<li>search</li>
+</ul>
+<h2>High-Level Structure</h2>
+<p>The component is wrapped in:</p>
+<pre><code class="language-html">&lt;div class=&quot;cagov-utility-header&quot;&gt;
+  &lt;!-- Utility Wrapper --&gt;
+&lt;/div&gt;
+</code></pre>
+<p>It is composed of one primary utility region containing four functional areas:</p>
+<ol>
+<li>CA.gov brand link</li>
+<li>CA.gov menu button</li>
+<li>CA.gov menu content</li>
+<li>Search control and search form</li>
+</ol>
+<h2>Region Breakdown</h2>
+<h3>1. CA.gov Brand Link</h3>
+<p>The first functional area provides the CA.gov logo link back to the main CA.gov site.</p>
+<p>Contained areas:</p>
+<ul>
+<li>CA.gov home link</li>
+<li>CA.gov logo graphic</li>
+<li>screen reader label</li>
+</ul>
+<p>This region establishes statewide branding and should remain visually and structurally intact.</p>
+<h3>2. CA.gov Menu</h3>
+<p>The next functional area provides access to statewide navigation.</p>
+<p>Contained areas:</p>
+<ul>
+<li>CA.gov menu button</li>
+<li>CA.gov navigation content</li>
+<li>links for Services, Departments, About California, and Get help</li>
+</ul>
+<p>This region provides access to core CA.gov destinations and should remain consistent with the CA.gov shell.</p>
+<h3>3. Search</h3>
+<p>The final functional area provides the CA.gov search experience.</p>
+<p>Contained areas:</p>
+<ul>
+<li>search button</li>
+<li>search form</li>
+<li>search input</li>
+<li>submit button</li>
+</ul>
+<p>This region supports global CA.gov search access and should be preserved intact.</p>
+<h2>Structural Outline</h2>
+<pre><code class="language-html">div.cagov-utility-header
+  div   /* Utility Wrapper */
+    div /* Container */
+      div /* Utility Bar */
+        div      /* CA.gov logo */
+        details  /* CA.gov menu button */
+        div      /* CA.gov menu content */
+        details  /* Search button */
+        div      /* Search content */
+</code></pre>
+<h2>Guidance</h2>
+<ul>
+<li>Treat this as a protected shell component, not a customization surface.</li>
+<li>Do not alter the branding, logo treatment, labels, navigation set, search pattern, or region order.</li>
+<li>Do not repurpose the component as a local header variant.</li>
+<li>If a project needs different header behavior, create or use another component rather than editing this one.</li>
+</ul>
+<h2>Files</h2>
+<ul>
+<li><code>cagov-utility-header.html</code>: Markup and region structure</li>
+<li><code>cagov-utility-header.html.css</code>: Presentation and layout</li>
+<li><code>cagov-utility-header.html.js</code>: Interactive behavior</li>
+</ul>
