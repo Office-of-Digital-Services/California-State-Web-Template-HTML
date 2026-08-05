@@ -64,14 +64,17 @@ Prefer adding your own site-specific stylesheet after template styles, and add c
 
 CDN option for template assets:
 
-- https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/
+- https://template.webstandards.ca.gov/cdn.html
+
+State Web Template NPM package:
+
+- https://template.webstandards.ca.gov/get-started/npm.html
 
 ## Available State Web Template Frameworks
 
-- [California-State-Web-Template-HTML](https://github.com/Office-of-Digital-Services/California-State-Web-Template-HTML)
-- [California-State-Web-Template-eleventy](https://github.com/Office-of-Digital-Services/California-State-Web-Template-eleventy)
-- [California-State-Template-NET-Core-MVC](https://github.com/Office-of-Digital-Services/California-State-Web-Template-NET-Core-MVC)
 - [California-State-Web-Template-react](https://github.com/Office-of-Digital-Services/California-State-Web-Template-react)
+- [California-State-Template-NET-Core-MVC](https://github.com/Office-of-Digital-Services/California-State-Web-Template-NET-Core-MVC)
+- [California-State-Web-Template-eleventy](https://github.com/Office-of-Digital-Services/California-State-Web-Template-eleventy)
 
 ## Publishing Notes
 
